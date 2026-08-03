@@ -6,21 +6,40 @@ The format is based on Keep a Changelog, adapted for the Boxify development proc
 
 ---
 
-## [1.6] - KiCad STEP Integration (Work in Progress)
+## [1.6] – KiCad STEP Integration
 
 ### Added
 
-- Support for imported KiCad STEP models ("Passenger")
-- Composite Part workflow for imported PCB assemblies
-- Derive workflow from Composite Part into the PCB Library
-- Configurable PCB positioning using Mate Connectors
-- Improved document organization using folders
+- Added support for importing KiCad STEP models into Boxify.
+- Introduced a dedicated **PS KiCadStep** workflow for integrating imported electronics.
+- Imported STEP models are converted into a **Composite Part**, keeping the Parts list clean and manageable.
+- Added support for coupling an imported STEP model to a selected PCB from the PCB Library, allowing the STEP model to act as a visual representation ("passenger") of the PCB reference.
+
+### Changed
+
+- Electronics are now assembled in a dedicated intermediate Part Studio before being derived into the Adapter Plate.
+- The Adapter Plate now derives the complete PCB + KiCad STEP assembly instead of separate PCB geometry.
+- Moved PCB orientation (rotation) from the PCB workflow to **PS Enclosure**, making board orientation an enclosure-level configuration.
+- Renamed **PS Box** to **PS Enclosure** to better reflect its responsibility for enclosure-level configuration and positioning.
 
 ### Improved
 
-- Separation between imported PCB geometry and parametric framework
-- Stable workflow for updating imported PCB revisions
-- Foundation for future ECAD integrations
+- Cleaner project organization using dedicated folders for Part Studios and CAD imports.
+- Greatly reduced Parts list clutter by encapsulating imported STEP assemblies into Composite Parts.
+- Improved separation between reusable framework components and project-specific electronics.
+- Established a scalable architecture for future projects using imported KiCad assemblies without changing the enclosure workflow.
+
+### Architecture
+
+The electronics workflow is now structured as:
+
+PCB Library
+→ KiCad STEP (Composite)
+→ Mated Electronics
+→ Adapter Plate
+→ Enclosure
+
+This preserves the PCB Library as the mechanical reference while allowing imported KiCad assemblies to follow all positioning and enclosure configuration automatically.
 
 ---
 
