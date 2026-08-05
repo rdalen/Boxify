@@ -29,18 +29,6 @@ The format is based on Keep a Changelog, adapted for the Boxify development proc
 - Improved separation between reusable framework components and project-specific electronics.
 - Established a scalable architecture for future projects using imported KiCad assemblies without changing the enclosure workflow.
 
-### Architecture
-
-The electronics workflow is now structured as:
-
-PCB Library
-→ KiCad STEP (Composite)
-→ Mated Electronics
-→ Adapter Plate
-→ Enclosure
-
-This preserves the PCB Library as the mechanical reference while allowing imported KiCad assemblies to follow all positioning and enclosure configuration automatically.
-
 ---
 
 ## [1.5] - Threaded Insert Library
