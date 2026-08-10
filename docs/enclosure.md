@@ -82,7 +82,7 @@ Typical features include:
 - Lid surface
 - Alignment lip
 - Screw clearance holes
-- Counterbores (where applicable)
+- Counterbores and countersinks (where applicable)
 - Optional openings for displays, buttons or connectors
 
 ---
