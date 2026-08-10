@@ -101,6 +101,7 @@ It provides:
 - PCB geometry
 - Reference Mate Connector
 - Reference geometry
+- Passing configuration variables to downstream Part Studios
 
 <img width="1028" height="892" alt="image" src="https://github.com/user-attachments/assets/a7fffb1a-8e42-4ea5-98ee-bf901e7f4a7c" />
 <p align="center"><i>The new PCB Library entry.</i></p>
