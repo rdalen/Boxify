@@ -6,6 +6,37 @@ The format is based on Keep a Changelog, adapted for the Boxify development proc
 
 ---
 
+## [2.0] – Unified Enclosure Configuration
+
+### Added
+
+- Introduced a unified **Enclosure Configuration** workflow where all user-configurable enclosure options are available directly from **PS Enclosure**.
+- Added configurable **Lid Fastening Types**, allowing different screw mounting strategies to be selected from a single configuration.
+- Added support for **No Screw**, **Counterbore**, and **Countersunk** lid fastening options through automatic feature suppression.
+- Added configurable automatic **lid text labels**.
+- Added configurable automatic **interface cut-outs**.
+- Added dynamic configuration visibility, showing only parameters relevant to the selected configuration.
+- Added support for configuration-driven feature suppression, enabling multiple enclosure variants from a single Part Studio.
+
+### Changed
+
+- Centralized all enclosure-related configuration into **PS Enclosure**.
+- Eliminated the need to switch between Part Studios during normal enclosure configuration.
+- Eliminated manual editing of **Derive** features when changing enclosure options.
+- Converted enclosure options into fully configuration-driven feature sets.
+- Simplified the enclosure workflow into a single configuration interface.
+
+### Improved
+
+- Cleaner and more intuitive configuration experience.
+- Reduced visual clutter by hiding irrelevant configuration variables.
+- Improved maintainability through dynamic feature suppression.
+- Increased scalability for adding future enclosure options without changing the overall architecture.
+- Further strengthened the separation between framework logic and user configuration.
+- Boxify now behaves as a configurable enclosure generator rather than a collection of parametric Part Studios.
+
+---
+
 ## [1.7] – Automatic Interface Cut-outs
 
 ### Added
