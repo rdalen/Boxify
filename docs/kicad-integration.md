@@ -31,7 +31,7 @@ Derive into PCB Library
 Configure Adapter Plate
       │
       ▼
-Generate Enclosure
+Configure & Generate Enclosure
       │
       ▼
 Assembly
