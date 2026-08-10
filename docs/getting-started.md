@@ -74,16 +74,7 @@ For best results:
 
 # 2️⃣ Create a PCB Library Entry
 
-Create a new PCB Library Part Studio.
-
-Insert the imported STEP model.
-
-Configure:
-
-- PCB Length
-- PCB Width
-- PCB Thickness
-- Mounting holes
+Create a PCB Library entry where the imported STEP model is the "passenger" on a "carrier" (= prototype PCB from the onshape PCB library)
 
 The PCB Library becomes the reusable definition of your PCB.
 
