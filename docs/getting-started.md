@@ -84,9 +84,6 @@ Configure:
 - PCB Width
 - PCB Thickness
 - Mounting holes
-- PCB Rotation
-- Component Side
-- Mount Side
 
 The PCB Library becomes the reusable definition of your PCB.
 
