@@ -66,6 +66,9 @@ The passenger should remain unchanged after import. All positioning, orientation
 
 Keeping the passenger "read-only" ensures that the original PCB design remains the single source of truth for the electronics.
 
+<img width="618" height="604" alt="image" src="https://github.com/user-attachments/assets/e55cbaf1-e128-4fd9-92a2-59690cd4e403" />
+<p align="center"><i>An example of a zenertester design on a prototype board.</i></p>
+
 ---
 
 # 🧩 Creating a Composite Part
@@ -80,6 +83,10 @@ Advantages include:
 - Easier deriving
 - Stable references
 - Improved model organisation
+
+In this example, I have aligned the parts that are attached to the front of the box
+<img width="874" height="682" alt="image" src="https://github.com/user-attachments/assets/99d0a31b-974c-4dc2-ad60-63bb750674fb" />
+<p align="center"><i>Composite part with aligned front-components.</i></p>
 
 ---
 
