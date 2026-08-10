@@ -84,9 +84,9 @@ Advantages include:
 - Stable references
 - Improved model organisation
 
-In this example, I have aligned the parts that are attached to the front of the box
+In this example, I have aligned the parts that are attached to the front of the box and deleted a not populated component 
 <img width="874" height="682" alt="image" src="https://github.com/user-attachments/assets/99d0a31b-974c-4dc2-ad60-63bb750674fb" />
-<p align="center"><i>Composite part with aligned front-components.</i></p>
+<p align="center"><i>Composite part with aligned front-attached components.</i></p>
 
 ---
 
