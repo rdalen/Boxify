@@ -51,7 +51,6 @@ Typical configuration options include:
 
 - Insert type
 - Thread size
-- Installation method
 
 Future versions may also support:
 
