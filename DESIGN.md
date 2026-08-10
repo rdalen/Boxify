@@ -125,7 +125,7 @@ Each layer builds upon the previous one while remaining independent.
 Information flows in a single direction.
 
 ```text
-Passenger
+Passenger (Imported STEP)
       │
       ▼
 PCB Library
