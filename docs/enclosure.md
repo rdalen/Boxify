@@ -180,6 +180,9 @@ Rather than modelling insert geometry directly, the enclosure references the sel
 
 This allows insert types to be changed without redesigning the enclosure.
 
+<img width="1140" height="516" alt="image" src="https://github.com/user-attachments/assets/05db3580-7ee9-48c6-b660-009862a38c0f" />
+<p align="center"><i>Section view of Enclosure with Treaded Inserts</i></p>
+
 ---
 
 # 🎯 Design Principles
