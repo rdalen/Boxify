@@ -19,13 +19,9 @@ The imported PCB becomes the starting point for the Boxify workflow.
 -> Export STEP Model
       │
       ▼
--> Import into Onshape
-      │
-      ▼
--> Create Composite Part
-      │
-      ▼
--> Derive into PCB Library
+-> Import into Onshape▼
+   Create Composite Part▼
+   Create a PCB Library Entry
       │
       ▼
 Configure Adapter Plate
