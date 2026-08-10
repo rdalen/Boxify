@@ -13,6 +13,10 @@ The enclosure consists of two closely related parts:
 
 Both are designed within the same Part Studio to ensure they always remain compatible.
 
+<img width="1008" height="896" alt="image" src="https://github.com/user-attachments/assets/0473b559-e9ca-46b3-b91c-65923bdfa731" />
+<p align="center"><i>Enclosure for the PCB with cut-outs and textlabels</i></p>
+
+
 ---
 
 
