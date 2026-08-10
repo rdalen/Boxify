@@ -13,19 +13,19 @@ The imported PCB becomes the starting point for the Boxify workflow.
 # 🔄 Workflow Overview
 
 ```text
-KiCad PCB
+-> KiCad PCB
       │
       ▼
-Export STEP Model
+-> Export STEP Model
       │
       ▼
-Import into Onshape
+-> Import into Onshape
       │
       ▼
-Create Composite Part
+-> Create Composite Part
       │
       ▼
-Derive into PCB Library
+-> Derive into PCB Library
       │
       ▼
 Configure Adapter Plate
