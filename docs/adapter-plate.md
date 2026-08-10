@@ -19,6 +19,7 @@ The Adapter Plate is responsible for:
 - Defining the mechanical reference for the enclosure
 - Providing mounting locations for enclosure features
 - Passing measured dimensions to downstream Part Studios
+- Passing configuration variables to downstream Part Studios
 
 The Adapter Plate intentionally contains no enclosure walls or lid geometry.
 
