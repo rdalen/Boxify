@@ -47,7 +47,7 @@ Create PCB Library Entry
 Configure Adapter Plate
       │
       ▼
-Generate Box Base & Lid
+Configure & Generate Box Base & Lid
       │
       ▼
 Create Assembly
