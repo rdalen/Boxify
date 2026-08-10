@@ -13,9 +13,8 @@ The enclosure consists of two closely related parts:
 
 Both are designed within the same Part Studio to ensure they always remain compatible.
 
-<img width="1008" height="896" alt="image" src="https://github.com/user-attachments/assets/0473b559-e9ca-46b3-b91c-65923bdfa731" />
+<img width="850" height="896" alt="image" src="https://github.com/user-attachments/assets/1331d56a-d396-409b-99f9-39e9f524ce26" />
 <p align="center"><i>Enclosure for the PCB with cut-outs and textlabels</i></p>
-
 
 ---
 
@@ -63,6 +62,9 @@ Adapter Plate
 │   │  Box Base   │   │
 │   ├─────────────┤   │
 │   │   Box Lid   │   │
+│   ├─────────────┤   │
+│   │   Cut-outs  │   │
+│   │ Text labels │   │
 │   └─────────────┘   │
 └─────────────────────┘
       │
@@ -102,6 +104,7 @@ Typical features include:
 - Threaded insert pockets
 - Cable openings (optional)
 - Ventilation features (optional)
+- Cut-outs and text labels
 
 ---
 
@@ -123,6 +126,7 @@ Typical features include:
 
 Typical configurable parameters include:
 
+- all the upstream Part Studio Configuration Variables
 - Box height
 - Wall thickness
 - Bottom thickness
