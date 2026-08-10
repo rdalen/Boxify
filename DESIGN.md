@@ -202,7 +202,7 @@ Engineering parameters that control how the framework generates geometry.
 Examples:
 
 - Wall thickness
-- Lip clearance
+- PCB clearance
 - Corner radius
 
 ---
