@@ -85,22 +85,25 @@ Advantages include:
 - Improved model organisation
 
 In this example, I have aligned the parts that are attached to the front of the box and deleted a not populated component 
-<img width="874" height="682" alt="image" src="https://github.com/user-attachments/assets/99d0a31b-974c-4dc2-ad60-63bb750674fb" />
+<img width="1092" height="894" alt="image" src="https://github.com/user-attachments/assets/dab130d6-efd1-49a4-85e4-d71f27485fb3" />
 <p align="center"><i>Composite part with aligned front-attached components.</i></p>
 
 ---
 
 # 📚 Creating a PCB Library Entry
 
-Derive the Composite Part into the Part Studio PS-KiCad-Integration and select a from the PCB Library a prototype board with the same dimensions as the imported PCB
+Derive the Composite Part into the Part Studio PS-KiCad-Integration (the "passenger") and select a from the PCB Library a prototype board with the same dimensions as the imported PCB ((the "carrier")
 
-This PCB Library entry becomes the reusable definition of the PCB within Boxify.
+This new PCB Library entry becomes the reusable definition of the PCB within Boxify.
 
 It provides:
 
 - PCB geometry
 - Reference Mate Connector
 - Reference geometry
+
+<img width="1014" height="926" alt="image" src="https://github.com/user-attachments/assets/d73effb3-419e-4727-a5f2-031ccad6d91c" />
+<p align="center"><i>The new PCB Library entry.</i></p>
 
 ---
 
@@ -134,7 +137,7 @@ Current limitations include:
 
 - Mechanical accuracy depends on the exported STEP model.
 - Missing component models will not appear in the enclosure.
-- Very large PCB assemblies may increase regeneration time.
+- Large PCB assemblies may increase regeneration time.
 
 ---
 
