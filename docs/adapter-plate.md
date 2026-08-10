@@ -8,8 +8,6 @@ It forms the interface between the PCB and the enclosure, allowing both to evolv
 
 By separating the electronics from the enclosure, the Adapter Plate makes it possible to reuse the same PCB with different enclosure designs or reuse the same enclosure architecture with different PCBs.
 
-<img width="782" height="778" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
-
 <img width="1046" height="892" alt="image" src="https://github.com/user-attachments/assets/f35adabe-419d-4af0-94da-1c42cc0a5404" />
 <p align="center"><i>Adapter Plate with the PCB Library Entry</i></p>
 
