@@ -39,7 +39,6 @@ The Threaded Insert Library is responsible for defining:
 - Insert dimensions
 - Pocket geometry
 - Installation clearance
-- Counterbore dimensions (where applicable)
 - Reference geometry
 
 The library intentionally contains **no enclosure geometry**.
