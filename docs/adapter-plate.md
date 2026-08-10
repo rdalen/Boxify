@@ -27,16 +27,25 @@ The Adapter Plate intentionally contains no enclosure walls or lid geometry.
 # 🔄 Position in the Workflow
 
 ```text
-PCB Library
+ KiCad PCB
       │
       ▼
-Adapter Plate
+ Export STEP Model
       │
       ▼
-Box Base
+ Import into Onshape
       │
       ▼
-Box Lid
+ Create Composite Part
+      │
+      ▼
+ Derive into PCB Library
+      │
+      ▼
+-> Configure Adapter Plate
+      │
+      ▼
+Configure & Generate Enclosure
       │
       ▼
 Assembly
