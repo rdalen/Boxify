@@ -68,7 +68,7 @@ For best results:
 - Export using millimetres
 
 <img width="618" height="604" alt="image" src="https://github.com/user-attachments/assets/42280f8b-9f39-426e-b917-bcd274f2daf1" />
-<p align="center"><i>An example of a design on a prototype board.</i></p>
+<p align="center"><i>An example of a zenertester design on a prototype board.</i></p>
 
 ---
 
