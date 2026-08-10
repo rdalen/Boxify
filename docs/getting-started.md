@@ -69,6 +69,7 @@ For best results:
 
 <img width="618" height="604" alt="image" src="https://github.com/user-attachments/assets/42280f8b-9f39-426e-b917-bcd274f2daf1" />
 <p align="center"><i>An example of a design on a prototype board.</i></p>
+
 ---
 
 # 2️⃣ Create a PCB Library Entry
