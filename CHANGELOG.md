@@ -25,6 +25,7 @@ The format is based on Keep a Changelog, adapted for the Boxify development proc
 - Eliminated manual editing of **Derive** features when changing enclosure options.
 - Converted enclosure options into fully configuration-driven feature sets.
 - Simplified the enclosure workflow into a single configuration interface.
+- No Generic variables in Variable Studio needed anymore by using measuredVariables
 
 ### Improved
 
