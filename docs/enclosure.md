@@ -15,6 +15,38 @@ Both are designed within the same Part Studio to ensure they always remain compa
 
 ---
 
+
+# 🔄 Position in the Workflow
+
+```text
+ KiCad PCB
+      │
+      ▼
+ Export STEP Model
+      │
+      ▼
+ Import into Onshape
+      │
+      ▼
+ Create Composite Part
+      │
+      ▼
+ Derive into PCB Library
+      │
+      ▼
+Configure Adapter Plate
+      │
+      ▼
+-> Configure & Generate Enclosure
+      │
+      ▼
+Assembly
+```
+
+All enclosure geometry is derived from the Adapter Plate rather than directly from the PCB.
+
+---
+
 # 🏗 Architecture
 
 ```text
