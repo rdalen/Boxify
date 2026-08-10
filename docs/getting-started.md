@@ -77,6 +77,9 @@ For best results:
 Create a PCB Library entry where the imported STEP model is the "passenger" on a "carrier" (= prototype PCB from the onshape PCB library)
 
 The PCB Library becomes the reusable definition of your PCB.
+## ⚙️ Configuration
+
+- PCB selection
 
 ---
 
