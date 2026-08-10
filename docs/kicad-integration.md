@@ -47,7 +47,7 @@ For best compatibility:
 
 - Include all mounted components
 - Export using millimetres
-- Keep the PCB origin unchanged
+- Make sure the PCB origin is centered
 - Ensure component orientation is correct
 
 The exported STEP model represents the complete electronic assembly.
