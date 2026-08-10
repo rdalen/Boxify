@@ -103,7 +103,7 @@ Examples include:
 - Brass inserts
 - Plastic threaded inserts
 
-Currently only the bronze inserts are supported
+Currently only the Brass inserts are supported
 
 Additional insert types can be added without changing the enclosure architecture.
 
