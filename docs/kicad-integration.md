@@ -92,7 +92,7 @@ In this example, I have aligned the parts that are attached to the front of the 
 
 # 📚 Creating a PCB Library Entry
 
-Derive the Composite Part into a new PCB Library Part Studio and select a from the PCB Library a prototype board with the same sizes
+Derive the Composite Part into a new Part Studio called PS-KiCad-Integration and select a from the PCB Library a prototype board with the same sizes as the imported PCB
 
 This PCB Library entry becomes the reusable definition of the PCB within Boxify.
 
