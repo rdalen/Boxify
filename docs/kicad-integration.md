@@ -85,31 +85,15 @@ Advantages include:
 
 # 📚 Creating a PCB Library Entry
 
-Derive the Composite Part into a new PCB Library Part Studio.
+Derive the Composite Part into a new PCB Library Part Studio and select a from the PCB Library a prototype board with the same sizes
 
-The PCB Library entry becomes the reusable definition of the PCB within Boxify.
+This PCB Library entry becomes the reusable definition of the PCB within Boxify.
 
 It provides:
 
 - PCB geometry
 - Reference Mate Connector
 - Reference geometry
-- PCB orientation
-
----
-
-# 📐 Positioning the PCB
-
-The PCB Library is responsible for defining the reference orientation of the PCB.
-
-Typical operations include:
-
-- Positioning using a Mate Connector
-- Rotating the PCB where required
-- Selecting the mounting side
-- Selecting the component side
-
-Once configured, downstream Part Studios automatically inherit the correct orientation.
 
 ---
 
