@@ -49,8 +49,6 @@ Each PCB is represented by:
 - PCB geometry
 - Mounting hole locations
 - PCB dimensions
-- Component orientation
-- Mounting orientation
 - Reference geometry
 
 The PCB Library never contains enclosure-specific information.
@@ -67,7 +65,8 @@ It provides the mechanical interface between the PCB and the enclosure.
 
 Responsibilities include:
 
-- Positioning the PCB
+- Component orientation
+- Mounting orientation
 - Defining mounting locations
 - Providing reference geometry
 - Measuring required dimensions
