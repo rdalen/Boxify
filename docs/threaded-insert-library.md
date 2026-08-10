@@ -7,6 +7,9 @@ The Threaded Insert Library provides a collection of reusable threaded insert de
 Each insert definition contains the geometry and dimensions required to generate the correct mounting pocket within an enclosure.
 
 By separating insert definitions from the enclosure itself, different insert types can be selected without modifying the enclosure design.
+<img width="800" height="580" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
+<img width="1914" height="890" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
+<p align="center"><i>Treaded brass inserts</i></p>
 
 ---
 
