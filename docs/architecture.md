@@ -9,7 +9,7 @@ Unlike traditional enclosure designs, Boxify separates the **electronics** from 
 This modular architecture allows the same PCB to be reused with different enclosure styles while keeping every stage fully parametric.
 
 <img width="582" height="630" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
-<p align="center"><i>Boxify</i></p>
+<p align="center"><i>Enclosure</i></p>
 
 
 ---
