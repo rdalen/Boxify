@@ -61,7 +61,6 @@ All enclosure geometry is derived from the Adapter Plate rather than directly fr
 Typical configuration options include:
 
 - PCB selection
-- PCB rotation
 - Component side
 - Mounting side
 - Adapter Plate height
