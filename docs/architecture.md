@@ -48,7 +48,7 @@ Each stage has a single responsibility and can evolve independently.
 <p align="center"><i>The 3D printed parts</i></p>
 
 <img width="724" height="980" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
-<p align="center"><Assembling</i></p>
+<p align="center"><i><Assembling</i></p>
   
 <img width="912" height="796" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
 <p align="center"><i>The final result</i></p>
