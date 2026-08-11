@@ -1,7 +1,5 @@
 # 🏗 Architecture
 
-## 🧠 Overview
-
 Boxify is a **Parametric Electronics Enclosure Framework (PEEF)** built for Onshape.
 
 Unlike traditional enclosure designs, Boxify separates the **electronics** from the **mechanical enclosure** by introducing an intermediate **Adapter Plate**.
@@ -10,7 +8,7 @@ This modular architecture allows the same PCB to be reused with different enclos
 
 ---
 
-# 🧩 System Architecture
+# 🧩 Workflow
 
 ```text
                  PCB Design
