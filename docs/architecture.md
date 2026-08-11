@@ -8,16 +8,6 @@ Unlike traditional enclosure designs, Boxify separates the **electronics** from 
 
 This modular architecture allows the same PCB to be reused with different enclosure styles while keeping every stage fully parametric.
 
-<img width="582" height="630" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
-<p align="center"><i>The boxify Enclosure design</i></p>
-<img width="1496" height="654" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
-<p align="center"><i>The 3D printed parts</i></p>
-<img width="724" height="980" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
-<p align="center"><iAssembling</i></p>
-<img width="912" height="796" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
-<p align="center"><i>The final result</i></p>
-
-
 ---
 
 # 🧩 System Architecture
@@ -45,6 +35,21 @@ This modular architecture allows the same PCB to be reused with different enclos
 ```
 
 Each stage has a single responsibility and can evolve independently.
+
+<img width="1406" height="926" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />
+<p align="center"><KiCad STEP</i></p>
+  
+<img width="582" height="630" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
+<p align="center"><i>The boxify Enclosure design</i></p>
+
+<img width="1496" height="654" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
+<p align="center"><i>The 3D printed parts</i></p>
+
+<img width="724" height="980" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
+<p align="center"><Assembling</i></p>
+  
+<img width="912" height="796" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
+<p align="center"><i>The final result</i></p>
 
 ---
 
