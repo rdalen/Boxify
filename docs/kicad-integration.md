@@ -9,8 +9,7 @@ This integration allows the enclosure to be generated directly from the actual P
 The imported PCB becomes the starting point for the Boxify workflow.
 
 ---
-
-# 🔄 Workflow Overview
+# 🔄 Position in the Workflow
 
 ```text
 -> KiCad PCB
