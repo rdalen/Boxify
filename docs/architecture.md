@@ -10,9 +10,10 @@ This modular architecture allows the same PCB to be reused with different enclos
 
 <img width="582" height="630" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
 <p align="center"><i>The boxify Enclosure design</i></p>
-
+<img width="1496" height="654" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
+<p align="center"><i>The 3D printed parts</i></p>
 <img width="912" height="796" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
-<p align="center"><i>The 3D printed result</i></p>
+<p align="center"><i>the assembled final result</i></p>
 
 
 ---
