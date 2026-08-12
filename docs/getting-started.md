@@ -80,8 +80,9 @@ For best results:
 - Export using millimetres
 
 ---
-
-<img width="618" height="604" alt="image" src="https://github.com/user-attachments/assets/42280f8b-9f39-426e-b917-bcd274f2daf1" />
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/42280f8b-9f39-426e-b917-bcd274f2daf1" />
+  <p>
 <p align="center"><i>As example, here a STEP file of a Zenertester design on a prototype board.</i></p>
 
 ---
@@ -104,7 +105,7 @@ Typical settings include:
 - Beam width
 - Lug radius
 
-Other settings can be configured using configuration variables that are derived and set downstreams in the PS enclosure.
+Other settings can be configured using configuration variables that are derived and set downstreams in the PS Enclosure.
 
 The Adapter Plate automatically adapts to the selected PCB.
 
@@ -119,11 +120,14 @@ The enclosure consists of:
 
 Configure parameters such as:
 
+- PCB selection
+- PCB orientation
+- Component side
+- Mounting side
 - Wall thickness
 - Box height
-- Corner radius
-- Lip dimensions
-- Clearances
+- Adapter plate height
+- Lid fastenings methode
 
 The enclosure is generated automatically from the Adapter Plate.
 
@@ -157,28 +161,16 @@ The Assembly allows you to verify:
 
 ---
 
-# 📐 Design Philosophy
-
-Boxify is built around a few simple principles:
-
-- Keep the PCB independent of the enclosure.
-- Make every important dimension configurable.
-- Derive geometry instead of recreating it.
-- Measure instead of hardcoding values.
-- Reuse components wherever possible.
-
----
-
 # 📚 Next Steps
 
 For more information, continue with:
 
-- **Architecture**
-- **PCB Library**
-- **Adapter Plate**
-- **Enclosure**
-- **Threaded Insert Library**
-- **KiCad Integration**
+- 📄 [Architecture](docs/architecture.md)
+- 📄 [PCB Library](docs/pcb-library.md)
+- 📄 [Adapter Plate](docs/adapter-plate.md)
+- 📄 [Enclosure](docs/enclosure.md)
+- 📄 [Threaded Insert Library](docs/threaded-insert-library.md)
+- 📄 [KiCad Integration](docs/kicad-integration.md)
 
 ---
 
