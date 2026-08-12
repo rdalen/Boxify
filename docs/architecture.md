@@ -43,33 +43,10 @@ The information flows in one direction, each stage builds upon the previous stag
 
 Changes made upstream automatically propagate downstream.
 
----
+<img width="59%" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />  
 
-<p align="center">
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />
-</p>
-<p align="center"><i>KiCad STEP</i></p>
-  
-<p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
-</p>
-<p align="center"><i>Boxify Enclosure design</i></p>
-
-<p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
-</p>
-<p align="center"><i>3D printed parts</i></p>
-
-<p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
-</p>
-<p align="center"><i>Assembling & check to see if everything fits</i></p>
-  
-<p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
-</p>
-<p align="center"><i>Final result</i></p>
-
+<img width="39%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
+<p align="center"><i>From PCB design to Boxify Enclosure design</i></p>
 
 ---
 
@@ -116,7 +93,9 @@ Responsibilities include:
 
 Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
 
-<img width="75%" alt="image" src="https://github.com/user-attachments/assets/e3d67d1b-cafe-44a0-b046-9d6984c00c5e" />
+<p align="center">
+  <img width="75%" alt="image" src="https://github.com/user-attachments/assets/e3d67d1b-cafe-44a0-b046-9d6984c00c5e" />
+<p>
 <p align="center"><i>Boxify Adapter Plate</i></p>
 
 ---
@@ -156,6 +135,10 @@ Each insert definition contains:
 
 The enclosure simply references the selected insert type.
 
+<img width="39%" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
+<img width="59%" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
+<p align="center"><i>Treaded brass inserts</i></p>
+
 ---
 
 ## Assembly
@@ -172,6 +155,18 @@ Typical checks include:
 - Insert alignment
 - Overall dimensions
 
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
+</p>
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
+</p>
+<p align="center"><i>Assembling & check to see if everything fits</i></p>
+
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
+</p>
+<p align="center"><i>Final result</i></p>
 ---
 
 
