@@ -6,10 +6,10 @@ Unlike traditional enclosure designs, Boxify separates the **electronics** from 
 
 This modular architecture allows the same PCB to be reused with different enclosure styles while keeping every stage fully parametric.
 
+---
+
 <img width="836" height="400" alt="image" src="https://github.com/user-attachments/assets/c668ee63-fbc0-4809-b90f-31d5326c883d" />
 <p align="center"><i>Boxify Enclosure design</i></p>
-
-
 
 ---
 
@@ -43,6 +43,8 @@ The information flows in one direction, each stage builds upon the previous stag
 
 Changes made upstream automatically propagate downstream.
 
+---
+
 <img width="59%" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />  
 
 <img width="39%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
@@ -54,7 +56,7 @@ Changes made upstream automatically propagate downstream.
 
 ## PCB Library
 
-The PCB Library defines the electronics.
+The PCB Library defines the PCB with electronics.
 
 In Boxify, this serves as the “Carrier” for the KiCad STEP Model (the “Passenger”)
 
@@ -69,6 +71,7 @@ The PCB Library never contains enclosure-specific information.
 
 Its only purpose is to describe the PCB itself.
 
+---
 
 <img width="29%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
 <img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
@@ -92,6 +95,8 @@ Responsibilities include:
 - Passing this information to the enclosure
 
 Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
+
+---
 
 <p align="center">
   <img width="75%" alt="image" src="https://github.com/user-attachments/assets/e3d67d1b-cafe-44a0-b046-9d6984c00c5e" />
@@ -118,10 +123,13 @@ Typical enclosure features include:
 - Screw pockets
 - Threaded insert pockets
 
+---
+
 <p align="center">
   <img width="50%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
 </p>
 <p align="center"><i>Boxify Enclosure</i></p>
+
 ---
 
 ## Threaded Insert Library
@@ -134,6 +142,8 @@ Each insert definition contains:
 - Pocket geometry
 
 The enclosure simply references the selected insert type.
+
+---
 
 <img width="39%" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
 <img width="59%" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
@@ -155,6 +165,8 @@ Typical checks include:
 - Insert alignment
 - Overall dimensions
 
+---
+
 <p align="center">
   <img width="50%" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
 </p>
@@ -167,8 +179,8 @@ Typical checks include:
   <img width="50%" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
 </p>
 <p align="center"><i>Final result</i></p>
----
 
+---
 
 # 📏 Parametric Design
 
@@ -198,6 +210,10 @@ Typical configurable options include:
 - Wall thickness
 - Lid fastening
 - Treaded Insert type
+
+---
+
+<img width="334" height="484" alt="image" src="https://github.com/user-attachments/assets/6e5d70cc-b268-4951-9477-bcb5dfadd063" />
 
 ---
 
