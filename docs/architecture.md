@@ -261,7 +261,6 @@ New functionality should extend the framework without requiring existing designs
 For implementation details, see:
 
 - 📄 [Getting Started](getting-started.md)
-- 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
