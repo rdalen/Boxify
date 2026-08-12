@@ -8,6 +8,8 @@ It forms the interface between the PCB and the enclosure, allowing both to evolv
 
 By separating the electronics from the enclosure, the Adapter Plate makes it possible to reuse the same PCB with different enclosure designs or reuse the same enclosure architecture with different PCBs.
 
+---
+
 <img width="1046" height="892" alt="image" src="https://github.com/user-attachments/assets/f35adabe-419d-4af0-94da-1c42cc0a5404" />
 <p align="center"><i>Adapter Plate with the PCB Library Entry</i></p>
 
@@ -21,8 +23,9 @@ The Adapter Plate is responsible for:
 - Positioning the PCB inside the enclosure
 - Defining the mechanical reference for the enclosure
 - Providing mounting locations for enclosure features
-- Passing measured dimensions to downstream Part Studios
 - Passing configuration variables to downstream Part Studios
+
+Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
 
 The Adapter Plate intentionally contains no enclosure walls or lid geometry.
 
@@ -62,41 +65,10 @@ Typical configuration options include:
 - PCB selection
 - Component side
 - Mounting side
-- Adapter Plate height
 - PCB offset
 - Mounting clearances
 
 These parameters allow the Adapter Plate to adapt automatically to different PCB designs.
-
----
-
-# 📐 Reference Geometry
-
-The Adapter Plate provides the reference geometry used throughout the Boxify framework.
-
-Examples include:
-
-- Reference planes
-- Reference Mate Connector
-- Mounting locations
-- Measured dimensions
-
-Downstream Part Studios should reference these features instead of creating their own.
-
----
-
-# 📏 Measured Variables
-
-Where possible, Boxify measures geometry instead of requiring manual input.
-
-Examples include:
-
-- Adapter Plate thickness
-- Mounting height
-- PCB position
-- Internal reference dimensions
-
-Measured variables improve robustness and reduce duplicated information.
 
 ---
 
@@ -118,7 +90,7 @@ These outputs are consumed by the Box Base, Box Lid and Assembly.
 
 The Adapter Plate follows several core principles:
 
-## Mechanical Separation
+### Mechanical Separation
 
 The PCB and enclosure remain independent.
 
@@ -126,13 +98,13 @@ Changes to one should have minimal impact on the other.
 
 ---
 
-## Single Source of Truth
+### Single Source of Truth
 
 The Adapter Plate is the authoritative source for the mechanical interface between the electronics and the enclosure.
 
 ---
 
-## Parametric by Design
+### Parametric by Design
 
 All important dimensions are controlled by variables or measured geometry.
 
@@ -140,7 +112,7 @@ Manual editing should rarely be required.
 
 ---
 
-## Stable References
+### Stable References
 
 Reference geometry is preferred over recreated geometry wherever possible.
 
@@ -155,3 +127,10 @@ This improves model stability and simplifies future changes.
 - Threaded Insert Library
 - KiCad Integration
 - Architecture
+
+- 📄 [Architecture](architecture.md)
+- 📄 [PCB Library](pcb-library.md)
+- 📄 [Enclosure](enclosure.md)
+- 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
