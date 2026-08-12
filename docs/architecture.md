@@ -53,7 +53,7 @@ Changes made upstream automatically propagate downstream.
 
 ## PCB Library
 
-The PCB Library defines the PCB with electronics.
+The PCB Library defines the electronic assembly that will be used throughout the Boxify framework.
 
 In Boxify, this serves as the “Carrier” for the KiCad STEP Model (the “Passenger”)
 
