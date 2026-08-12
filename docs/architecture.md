@@ -82,11 +82,11 @@ It provides the mechanical interface between the PCB and the enclosure.
 
 Responsibilities include:
 
-- Component orientation
-- Mounting orientation
-- Defining mounting locations
-- Providing reference geometry
-- Passing this information to the enclosure
+- Mounting the PCB
+- Positioning the PCB inside the enclosure
+- Defining the mechanical reference for the enclosure
+- Providing mounting locations for enclosure features
+- Passing configuration variables to downstream Part Studios
 
 Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
 
