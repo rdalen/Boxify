@@ -107,6 +107,7 @@ The enclosure consists of two parts:
 - Box Lid
 
 These are generated from the Adapter Plate rather than directly from the PCB.
+Changes to the PCB or Adapter Plate should automatically propagate through the enclosure.
 
 Typical enclosure features include:
 
@@ -116,8 +117,6 @@ Typical enclosure features include:
 - Mounting lugs
 - Screw pockets
 - Threaded insert pockets
-
-Changes to the PCB or Adapter Plate should automatically propagate through the enclosure with minimal manual intervention.
 
 ---
 
