@@ -117,6 +117,8 @@ Typical enclosure features include:
 - Screw pockets
 - Threaded insert pockets
 
+Changes to the PCB or Adapter Plate should automatically propagate through the enclosure with minimal manual intervention.
+
 ---
 
 <p align="center">
