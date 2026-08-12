@@ -4,6 +4,10 @@
 
 The PCB Library defines the electronic assembly that will be used throughout the Boxify framework.
 
+In Boxify, this serves as the “Carrier” for the KiCad STEP Model (the “Passenger”)
+
+The PCB Library never contains enclosure-specific information, its only purpose is to describe the PCB itself.
+
 Each PCB is represented by a reusable Part Studio that serves as the **single source of truth** for all PCB-related geometry and reference information.
 
 A PCB Library entry may be:
@@ -14,9 +18,9 @@ A PCB Library entry may be:
 Regardless of its origin, every PCB is presented to the rest of Boxify through the same interface.
 
 
-<img width="782" height="778" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
-<img width="1908" height="888" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
-<p align="center"><i>PCB Library with the common ProtoType PCB's</i></p>
+<img width="29%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
+<img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
+<p align="center"><i>Boxify PCB Library</i></p>
 
 
 ---
@@ -41,9 +45,7 @@ The PCB Library intentionally contains **no enclosure-specific features**.
 Depending on the PCB type, configurable options may include:
 
 - PCB selection
-- PCB rotation
-- Component side
-- Mounting side
+
 
 For standard prototype PCBs, available sizes include:
 
