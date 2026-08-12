@@ -17,6 +17,7 @@ A PCB Library entry may be:
 
 Regardless of its origin, every PCB is presented to the rest of Boxify through the same interface.
 
+---
 
 <img width="29%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
 <img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
