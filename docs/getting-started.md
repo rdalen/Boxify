@@ -79,8 +79,10 @@ For best results:
 - Include all components
 - Export using millimetres
 
+---
+
 <img width="618" height="604" alt="image" src="https://github.com/user-attachments/assets/42280f8b-9f39-426e-b917-bcd274f2daf1" />
-<p align="center"><i>As example, a STEP file of a Zenertester design on a prototype board.</i></p>
+<p align="center"><i>As example, here a STEP file of a Zenertester design on a prototype board.</i></p>
 
 ---
 
@@ -89,9 +91,6 @@ For best results:
 Create a PCB Library entry where the imported STEP model is the "passenger" on a "carrier" (= prototype PCB from the onshape PCB library)
 
 The PCB Library becomes the reusable definition of your PCB.
-## ⚙️ Configuration
-
-- PCB selection
 
 ---
 
@@ -101,11 +100,11 @@ The Adapter Plate connects your PCB to the enclosure.
 
 Typical settings include:
 
-- PCB selection
-- Adapter Plate height
-- Mounting offsets
-- Screw locations
-- Clearance
+- Adapter Plate thickness
+- Beam width
+- Lug radius
+
+Other settings can be configured using configuration variables that are derived and set downstreams in the PS enclosure.
 
 The Adapter Plate automatically adapts to the selected PCB.
 
