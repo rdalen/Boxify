@@ -149,9 +149,6 @@ Potential future additions include:
 
 # 📚 Related Documentation
 
-- Architecture
-- Adapter Plate
-- Enclosure
 
 - 📄 [Architecture](architecture.md)
 - 📄 [Enclosure](enclosure.md)
