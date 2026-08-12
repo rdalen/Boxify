@@ -70,6 +70,8 @@ Typical configuration options include:
 
 These parameters allow the Adapter Plate to adapt automatically to different PCB designs.
 
+These configuration options can be selected in the downstream Part Studio PS Enclosure
+
 ---
 
 # 📤 Outputs
