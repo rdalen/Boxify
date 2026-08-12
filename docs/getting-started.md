@@ -165,12 +165,14 @@ The Assembly allows you to verify:
 
 For more information, continue with:
 
+- 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
 - 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
 
 ---
 
