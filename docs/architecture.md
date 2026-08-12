@@ -116,6 +116,8 @@ Responsibilities include:
 
 Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
 
+<img width="75%" alt="image" src="https://github.com/user-attachments/assets/e3d67d1b-cafe-44a0-b046-9d6984c00c5e" />
+
 ---
 
 ## Enclosure
