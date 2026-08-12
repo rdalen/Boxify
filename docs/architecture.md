@@ -10,6 +10,7 @@ This modular architecture allows the same PCB to be reused with different enclos
 <p align="center"><i>Boxify Enclosure design</i></p>
 
 
+
 ---
 
 # 🔄 Workflow Overview
@@ -42,20 +43,33 @@ The information flows in one direction, each stage builds upon the previous stag
 
 Changes made upstream automatically propagate downstream.
 
-<img width="1406" height="926" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />
-<p align="center"><KiCad STEP</i></p>
+---
+
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />
+</p>
+<p align="center"><i>KiCad STEP</i></p>
   
-<img width="582" height="630" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
+</p>
 <p align="center"><i>Boxify Enclosure design</i></p>
 
-<img width="1496" height="654" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
+</p>
 <p align="center"><i>3D printed parts</i></p>
 
-<img width="724" height="980" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
+</p>
 <p align="center"><i>Assembling & check to see if everything fits</i></p>
   
-<img width="912" height="796" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
+</p>
 <p align="center"><i>Final result</i></p>
+
 
 ---
 
