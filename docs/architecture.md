@@ -29,7 +29,7 @@ This modular architecture allows the same PCB to be reused with different enclos
                      │
           ┌──────────┴──────────┐
           ▼                     ▼
-      Box Base             Box Lid
+      Box Base   Enclosure    Box Lid
           │                     │
           └──────────┬──────────┘
                      ▼
@@ -37,6 +37,10 @@ This modular architecture allows the same PCB to be reused with different enclos
 ```
 
 Each stage has a single responsibility and can evolve independently.
+
+The information flows in one direction, each stage builds upon the previous stage.
+
+Changes made upstream automatically propagate downstream.
 
 <img width="1406" height="926" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />
 <p align="center"><KiCad STEP</i></p>
@@ -48,7 +52,7 @@ Each stage has a single responsibility and can evolve independently.
 <p align="center"><i>3D printed parts</i></p>
 
 <img width="724" height="980" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
-<p align="center"><i>Assembling</i></p>
+<p align="center"><i>Assembling & check to see if everything fits</i></p>
   
 <img width="912" height="796" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
 <p align="center"><i>Final result</i></p>
@@ -60,6 +64,8 @@ Each stage has a single responsibility and can evolve independently.
 ## PCB Library
 
 The PCB Library defines the electronics.
+
+In Boxify, this serves as the “Carrier” for the KiCad STEP Model (the “Passenger”)
 
 Each PCB is represented by:
 
@@ -86,8 +92,7 @@ Responsibilities include:
 - Mounting orientation
 - Defining mounting locations
 - Providing reference geometry
-- Measuring required dimensions
-- Passing information to the enclosure
+- Passing this information to the enclosure
 
 Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
 
@@ -107,7 +112,6 @@ Typical enclosure features include:
 - Walls
 - Bottom
 - Lid
-- Lip
 - Mounting lugs
 - Screw pockets
 - Threaded insert pockets
@@ -122,8 +126,6 @@ Each insert definition contains:
 
 - Insert dimensions
 - Pocket geometry
-- Clearance
-- Counterbore dimensions
 
 The enclosure simply references the selected insert type.
 
@@ -145,27 +147,6 @@ Typical checks include:
 
 ---
 
-# 🔄 Data Flow
-
-Information flows in one direction.
-
-```text
-PCB
- ↓
-PCB Library
- ↓
-Adapter Plate
- ↓
-Enclosure
- ↓
-Assembly
-```
-
-Each stage builds upon the previous stage.
-
-Changes made upstream automatically propagate downstream.
-
----
 
 # 📏 Parametric Design
 
@@ -182,44 +163,6 @@ Examples include:
 
 This allows an enclosure to adapt automatically when the PCB changes.
 
----
-
-# 📐 Measured Variables
-
-Whenever possible, Boxify measures geometry instead of relying on manually entered values.
-
-Examples include:
-
-- PCB size
-- Adapter Plate thickness
-- Lug height
-- Internal enclosure dimensions
-
-Measured variables reduce duplicate information and improve robustness.
-
----
-
-# 🔗 Reference Geometry
-
-Rather than copying geometry between Part Studios, Boxify uses derived geometry and reference features.
-
-This provides:
-
-- Consistent positioning
-- Reduced maintenance
-- Better model stability
-
-Reference geometry includes:
-
-- Mate Connectors
-- Derived Parts
-- Composite Parts
-- Construction Geometry
-
----
-
-# ⚙ Configurations
-
 Configurations allow a single model to support multiple hardware variants.
 
 Typical configurable options include:
@@ -228,10 +171,11 @@ Typical configurable options include:
 - PCB rotation
 - Mount side
 - Component side
-- Insert type
-- Enclosure dimensions
-
-This avoids maintaining multiple versions of the same design.
+  Adapter plate height 
+- Box Height
+- Wall thickness
+- Lid fastening
+- Treaded Insert type
 
 ---
 
@@ -239,37 +183,39 @@ This avoids maintaining multiple versions of the same design.
 
 Boxify follows several guiding principles.
 
-## Separation of Responsibilities
+---
+
+**Separation of Responsibilities**
 
 Each Part Studio has one clearly defined purpose.
 
 ---
 
-## Reusable Components
+**Reusable Components**
 
 Components should be reusable across multiple projects whenever possible.
 
 ---
 
-## Parametric First
+**Parametric First**
 
 Geometry should adapt through parameters rather than manual editing.
 
 ---
 
-## Measure Rather Than Duplicate
+**Measure Rather Than Duplicate**
 
 Whenever geometry already contains the required information, measure it instead of entering it again.
 
 ---
 
-## Stable References
+**Stable References**
 
 Use reference geometry and derived parts instead of recreating geometry.
 
 ---
 
-## Modular Growth
+**Modular Growth**
 
 New functionality should extend the framework without requiring existing designs to change.
 
