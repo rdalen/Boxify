@@ -56,7 +56,7 @@ For standard prototype PCBs, available sizes include:
 - 60 × 80 mm
 - 70 × 90 mm
 
-A PCB type can be selected in the downstream Part Studio's (PS Adapter Plate or PS Enclosure)
+This configuration option can be selected in the downstream Part Studio's (PS Adapter Plate or PS Enclosure)
 
 ---
 
