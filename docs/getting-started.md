@@ -8,6 +8,11 @@ Instead of designing a new enclosure for every project, Boxify separates the **e
 
 ---
 
+<img width="836" height="400" alt="image" src="https://github.com/user-attachments/assets/c668ee63-fbc0-4809-b90f-31d5326c883d" />
+<p align="center"><i>Boxify Enclosure design</i></p>
+
+---
+
 # 📋 Prerequisites
 
 Before using Boxify, you should have:
@@ -24,6 +29,13 @@ Before using Boxify, you should have:
 Open the latest Boxify Onshape document using the link provided in the repository.
 
 The document contains several Part Studios that together form the complete enclosure framework.
+- PS Enclosure
+- PS Adapter Plate
+- PS KiCad-Integration - containing the derived STEP file and a PCB model from the PCB Library
+- A "PS LIBs" folder with
+  - PS PCB Library
+  - PS Treaded Insert Library
+- PS STEP - containing the Onshape model of the imported STEP 
 
 ---
 
@@ -68,7 +80,7 @@ For best results:
 - Export using millimetres
 
 <img width="618" height="604" alt="image" src="https://github.com/user-attachments/assets/42280f8b-9f39-426e-b917-bcd274f2daf1" />
-<p align="center"><i>An example of a zenertester design on a prototype board.</i></p>
+<p align="center"><i>As example, a STEP file of a Zenertester design on a prototype board.</i></p>
 
 ---
 
