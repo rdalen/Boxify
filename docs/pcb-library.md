@@ -22,7 +22,6 @@ Regardless of its origin, every PCB is presented to the rest of Boxify through t
 <img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
 <p align="center"><i>Boxify PCB Library</i></p>
 
-
 ---
 
 # 📦 Responsibilities
@@ -44,7 +43,7 @@ The PCB Library intentionally contains **no enclosure-specific features**.
 
 Depending on the PCB type, configurable options may include:
 
-- PCB selection
+- PCB type selection
 
 
 For standard prototype PCBs, available sizes include:
@@ -55,6 +54,8 @@ For standard prototype PCBs, available sizes include:
 - 50 × 70 mm
 - 60 × 80 mm
 - 70 × 90 mm
+
+A PCB type can be selected in the downstream Part Studio's (PS Adapter Plate or PS Enclosure)
 
 ---
 
@@ -81,3 +82,12 @@ The PCB Library follows several important principles:
 - PCB changes automatically propagate through the Boxify framework.
 
 This allows a PCB to be replaced or updated without redesigning the enclosure.
+
+# 📚 Related Documentation
+
+- 📄 [Architecture](architecture.md)
+- 📄 [Adapter Plate](adapter-plate.md)
+- 📄 [Enclosure](enclosure.md)
+- 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
