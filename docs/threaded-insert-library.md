@@ -7,28 +7,13 @@ The Threaded Insert Library provides a collection of reusable threaded insert de
 Each insert definition contains the geometry and dimensions required to generate the correct mounting pocket within an enclosure.
 
 By separating insert definitions from the enclosure itself, different insert types can be selected without modifying the enclosure design.
-<img width="800" height="580" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
-<img width="1914" height="890" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
-<p align="center"><i>Treaded brass inserts</i></p>
 
 ---
 
-# 🏗 Architecture
+<img width="39%" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
+<img width="59%" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
+<p align="center"><i>Boxify Treaded brass inserts Library</i></p>
 
-```text
-Threaded Insert Library
-           │
-           ▼
-    Insert Definition
-           │
-           ▼
-      Box Enclosure
-           │
-           ▼
-Generated Insert Pocket
-```
-
-The enclosure references the selected insert definition to create the appropriate mounting geometry.
 
 ---
 
@@ -51,6 +36,8 @@ Typical configuration options include:
 
 - Insert type
 - Thread size
+
+This configuration option can be selected in the downstream Part Studio PS Enclosure
 
 Future versions may also support:
 
@@ -103,7 +90,7 @@ Examples include:
 - Brass inserts
 - Plastic threaded inserts
 
-Currently only the Brass inserts are supported
+**Currently only the Brass inserts are supported**
 
 Additional insert types can be added without changing the enclosure architecture.
 
@@ -111,13 +98,15 @@ Additional insert types can be added without changing the enclosure architecture
 
 # 🎯 Design Principles
 
-## Library-Based Design
+---
+
+### Library-Based Design
 
 Every insert type is defined once and reused wherever required.
 
 ---
 
-## Interchangeable Components
+### Interchangeable Components
 
 Changing the insert type should only require selecting another library definition.
 
@@ -125,13 +114,13 @@ No enclosure redesign should be necessary.
 
 ---
 
-## Parametric First
+### Parametric First
 
 Insert geometry is generated from configurable dimensions rather than fixed sketches.
 
 ---
 
-## Separation of Responsibilities
+### Separation of Responsibilities
 
 The Threaded Insert Library defines the insert.
 
@@ -139,7 +128,7 @@ The Enclosure determines where inserts are placed.
 
 ---
 
-## Extensible
+### Extensible
 
 New insert families can be added without affecting existing enclosure designs.
 
@@ -163,3 +152,7 @@ Potential future additions include:
 - Architecture
 - Adapter Plate
 - Enclosure
+
+- 📄 [Architecture](architecture.md)
+- 📄 [Enclosure](enclosure.md)
+- 📄 [Configurations](configurations.md)
