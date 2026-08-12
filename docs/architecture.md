@@ -272,7 +272,7 @@ For implementation details, see:
 - Configurations
 
 - 📄 [Getting Started](docs/getting-started.md)
-- 📄 [Architectured](docs/archtecture.md)
+- 📄 [Architecture](docs/architecture.md)
 - 📄 [PCB Library](docs/pcb-library.md)
 - 📄 [Adapter Plate](docs/adapter-plate.md)
 - 📄 [Enclosure](docs/enclosure.md)
