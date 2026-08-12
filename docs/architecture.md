@@ -260,14 +260,6 @@ New functionality should extend the framework without requiring existing designs
 
 For implementation details, see:
 
-- Getting Started
-- PCB Library
-- Adapter Plate
-- Enclosure
-- Threaded Insert Library
-- KiCad Integration
-- Configurations
-
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](pcb-library.md)
