@@ -122,12 +122,6 @@ This improves model stability and simplifies future changes.
 
 # 📚 Related Documentation
 
-- PCB Library
-- Enclosure
-- Threaded Insert Library
-- KiCad Integration
-- Architecture
-
 - 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Enclosure](enclosure.md)
