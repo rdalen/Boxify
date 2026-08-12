@@ -166,11 +166,11 @@ The Assembly allows you to verify:
 For more information, continue with:
 
 - 📄 [Architecture](architecture.md)
-- 📄 [PCB Library](docs/pcb-library.md)
-- 📄 [Adapter Plate](docs/adapter-plate.md)
-- 📄 [Enclosure](docs/enclosure.md)
-- 📄 [Threaded Insert Library](docs/threaded-insert-library.md)
-- 📄 [KiCad Integration](docs/kicad-integration.md)
+- 📄 [PCB Library](pcb-library.md)
+- 📄 [Adapter Plate](adapter-plate.md)
+- 📄 [Enclosure](enclosure.md)
+- 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [KiCad Integration](kicad-integration.md)
 
 ---
 
