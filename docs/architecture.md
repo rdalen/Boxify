@@ -95,7 +95,7 @@ Its only purpose is to describe the PCB itself.
 
 <img width="29%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
 <img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
-<p align="center"><i>PCB Library with the common ProtoType PCB's</i></p>
+<p align="center"><i>PCB Library</i></p>
 
 
 ---
@@ -117,6 +117,7 @@ Responsibilities include:
 Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
 
 <img width="75%" alt="image" src="https://github.com/user-attachments/assets/e3d67d1b-cafe-44a0-b046-9d6984c00c5e" />
+<p align="center"><i>Boxify Adapter Plate</i></p>
 
 ---
 
@@ -138,6 +139,10 @@ Typical enclosure features include:
 - Screw pockets
 - Threaded insert pockets
 
+<p align="center">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
+</p>
+<p align="center"><i>Boxify Enclosure</i></p>
 ---
 
 ## Threaded Insert Library
