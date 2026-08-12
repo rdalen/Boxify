@@ -226,8 +226,9 @@ Possible future enclosure features include:
 
 # 📚 Related Documentation
 
-- Architecture
-- PCB Library
-- Adapter Plate
-- Threaded Insert Library
-- KiCad Integration
+- 📄 [Architecture](architecture.md)
+- 📄 [PCB Library](pcb-library.md)
+- 📄 [Adapter Plate](adapter-plate.md)
+- 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
