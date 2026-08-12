@@ -92,6 +92,8 @@ These outputs are consumed by the Box Base, Box Lid and Assembly.
 
 The Adapter Plate follows several core principles:
 
+---
+
 ### Mechanical Separation
 
 The PCB and enclosure remain independent.
