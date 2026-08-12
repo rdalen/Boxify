@@ -4,9 +4,7 @@ Boxify is a **Parametric Electronics Enclosure Framework (PEEF)** built for Onsh
 
 Unlike traditional enclosure designs, Boxify separates the **electronics** from the **mechanical enclosure** by introducing an intermediate **Adapter Plate**.
 
-This modular architecture allows the same PCB to be reused with different enclosure styles while keeping every stage fully parametric.
-
-PS KICAD Integration
+This modular architecture allows the same PCB to be to reused with different enclosure designs or reuse the same enclosure architecture with different PCBs.
 
 ---
 
