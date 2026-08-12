@@ -155,8 +155,9 @@ Potential future improvements include:
 
 # 📚 Related Documentation
 
-- Getting Started
-- PCB Library
-- Adapter Plate
-- Enclosure
-- Architecture
+- 📄 [Architecture](architecture.md)
+- 📄 [PCB Library](pcb-library.md)
+- 📄 [Adapter Plate](adapter-plate.md)
+- 📄 [Enclosure](enclosure.md)
+- 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [Configurations](configurations.md)
