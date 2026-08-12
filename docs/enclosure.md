@@ -103,8 +103,8 @@ Typical features include:
 - Adapter Plate supports
 - Threaded insert pockets
 - Cable openings (optional)
+- Connector openings (optional)
 - Ventilation features (optional)
-- Cut-outs and text labels
 
 ---
 
@@ -115,10 +115,10 @@ The Box Lid closes the enclosure and protects the electronics.
 Typical features include:
 
 - Lid surface
-- Alignment lip
-- Screw clearance holes
+- Screw holes
 - Counterbores and countersinks (where applicable)
 - Optional openings for displays, buttons or connectors
+- Text labels (optional)
 
 ---
 
@@ -126,14 +126,12 @@ Typical features include:
 
 Typical configurable parameters include:
 
-- all the upstream Part Studio Configuration Variables
+- All the upstream Part Studio Configuration options
 - Box height
+- Adapter plate height position
 - Wall thickness
 - Bottom thickness
 - Lid thickness
-- Corner radius
-- Lip height
-- Lip clearance
 - Screw type
 - Threaded insert type
 
@@ -145,30 +143,15 @@ All dimensions are controlled parametrically.
 
 The enclosure derives its geometry from the Adapter Plate.
 
-Examples include:
+Including;
 
 - Overall footprint
 - Mounting lug positions
 - Internal clearances
 - Mounting references
-- Adapter Plate height
 
 This approach minimizes duplicated information and allows changes to propagate automatically.
 
----
-
-# 📏 Measured Variables
-
-Where possible, Boxify measures geometry rather than relying on manually entered dimensions.
-
-Examples include:
-
-- Adapter Plate height
-- Lug height
-- Internal enclosure height
-- Reference offsets
-
-Measured variables improve consistency and reduce maintenance.
 
 ---
 
@@ -189,7 +172,9 @@ This allows insert types to be changed without redesigning the enclosure.
 
 The enclosure follows several key principles.
 
-## Shared Design Context
+---
+
+### Shared Design Context
 
 The Box Base and Box Lid are created in the same Part Studio.
 
@@ -197,19 +182,19 @@ This ensures both parts always share the same reference geometry and remain full
 
 ---
 
-## Parametric First
+### Parametric First
 
 Every important dimension should be configurable through variables.
 
 ---
 
-## Reuse Over Recreation
+### Reuse Over Recreation
 
 Geometry is derived from upstream components whenever possible instead of being recreated.
 
 ---
 
-## Modular Design
+### Modular Design
 
 The enclosure focuses solely on protecting and supporting the electronics.
 
@@ -217,7 +202,7 @@ Electronic design remains independent within the PCB Library and Adapter Plate.
 
 ---
 
-## Maintainability
+### Maintainability
 
 Changes to the PCB or Adapter Plate should automatically propagate through the enclosure with minimal manual intervention.
 
