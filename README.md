@@ -6,6 +6,11 @@ Instead of designing a new enclosure for every PCB, Boxify separates the electro
 
 ---
 
+<img width="836" height="400" alt="image" src="https://github.com/user-attachments/assets/c668ee63-fbc0-4809-b90f-31d5326c883d" />
+<p align="center"><i>Boxify Enclosure design</i></p>
+
+---
+
 ## 🚀 Getting Started
 
 If you're new to Boxify, start here:
