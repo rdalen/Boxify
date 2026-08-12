@@ -165,7 +165,7 @@ The Assembly allows you to verify:
 
 For more information, continue with:
 
-- 📄 [Architecture](docs/architecture.md)
+- 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](docs/pcb-library.md)
 - 📄 [Adapter Plate](docs/adapter-plate.md)
 - 📄 [Enclosure](docs/enclosure.md)
