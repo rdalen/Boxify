@@ -268,11 +268,11 @@ For implementation details, see:
 - KiCad Integration
 - Configurations
 
-- 📄 [Getting Started](docs/getting-started.md)
-- 📄 [Architecture](docs/architecture.md)
-- 📄 [PCB Library](docs/pcb-library.md)
-- 📄 [Adapter Plate](docs/adapter-plate.md)
-- 📄 [Enclosure](docs/enclosure.md)
-- 📄 [Threaded Insert Library](docs/threaded-insert-library.md)
-- 📄 [KiCad Integration](docs/kicad-integration.md)
-- 📄 [Configurations](docs/configurations.md)
+- 📄 [Getting Started](getting-started.md)
+- 📄 [Architecture](architecture.md)
+- 📄 [PCB Library](pcb-library.md)
+- 📄 [Adapter Plate](adapter-plate.md)
+- 📄 [Enclosure](enclosure.md)
+- 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
