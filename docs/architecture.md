@@ -75,8 +75,7 @@ Its only purpose is to describe the PCB itself.
 
 <img width="29%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
 <img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
-<p align="center"><i>PCB Library</i></p>
-
+<p align="center"><i>Boxify PCB Library</i></p>
 
 ---
 
@@ -147,7 +146,7 @@ The enclosure simply references the selected insert type.
 
 <img width="39%" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
 <img width="59%" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
-<p align="center"><i>Treaded brass inserts</i></p>
+<p align="center"><i>Boxify Treaded brass inserts Library</i></p>
 
 ---
 
@@ -214,6 +213,7 @@ Typical configurable options include:
 ---
 
 <img width="334" height="484" alt="image" src="https://github.com/user-attachments/assets/6e5d70cc-b268-4951-9477-bcb5dfadd063" />
+<p align="center"><i>Configuration variables</i></p>
 
 ---
 
