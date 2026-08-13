@@ -34,7 +34,7 @@ Assembly
 
 ---
 
-# Exporting from KiCad
+## Exporting from KiCad
 
 Export the PCB as a STEP model.
 
@@ -49,7 +49,7 @@ The exported STEP model represents the complete electronic assembly.
 
 ---
 
-# Importing the STEP Model
+## Importing the STEP Model
 
 The STEP model exported from KiCad is imported into the Boxify document as a **passenger**.
 
@@ -66,7 +66,7 @@ Keeping the passenger "read-only" ensures that the original PCB design remains t
 
 ---
 
-# Creating a Composite Part
+## Creating a Composite Part
 
 Imported STEP models often contain many individual parts.
 
@@ -85,7 +85,7 @@ In this example, I have aligned the parts that are attached to the front of the 
 
 ---
 
-# Creating a PCB Library Entry
+## Creating a PCB Library Entry
 
 Derive the Composite Part into the Part Studio PS-KiCad-Integration (the "passenger") and select a from the PCB Library a prototype board with the same dimensions as the imported PCB ((the "carrier")
 
