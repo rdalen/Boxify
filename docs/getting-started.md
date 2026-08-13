@@ -111,7 +111,7 @@ The Adapter Plate automatically adapts to the selected PCB.
 
 ---
 
-#[4️⃣ Generate the Enclosure](enclosure.md)
+# [4️⃣ Generate the Enclosure](enclosure.md)
 
 The enclosure consists of:
 
