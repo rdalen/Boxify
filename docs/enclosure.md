@@ -226,6 +226,7 @@ Possible future enclosure features include:
 
 # 📚 Related Documentation
 
+- 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
