@@ -30,7 +30,7 @@ The library intentionally contains **no enclosure geometry**.
 
 ---
 
-# ⚙️ Configuration
+# ⚙️ Configuration options
 
 Typical configuration options include:
 
