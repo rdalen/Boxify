@@ -58,7 +58,7 @@ All enclosure geometry is derived from the Adapter Plate rather than directly fr
 
 ---
 
-# ⚙️ Configuration
+# ⚙️ Configuration options
 
 Typical configuration options include:
 
