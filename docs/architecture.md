@@ -266,3 +266,4 @@ For implementation details, see:
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
 - 📄 [KiCad Integration](kicad-integration.md)
 - 📄 [Configurations](configurations.md)
+- 📄 [Design Philosophy](DESIGN.md)
