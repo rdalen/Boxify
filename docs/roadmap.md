@@ -170,7 +170,7 @@ From a single PCB design to a finished enclosure with as little manual CAD work 
 
 # 📚 Related Documentation
 
-- Getting Started
+- 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
