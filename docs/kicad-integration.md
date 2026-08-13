@@ -34,7 +34,7 @@ Assembly
 
 ---
 
-# 📤 Exporting from KiCad
+# Exporting from KiCad
 
 Export the PCB as a STEP model.
 
