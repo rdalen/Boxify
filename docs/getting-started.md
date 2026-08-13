@@ -277,4 +277,4 @@ For more information, continue with:
 
 ---
 
-Happy Boxifying! 🚀
+**Happy Boxifying! 🚀**
