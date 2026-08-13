@@ -1,226 +1,399 @@
-# 📄 Enclosure
+# 📦 Enclosure
 
 ## 🧠 Purpose
 
-The Enclosure provides the protective housing for the electronics.
+The **Enclosure** is the final mechanical stage of the Boxify framework.
 
-Within Boxify, the enclosure is generated from the Adapter Plate rather than directly from the PCB. This separation allows the enclosure to adapt automatically to different PCB designs while keeping the mechanical architecture consistent.
-
-The enclosure consists of two closely related parts:
+It converts the mechanical interface provided by the **Adapter Plate** and the user-selected configuration in **PS Enclosure** into a complete parametric enclosure consisting of:
 
 - **Box Base**
 - **Box Lid**
 
-Both are designed within the same Part Studio to ensure they always remain compatible.
+The Base and Lid are designed together because they always belong to the same enclosure configuration.
+
+The enclosure adapts automatically to the selected PCB, Adapter Plate and configuration.
+
+---
+
 
 <img width="850" height="896" alt="image" src="https://github.com/user-attachments/assets/1331d56a-d396-409b-99f9-39e9f524ce26" />
 <p align="center"><i>Enclosure for the PCB with cut-outs and textlabels</i></p>
 
 ---
 
+# 🏗 Enclosure Architecture
 
-# 🔄 Position in the Workflow
-
-```text
-KiCad PCB
-      │
-      ▼
-Export STEP Model
-      │
-      ▼
-Import into Onshape
-Create Composite Part
-Create a PCB Library Entry
-      │
-      ▼
-Configure Adapter Plate
-      │
-      ▼
--> Configure & Generate Enclosure
-      │
-      ▼
-Assembly
-```
-
-All enclosure geometry is derived from the Adapter Plate rather than directly from the PCB.
-
----
-
-# 🏗 Architecture
+The enclosure is generated from the information provided by the preceding stages of the Boxify architecture.
 
 ```text
-PCB Library
-      │
-      ▼
+PS KiCadStep  <--- PCB Library
+     │
+     │ PCB geometry
+     ▼
 Adapter Plate
-      │
-      ▼
-┌─────────────────────┐
-│     Enclosure       │
-│                     │
-│   ┌─────────────┐   │
-│   │  Box Base   │   │
-│   ├─────────────┤   │
-│   │   Box Lid   │   │
-│   ├─────────────┤   │
-│   │   Cut-outs  │   │
-│   │ Text labels │   │
-│   └─────────────┘   │
-└─────────────────────┘
-      │
-      ▼
-Assembly
+     │
+     │ mechanical interface
+     ▼
+PS Enclosure  <--- Threaded Insert Library
+     │
+     │ user configuration
+     ▼
+┌─────────────────────────┐
+│                         │
+│     Box Base + Lid      │
+│                         │
+└─────────────────────────┘
 ```
 
-The enclosure relies on the Adapter Plate for positioning, dimensions and reference geometry.
+The enclosure does not need to understand the detailed implementation of the PCB.
+
+It uses the **Adapter Plate as the mechanical abstraction layer**.
+
+This keeps the enclosure independent from the PCB implementation while allowing it to adapt to different PCB designs.
 
 ---
 
-# 📦 Responsibilities
+# ⚙️ PS Enclosure
 
-The enclosure is responsible for:
+**PS Enclosure** is the main user-facing Part Studio for configuring and generating the enclosure.
 
-- Protecting the electronics
-- Providing structural rigidity
-- Defining the external dimensions
-- Housing the Adapter Plate
-- Supporting threaded inserts and fasteners
-- Providing a removable lid for assembly and maintenance
+Enclosure-related configuration is centralized here.
 
-The enclosure does **not** define PCB geometry or mounting locations. Those responsibilities belong to the Adapter Plate.
+Typical configuration options include:
 
----
-
-# 🧩 Box Base
-
-The Box Base forms the structural foundation of the enclosure.
-
-Typical features include:
-
-- Bottom surface
-- Side walls
-- Internal mounting lugs
-- Adapter Plate supports
-- Threaded insert pockets
-- Cable openings (optional)
-- Connector openings (optional)
-- Ventilation features (optional)
-
----
-
-# 🧩 Box Lid
-
-The Box Lid closes the enclosure and protects the electronics.
-
-Typical features include:
-
-- Lid surface
-- Screw holes
-- Counterbores and countersinks (where applicable)
-- Optional openings for displays, buttons or connectors
-- Text labels (optional)
-
----
-
-# ⚙️ Configuration options
-
-Typical configurable parameters include:
-
-- All the upstream Part Studio Configuration options
+- PCB selection
+- PCB rotation
+- Component side
+- Mounting side
+- Adapter Plate height
 - Box height
-- Adapter plate height position
 - Wall thickness
-- Bottom thickness
-- Lid thickness
-- Screw type
-- Threaded insert type
+- Lid fastening type
+- Threaded insert configuration
+- Interface cut-outs
+- Text labels
 
-All dimensions are controlled parametrically.
+The available configuration options can change dynamically depending on other selections.
+
+This prevents irrelevant settings from being presented to the user.
 
 ---
 
-# 📐 Derived Geometry
+# 🧱 Box Base
 
-The enclosure derives its geometry from the Adapter Plate.
+The **Box Base** contains the main body of the enclosure.
 
-Including;
+It is generated relative to the Adapter Plate and the selected enclosure configuration.
 
-- Overall footprint
-- Mounting lug positions
-- Internal clearances
-- Mounting references
+Typical Base features include:
 
-This approach minimizes duplicated information and allows changes to propagate automatically.
+- Bottom
+- Side walls
+- Mounting structure
+- PCB / Adapter Plate support
+- Enclosure lugs
+- Threaded insert pockets
+- Interface cut-outs
+- Text labels
 
+The Base dimensions are derived from the configured PCB and Adapter Plate geometry wherever possible.
+
+This allows the Base to adapt automatically when the upstream geometry changes.
+
+---
+
+# 🛡️ Box Lid
+
+The **Box Lid** closes the enclosure and is generated as part of the same enclosure configuration as the Base.
+
+The Lid can contain:
+
+- Lid plate
+- Fastening features
+- Screw pockets
+- Countersinks or counterbores
+- Optional cut-outs
+- Text labels
+
+The Lid is designed together with the Base so that fastening features, wall geometry and clearances remain coordinated.
+
+---
+
+# 🔩 Lid Fastening
+
+The Lid fastening system is configuration-driven.
+
+The user selects a **Lid Fastening Type**, and Boxify generates the corresponding geometry.
+
+Possible configurations can include:
+
+- **No fastening**
+- **Counterbore**
+- **Countersink**
+
+The exact options can evolve as additional fastening methods are added.
+
+The important principle is that the user selects the **fastening method**, not the individual CAD features required to implement it.
+
+---
+
+## Dynamic Fastening Features
+
+Fastening-related features are dynamically suppressed when they are not required.
+
+For example:
+
+```text
+Lid Fastening Type
+       │
+       ├── No fastening
+       │       └── Screw-related features suppressed
+       │
+       ├── Counterbore
+       │       └── Counterbore geometry enabled
+       │
+       └── Countersink
+               └── Countersink geometry enabled
+```
+
+This allows several lid variants to be generated from the same parametric feature structure.
 
 ---
 
 # 🔩 Threaded Inserts
 
-The enclosure supports interchangeable threaded insert definitions from the Threaded Insert Library.
+Threaded inserts are optional.
 
-Rather than modelling insert geometry directly, the enclosure references the selected insert type to generate the appropriate mounting pockets.
+The **Threaded Insert Library** provides reusable insert definitions that can be selected from the enclosure configuration.
 
-This allows insert types to be changed without redesigning the enclosure.
+The selected insert definition determines the geometry required to accommodate the insert.
+
+```text
+Threaded Insert Library
+          │
+          │ reusable insert definition
+          ▼
+     PS Enclosure
+          │
+          ▼
+ Insert pockets / mounting geometry
+```
+
+Threaded inserts can also be disabled completely.
+
+When inserts are disabled, insert-related features are dynamically suppressed.
+
+This makes it possible to use the same enclosure model for:
+
+- Enclosures with threaded inserts
+- Enclosures without threaded inserts
+
+---
 
 <img width="1156" height="494" alt="image" src="https://github.com/user-attachments/assets/cdcd8059-6a76-43c5-95dc-5889efbc2660" />
 <p align="center"><i>Section view of Enclosure with Treaded Inserts</i></p>
 
 ---
 
-# 🎯 Design Principles
+# 🔌 Interface Cut-outs
 
-The enclosure follows several key principles.
+Boxify can generate interface cut-outs based on the geometry and configuration available to the enclosure.
 
----
+Cut-outs are positioned relative to the enclosure and Adapter Plate rather than being manually placed against the final enclosure walls.
 
-### Shared Design Context
+This makes them more robust when enclosure dimensions change.
 
-The Box Base and Box Lid are created in the same Part Studio.
+Where the required geometry is available from the PCB / KiCad integration, the cut-out can follow the corresponding interface geometry.
 
-This ensures both parts always share the same reference geometry and remain fully compatible.
-
----
-
-### Parametric First
-
-Every important dimension should be configurable through variables.
+The goal is to keep the cut-out associated with the **interface it represents**, rather than with a fixed location in the enclosure.
 
 ---
 
-### Reuse Over Recreation
+# 🏷️ Text Labels
 
-Geometry is derived from upstream components whenever possible instead of being recreated.
+Optional text labels can be included in the enclosure configuration.
 
----
+Labels can be used for:
 
-### Modular Design
+- Connector identification
+- Button identification
+- Orientation markings
+- Project information
+- Other enclosure-specific information
 
-The enclosure focuses solely on protecting and supporting the electronics.
-
-Electronic design remains independent within the PCB Library and Adapter Plate.
-
----
-
-### Maintainability
-
-Changes to the PCB or Adapter Plate should automatically propagate through the enclosure with minimal manual intervention.
+Labels belong to the enclosure configuration rather than the PCB Library because they describe the physical enclosure.
 
 ---
 
-# 🚀 Future Enhancements
+# 📐 Parametric Dimensions
 
-Possible future enclosure features include:
+The enclosure is driven by a combination of configuration variables and derived/measured geometry.
 
-- Snap-fit lids
-- Living hinges
-- Waterproof sealing grooves
-- Gasket support
-- Ventilation patterns
-- Cable glands
-- DIN rail mounting
-- Wall mounting options
-- Modular front and rear panels
+Typical configurable dimensions include:
+
+- Box height
+- Wall thickness
+- Bottom thickness
+- Lid thickness
+- Adapter Plate height
+
+Other dimensions should preferably be derived from existing geometry.
+
+For example:
+
+```text
+PCB geometry
+     │
+     ▼
+Adapter Plate geometry
+     │
+     ├── measured height
+     ├── mounting positions
+     └── reference geometry
+             │
+             ▼
+       Enclosure geometry
+```
+
+This avoids duplicating dimensions throughout the model.
+
+---
+
+# 🔄 Base and Lid Relationship
+
+The Box Base and Box Lid are intentionally kept together in the same Part Studio.
+
+This provides a shared design context for features that must remain coordinated.
+
+Examples include:
+
+- Overall enclosure dimensions
+- Wall thickness
+- Lug position
+- Fastening locations
+- Screw clearance
+- Insert positions
+- Lid fit
+- Cut-out locations
+
+A change to the enclosure configuration can therefore update both Base and Lid together.
+
+---
+
+# 🧩 Feature Organization
+
+Related enclosure features should remain grouped logically.
+
+A typical feature structure can contain groups such as:
+
+```text
+Enclosure
+│
+├── References
+│
+├── Box Base
+│   ├── Bottom
+│   ├── Walls
+│   ├── Lugs
+│   └── Insert Features
+│
+├── Box Lid
+│   ├── Lid
+│   ├── Fastening
+│   └── Optional Features
+│
+├── Cut-outs
+│
+└── Labels
+```
+
+The exact feature structure can evolve as the enclosure develops.
+
+The important principle is that related features remain together and their order remains understandable.
+
+---
+
+# ⚙️ Dynamic Feature Suppression
+
+Boxify uses **dynamic suppression** to keep optional features under control.
+
+A configuration can determine whether a feature or feature group is relevant.
+
+For example:
+
+```text
+Configuration
+     │
+     ├── Inserts = No
+     │       └── Insert features suppressed
+     │
+     ├── Lid fastening = Countersink
+     │       ├── Counterbore suppressed
+     │       └── Countersink enabled
+     │
+     └── Labels = No
+             └── Label features suppressed
+```
+
+This means one enclosure model can support multiple valid configurations without requiring separate versions of the feature tree.
+
+---
+
+# 🧠 Design Principles
+
+The enclosure follows several important principles.
+
+### Configuration-driven
+
+The enclosure is generated from user-selected configuration rather than manually edited geometry.
+
+### Adapter Plate driven
+
+The enclosure uses the Adapter Plate as its mechanical reference.
+
+### Base and Lid together
+
+The Base and Lid share the same design context and configuration.
+
+### Optional features
+
+Features that are not required are dynamically suppressed.
+
+### Reusable libraries
+
+Reusable components such as threaded inserts are provided through libraries rather than hard-coded into the enclosure.
+
+### Derived geometry
+
+Where possible, geometry is derived or measured rather than duplicated as independent variables.
+
+### Minimal manual intervention
+
+Normal enclosure configuration should not require editing Derive features, sketches or internal implementation details.
+
+---
+
+# 🎯 Result
+
+The result is a configurable enclosure that can adapt to different electronics without rebuilding the enclosure architecture from scratch.
+
+The same Boxify framework can therefore produce variants such as:
+
+```text
+                    Boxify Enclosure
+                           │
+          ┌────────────────┼────────────────┐
+          │                │                │
+          ▼                ▼                ▼
+     No Inserts       With Inserts      Different PCB
+          │                │                │
+          └────────────────┼────────────────┘
+                           │
+                           ▼
+                  Configured Base + Lid
+```
+
+The geometry changes according to the selected configuration while the underlying enclosure architecture remains reusable.
 
 ---
 
@@ -228,8 +401,12 @@ Possible future enclosure features include:
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
+- 📄 [Configurations](configurations.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
 - 📄 [KiCad Integration](kicad-integration.md)
-- 📄 [Configurations](configurations.md)
+
+---
+
+**Happy Boxifying! 🚀**
