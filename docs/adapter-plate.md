@@ -126,6 +126,7 @@ This improves model stability and simplifies future changes.
 
 # 📚 Related Documentation
 
+- 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Enclosure](enclosure.md)
