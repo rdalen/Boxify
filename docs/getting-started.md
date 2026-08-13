@@ -67,6 +67,7 @@ Create Assembly
 
 ---
 
+# [1️⃣ Import your PCB](kicad-integration.md#Import-your-PCB)
 # 1️⃣ Import your PCB
 
 Export your PCB from KiCad as a STEP model.
