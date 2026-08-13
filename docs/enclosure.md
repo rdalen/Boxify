@@ -122,7 +122,7 @@ Typical features include:
 
 ---
 
-# ⚙️ Configuration
+# ⚙️ Configuration options
 
 Typical configurable parameters include:
 
