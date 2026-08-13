@@ -48,9 +48,6 @@ Each level exposes only the parameters relevant to its own responsibility.
 Typical PCB configuration options include:
 
 - PCB selection
-- PCB rotation
-- Component side
-- Mounting side
 
 These settings define how the PCB is presented to the rest of the framework.
 
@@ -60,8 +57,11 @@ These settings define how the PCB is presented to the rest of the framework.
 
 Typical Adapter Plate options include:
 
-- Adapter Plate height
+
+- Component side
+- Mounting side
 - PCB offset
+- Corner radius
 - Mounting clearances
 - Reference orientation
 
@@ -73,13 +73,15 @@ These settings determine the mechanical interface between the PCB and the enclos
 
 Typical enclosure options include:
 
+- Adapter Plate height
+- PCB rotation
 - Box height
 - Wall thickness
 - Bottom thickness
 - Lid thickness
-- Corner radius
-- Lip dimensions
 - Internal clearances
+- Insert type
+- Lid fastenings methode
 
 These settings control the overall enclosure geometry.
 
@@ -91,7 +93,6 @@ Typical insert options include:
 
 - Insert type
 - Thread size
-- Pocket type
 
 The enclosure automatically adapts to the selected insert definition.
 
