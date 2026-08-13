@@ -68,7 +68,6 @@ Create Assembly
 ---
 
 # [1️⃣ Import your PCB](kicad-integration.md#importing-the-step-model)
-# 1️⃣ Import your PCB
 
 Export your PCB from KiCad as a STEP model.
 
@@ -89,6 +88,7 @@ For best results:
 ---
 
 # 2️⃣ Create a PCB Library Entry
+# [2️⃣ Create a PCB Library Entry](kicad-integration.md#creating-a-pcb-Library-entry)
 
 Create a PCB Library entry where the imported STEP model is the "passenger" on a "carrier" (= prototype PCB from the onshape PCB library)
 
