@@ -86,6 +86,7 @@ This allows a PCB to be replaced or updated without redesigning the enclosure.
 
 # 📚 Related Documentation
 
+- 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
