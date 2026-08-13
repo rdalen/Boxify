@@ -57,7 +57,7 @@ These settings define how the PCB is presented to the rest of the framework.
 
 Typical Adapter Plate options include:
 
-
+- All the upstream Part Studio Configuration options
 - Component side
 - Mounting side
 - PCB offset
@@ -73,14 +73,13 @@ These settings determine the mechanical interface between the PCB and the enclos
 
 Typical enclosure options include:
 
-- Adapter Plate height
+- All the upstream Part Studio Configuration options
 - PCB rotation
+- Adapter Plate height
 - Box height
 - Wall thickness
 - Bottom thickness
 - Lid thickness
-- Internal clearances
-- Insert type
 - Lid fastenings methode
 
 These settings control the overall enclosure geometry.
