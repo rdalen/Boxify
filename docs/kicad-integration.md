@@ -49,7 +49,7 @@ The exported STEP model represents the complete electronic assembly.
 
 ---
 
-# 📥 Importing the STEP Model
+# Importing the STEP Model
 
 The STEP model exported from KiCad is imported into the Boxify document as a **passenger**.
 
