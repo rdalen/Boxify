@@ -151,5 +151,9 @@ Potential future additions include:
 
 
 - 📄 [Architecture](architecture.md)
+- 📄 [PCB Library](pcb-library.md)
+- 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
+- 📄 [KiCad Integration](kicad-integration.md)
 - 📄 [Configurations](configurations.md)
+
