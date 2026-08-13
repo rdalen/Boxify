@@ -87,7 +87,6 @@ For best results:
 
 ---
 
-# 2️⃣ Create a PCB Library Entry
 # [2️⃣ Create a PCB Library Entry](kicad-integration.md#creating-a-pcb-Library-entry)
 
 Create a PCB Library entry where the imported STEP model is the "passenger" on a "carrier" (= prototype PCB from the onshape PCB library)
@@ -96,7 +95,7 @@ The PCB Library becomes the reusable definition of your PCB.
 
 ---
 
-# 3️⃣ Configure the Adapter Plate
+# [3️⃣ Configure the Adapter Plate](adapter-plate.md)
 
 The Adapter Plate connects your PCB to the enclosure.
 
@@ -112,7 +111,7 @@ The Adapter Plate automatically adapts to the selected PCB.
 
 ---
 
-# 4️⃣ Generate the Enclosure
+#[4️⃣ Generate the Enclosure](enclosure.md)
 
 The enclosure consists of:
 
@@ -134,7 +133,7 @@ The enclosure is generated automatically from the Adapter Plate.
 
 ---
 
-# 5️⃣ Add Threaded Inserts
+# [5️⃣ Add Threaded Inserts](threaded-insert-library.md)
 
 If desired, select a threaded insert type from the Threaded Insert Library.
 
