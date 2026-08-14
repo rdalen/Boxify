@@ -128,9 +128,10 @@ The configuration describes the **intended fastening method**, rather than expos
 
 For example:
 
-- No fastening
-- Counterbore
-- Countersink
+- None
+- Counterbore screws
+- Countersunk screws
+- Selftapping screws
 
 The selected fastening type controls which related geometry is required.
 
