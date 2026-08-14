@@ -45,7 +45,7 @@ The libraries support the stages where their reusable definitions are consumed:
 - **PCB Library** provides the reusable PCB prototype used by `PS KiCadStep`.
 - **Threaded Insert Library** provides the insert definitions used by `PS Enclosure`.
 
-The main design flow remains one-directional:
+The main mechanical design flow remains one-directional:
 
 > **PCB → Adapter Plate → Enclosure → Assembly**
 
