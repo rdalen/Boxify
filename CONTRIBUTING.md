@@ -240,9 +240,10 @@ For example, a change to lid fastening should be tested with relevant alternativ
 ```text id="v3n6gs"
 Lid Fastening
     │
-    ├── No fastening
-    ├── Counterbore
-    └── Countersink
+    ├── None
+    ├── Counterbore screws
+    ├── Countersunk screws 
+    └── Selftapping screws
 ```
 
 Likewise, threaded insert changes should be tested with:
