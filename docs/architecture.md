@@ -2,41 +2,54 @@
 
 Boxify is a **Parametric Electronics Enclosure Framework (PEEF)** built for Onshape.
 
-Unlike traditional enclosure designs, Boxify separates the **electronics** from the **mechanical enclosure** by introducing an intermediate **Adapter Plate**.
+The architecture separates the electronics from the mechanical enclosure by introducing an intermediate **Adapter Plate**.
 
-This modular architecture allows the same PCB to be to reused with different enclosure designs or reuse the same enclosure architecture with different PCBs.
+This separation allows:
+
+- The same PCB to be used with different enclosure configurations.
+- The same enclosure architecture to support different PCBs.
+- PCB-specific geometry to remain independent from enclosure-specific geometry.
+- Enclosure configuration to be managed from a single user-facing location.
+
+The result is a modular, reusable and configuration-driven enclosure framework.
 
 ---
 
 # 🔄 Workflow Overview
 
 ```text
-                 PCB Design
-                     │
-                     ▼
-              Imported STEP Model
-                     │
-                     ▼
-               PCB Library Entry
-                     │
-                     ▼
-               Adapter Plate
-          (Mechanical Interface)
-                     │
-          ┌──────────┴──────────┐
-          ▼                     ▼
-      Box Base   Enclosure    Box Lid
-          │                     │
-          └──────────┬──────────┘
-                     ▼
-                  Assembly
+PCB / KiCad
+     │
+     │ detailed PCB STEP
+     ▼
+PS KiCadStep  <--- PCB Library
+     │
+     │ PCB + reusable prototype
+     ▼
+Adapter Plate
+     │
+     │ mechanical interface
+     ▼
+PS Enclosure <--- Threaded Insert Library
+     │
+     │ user configuration
+     ▼
+Box Base + Box Lid
+     │
+     ▼
+Assembly
 ```
 
-Each stage has a single responsibility and can evolve independently.
+The libraries support the stages where their reusable definitions are consumed:
 
-The information flows in one direction, each stage builds upon the previous stage.
+- **PCB Library** provides the reusable PCB prototype used by `PS KiCadStep`.
+- **Threaded Insert Library** provides the insert definitions used by `PS Enclosure`.
 
-Changes made upstream automatically propagate downstream.
+The main mechanical design flow remains one-directional:
+
+> **PCB → Adapter Plate → Enclosure → Assembly**
+
+Changes to upstream geometry or configuration propagate downstream through the parametric architecture.
 
 ---
 
@@ -44,27 +57,27 @@ Changes made upstream automatically propagate downstream.
 
 <img width="39%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
 <p align="center"><i>From PCB design to Boxify Enclosure design</i></p>
-
 ---
 
-# 📦 Core Components
+# 🧩 Core Components
 
 ## PCB Library
 
-The PCB Library defines the electronic assembly that will be used throughout the Boxify framework.
+The **PCB Library** contains reusable definitions of supported PCB designs.
 
-In Boxify, this serves as the “Carrier” for the KiCad STEP Model (the “Passenger”)
+In the Boxify architecture, the PCB Library provides the **Carrier** for the imported KiCad STEP model, which acts as the **Passenger**.
 
-Each PCB is represented by:
+Each PCB definition can provide:
 
 - PCB geometry
 - Mounting hole locations
 - PCB dimensions
 - Reference geometry
+- PCB-specific measured variables
 
-The PCB Library never contains enclosure-specific information.
+The PCB Library contains information about the PCB itself and does not contain enclosure-specific configuration.
 
-Its only purpose is to describe the PCB itself.
+This separation allows the same PCB definition to be reused by different enclosure designs.
 
 ---
 
@@ -74,21 +87,52 @@ Its only purpose is to describe the PCB itself.
 
 ---
 
-## Adapter Plate
+## PS KiCadStep
 
-The Adapter Plate is the heart of Boxify.
+`PS KiCadStep` integrates a detailed PCB STEP model exported from KiCad with a reusable PCB Library prototype.
 
-It provides the mechanical interface between the PCB and the enclosure.
+The architecture uses a **Carrier / Passenger** relationship:
 
-Responsibilities include:
+```text
+PCB Library
+    │
+    │ reusable PCB prototype
+    ▼
+  Carrier
+    ▲
+    │
+  Passenger
+    │
+    │ detailed KiCad STEP
+    │
+PS KiCadStep
+```
 
-- Mounting the PCB
-- Positioning the PCB inside the enclosure
-- Defining the mechanical reference for the enclosure
-- Providing mounting locations for enclosure features
-- Passing configuration variables to downstream Part Studios
+The PCB Library provides the stable, reusable reference geometry, while the imported STEP model provides the detailed representation of the actual PCB assembly.
 
-Because the enclosure depends only on the Adapter Plate, the PCB and enclosure remain loosely coupled.
+This allows the detailed KiCad model to be used without making the enclosure dependent directly on the imported STEP geometry.
+
+---
+
+# 🔧 Adapter Plate
+
+The **Adapter Plate** is the mechanical heart of Boxify.
+
+It provides the interface between the PCB and the enclosure.
+
+Its responsibilities include:
+
+- Mounting the PCB.
+- Positioning the PCB relative to the enclosure.
+- Providing stable mechanical reference geometry.
+- Defining mounting locations for enclosure features.
+- Providing measured and derived geometry required by the enclosure.
+
+The Adapter Plate deliberately separates the electronics from the enclosure.
+
+The enclosure therefore does not need to understand the details of the PCB itself. It only needs the mechanical interface provided by the Adapter Plate.
+
+This loose coupling is one of the fundamental principles of Boxify.
 
 ---
 
@@ -99,24 +143,29 @@ Because the enclosure depends only on the Adapter Plate, the PCB and enclosure r
 
 ---
 
-## Enclosure
+# 📦 PS Enclosure
 
-The enclosure consists of two parts:
+`PS Enclosure` is the **main user-facing configuration point** of Boxify.
 
-- Box Base
-- Box Lid
+Enclosure-related configuration is centralized here so that the user normally does not need to switch between Part Studios to configure the enclosure.
 
-These are generated from the Adapter Plate rather than directly from the PCB.
-Changes to the PCB or Adapter Plate should automatically propagate through the enclosure.
+Typical configuration options include:
 
-Typical enclosure features include:
+- PCB selection
+- PCB rotation
+- Mount side
+- Component side
+- Adapter Plate height
+- Box height
+- Wall thickness
+- Lid fastening type
+- Threaded insert configuration
+- Interface cut-outs
+- Text labels
 
-- Walls
-- Bottom
-- Lid
-- Mounting lugs
-- Screw pockets
-- Threaded insert pockets
+Configuration variables and features can be shown, hidden or dynamically suppressed depending on the selected options.
+
+This allows a single enclosure framework to generate different enclosure variants without manually editing downstream features.
 
 ---
 
@@ -127,89 +176,140 @@ Typical enclosure features include:
 
 ---
 
-## Threaded Insert Library
+### 🧱 Box Base and Box Lid
 
-Threaded inserts are managed independently from the enclosure.
+The enclosure consists of two main components:
 
-Each insert definition contains:
+- **Box Base**
+- **Box Lid**
+
+Both are generated from the enclosure configuration and the mechanical references provided by the Adapter Plate.
+
+Typical enclosure features include:
+
+- Walls
+- Bottom
+- Lid
+- Mounting lugs
+- Screw pockets
+- Threaded insert pockets
+- Interface cut-outs
+- Text labels
+
+The Box Base and Box Lid are designed as a coordinated system because they always belong to the same enclosure configuration.
+
+The selected configuration determines which features are required. Features that are not applicable can be dynamically suppressed.
+
+---
+
+# 🔩 Threaded Insert Library
+
+The **Threaded Insert Library** contains reusable definitions for threaded inserts.
+
+Each insert definition can contain:
 
 - Insert dimensions
 - Pocket geometry
+- Installation requirements
+- Configuration information
 
-The enclosure simply references the selected insert type.
+The library is consumed by **PS Enclosure**.
+
+This keeps insert-specific geometry separate from the enclosure itself and allows different insert types to be supported without redesigning the enclosure features.
+
+Threaded inserts can also be disabled when an enclosure does not require them.
 
 ---
 
 <img width="39%" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
 <img width="59%" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
-<p align="center"><i>Boxify Treaded brass inserts Library</i></p>
+<p align="center"><i>Boxify Treaded inserts Library</i></p>
 
 ---
 
-## Assembly
+# ⚙️ Configuration Architecture
 
-The Assembly combines all generated components.
+A key principle introduced in Boxify v2.0 is **centralized user configuration**.
 
-Its purpose is verification rather than design.
+The user-facing configuration belongs to **PS Enclosure**.
 
-Typical checks include:
+The other components provide the information required to generate the enclosure:
 
-- PCB fit
-- Component clearance
-- Screw alignment
-- Insert alignment
-- Overall dimensions
+```text
+                     User Configuration
+                            │
+                            ▼
+                    ┌───────────────┐
+                    │ PS Enclosure  │
+                    └───────┬───────┘
+                            │
+             ┌──────────────┼──────────────┐
+             │              │              │
+             ▼              ▼              ▼
+        PCB geometry   Adapter Plate   Insert Library
+             │              │              │
+             └──────────────┼──────────────┘
+                            ▼
+                    Box Base + Box Lid
+```
 
----
+This distinction is important:
 
-<p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/865c9a41-163f-49ba-be22-f7ac81d1cc89" />
-</p>
-<p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/6fb12a9c-95a2-4db4-b1dd-10970b38fe7a" />
-</p>
-<p align="center"><i>Assembling & check to see if everything fits</i></p>
+### User configuration
 
-<p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/2a43b5b7-7397-4ead-834f-749adac874b5" />
-</p>
-<p align="center"><i>Final result</i></p>
+Controls **what the user wants**, for example:
 
----
-
-# 📏 Parametric Design
-
-Every important dimension in Boxify is controlled by variables.
-
-Examples include:
-
-- Wall thickness
 - Box height
-- Adapter Plate height
-- PCB offset
-- Corner radius
-- Insert type
-
-This allows an enclosure to adapt automatically when the PCB changes.
-
-Configurations allow a single model to support multiple hardware variants.
-
-Typical configurable options include:
-
-- PCB selection
-- PCB rotation
-- Mount side
-- Component side
-  Adapter plate height 
-- Box Height
 - Wall thickness
 - Lid fastening
-- Treaded Insert type
+- Insert option
+- PCB orientation
+
+### Engineering and measured variables
+
+Describe **what the geometry provides**, for example:
+
+- PCB dimensions
+- Mounting-hole positions
+- Adapter Plate height
+- Derived reference locations
+- Measured component clearance
+
+Whenever possible, engineering information is measured or derived from existing geometry rather than entered manually.
 
 ---
 
-<img width="334" height="484" alt="image" src="https://github.com/user-attachments/assets/6e5d70cc-b268-4951-9477-bcb5dfadd063" />
-<p align="center"><i>Configuration variables</i></p>
+# 🔁 Parametric Propagation
+
+Boxify is designed so that information flows through the architecture rather than being duplicated.
+
+```text
+PCB / KiCad
+     │
+     ▼
+PS KiCadStep
+     │
+     ▼
+Adapter Plate
+     │
+     ▼
+PS Enclosure
+     │
+     ▼
+Box Base + Box Lid
+```
+
+For example:
+
+1. A PCB STEP model provides the detailed PCB geometry.
+2. The PCB Library provides the reusable PCB reference.
+3. The Adapter Plate establishes the mechanical interface.
+4. PS Enclosure uses that interface together with the selected configuration.
+5. Box Base and Box Lid are generated from those references.
+
+When upstream geometry changes, downstream geometry can adapt automatically.
+
+This reduces duplicated dimensions and minimizes manual updates.
 
 ---
 
@@ -217,41 +317,85 @@ Typical configurable options include:
 
 Boxify follows several guiding principles.
 
+## Separation of Responsibilities
+
+Each Part Studio and library has a clearly defined purpose.
+
+PCB-related information belongs to the PCB architecture.
+
+Mechanical interface information belongs to the Adapter Plate.
+
+Enclosure configuration and generation belong to PS Enclosure.
+
+Reusable insert definitions belong to the Threaded Insert Library.
+
 ---
 
-**Separation of Responsibilities**
+## Centralized User Configuration
 
-Each Part Studio has one clearly defined purpose.
+User-facing enclosure configuration should be available from **PS Enclosure**.
+
+The user should not need to edit downstream Part Studios or manually modify Derive features during normal configuration.
 
 ---
 
-**Reusable Components**
+## Reusable Components
 
 Components should be reusable across multiple projects whenever possible.
 
----
-
-**Parametric First**
-
-Geometry should adapt through parameters rather than manual editing.
+Libraries are used to separate reusable definitions from project-specific geometry.
 
 ---
 
-**Measure Rather Than Duplicate**
+## Parametric First
 
-Whenever geometry already contains the required information, measure it instead of entering it again.
-
----
-
-**Stable References**
-
-Use reference geometry and derived parts instead of recreating geometry.
+Geometry should adapt through parameters and configuration rather than manual editing.
 
 ---
 
-**Modular Growth**
+## Measure Rather Than Duplicate
 
-New functionality should extend the framework without requiring existing designs to change.
+Whenever geometry already contains the required information, measure or derive it instead of entering the same information again.
+
+This reduces inconsistencies and makes the model more robust to changes.
+
+---
+
+## Stable References
+
+Use stable reference geometry and derived parts instead of recreating geometry.
+
+This keeps relationships between the PCB, Adapter Plate and enclosure predictable.
+
+---
+
+## Loose Coupling
+
+The enclosure should depend on the **mechanical interface** rather than directly on PCB implementation details.
+
+The Adapter Plate provides this abstraction layer.
+
+---
+
+## Dynamic Configuration
+
+Features that are not required by a selected configuration should be automatically suppressed where practical.
+
+This keeps the generated model clean while allowing one framework to support many enclosure variants.
+
+---
+
+## Modular Growth
+
+New functionality should extend the framework without requiring existing designs to be fundamentally redesigned.
+
+Libraries and configuration-driven features should be preferred over project-specific hard-coded geometry.
+
+---
+
+# 🧠 The Boxify Architecture in One Sentence
+
+> **Boxify separates the PCB from the enclosure through an Adapter Plate, while PS Enclosure provides centralized configuration to generate a complete parametric enclosure from reusable libraries and derived mechanical references.**
 
 ---
 
@@ -266,4 +410,5 @@ For implementation details, see:
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
 - 📄 [KiCad Integration](kicad-integration.md)
 - 📄 [Configurations](configurations.md)
-- 📄 [Design Philosophy](DESIGN.md)
+
+---
