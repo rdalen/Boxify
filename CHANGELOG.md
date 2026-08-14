@@ -12,7 +12,7 @@ The format is based on Keep a Changelog, adapted for the Boxify development proc
 
 - Introduced a unified **Enclosure Configuration** workflow where all user-configurable enclosure options are available directly from **PS Enclosure**.
 - Added configurable **Lid Fastening Types**, allowing different screw mounting strategies to be selected from a single configuration.
-- Added support for **No Screw**, **Counterbore**, and **Countersunk** lid fastening options through automatic feature suppression.
+- Added support for **None**, **Counterbore screws**, **Countersunk screws** and **Selftapping screws** lid fastening options through automatic feature suppression.
 - Added configurable automatic **lid text labels**.
 - Added configurable automatic **interface cut-outs**.
 - Added dynamic configuration visibility, showing only parameters relevant to the selected configuration.
