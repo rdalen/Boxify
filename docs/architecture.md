@@ -223,7 +223,7 @@ Threaded inserts can also be disabled when an enclosure does not require them.
 
 <img width="39%" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
 <img width="59%" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
-<p align="center"><i>Boxify Treaded brass inserts Library</i></p>
+<p align="center"><i>Boxify Treaded inserts Library</i></p>
 
 ---
 
