@@ -1,21 +1,18 @@
-# 📄 PCB Library
+# 📚 PCB Library
 
 ## 🧠 Purpose
 
-The PCB Library defines the electronic assembly that will be used throughout the Boxify framework.
+The **PCB Library** contains reusable definitions of supported PCB designs for use within the Boxify framework.
 
-In Boxify, this serves as the “Carrier” for the KiCad STEP Model (the “Passenger”)
+A PCB Library entry provides the stable mechanical reference that Boxify uses to connect a PCB design to the Adapter Plate and, ultimately, the enclosure.
 
-The PCB Library never contains enclosure-specific information, its only purpose is to describe the PCB itself.
+The PCB Library is deliberately separated from the detailed PCB STEP model exported from KiCad.
 
-Each PCB is represented by a reusable Part Studio that serves as the **single source of truth** for all PCB-related geometry and reference information.
+The library provides the **Carrier**.
 
-A PCB Library entry may be:
+The imported KiCad STEP model provides the **Passenger**.
 
-- A standard prototype PCB generated parametrically
-- A custom PCB imported from an ECAD tool such as KiCad
-
-Regardless of its origin, every PCB is presented to the rest of Boxify through the same interface.
+Together they form the PCB definition used by the Boxify architecture.
 
 ---
 
@@ -25,71 +22,390 @@ Regardless of its origin, every PCB is presented to the rest of Boxify through t
 
 ---
 
-# 📦 Responsibilities
+# 🏗 Position in the Boxify Architecture
 
-The PCB Library is responsible for defining:
+```text id="n2n3p5"
+PCB / KiCad
+     │
+     │ detailed STEP
+     ▼
+PS KiCadStep  <--- PCB Library
+     │
+     │ PCB + reusable prototype
+     ▼
+Adapter Plate
+     │
+     │ mechanical interface
+     ▼
+PS Enclosure  <--- Threaded Insert Library
+     │
+     ▼
+Box Base + Box Lid
+```
+
+The PCB Library is therefore part of the **PCB definition stage**, not the enclosure configuration stage.
+
+---
+
+# 🚗 Carrier / Passenger Architecture
+
+The PCB Library prototype acts as the **Carrier** for the imported KiCad STEP model.
+
+```text id="9y3c2v"
+                PCB Library
+                     │
+                     │ reusable prototype
+                     ▼
+                  CARRIER
+                     │
+                     ▲
+                     │
+                  PASSENGER
+                     │
+                     │ detailed PCB assembly
+                     │
+                 KiCad STEP
+```
+
+### Carrier
+
+The Carrier provides the stable, reusable PCB reference.
+
+It can contain:
+
+- PCB outline
+- Mounting-hole geometry
+- Reference geometry
+- Mate Connector
+- PCB dimensions
+- PCB-specific measured or derived variables
+
+### Passenger
+
+The Passenger is the detailed PCB assembly imported from KiCad.
+
+It can contain:
+
+- PCB
+- Components
+- Connectors
+- Mounting hardware
+- Other mechanical details represented by the KiCad STEP export
+
+The Passenger can be replaced when the PCB revision changes, while the Carrier remains the reusable reference whenever the PCB definition itself has not changed.
+
+---
+
+# 🧩 What a PCB Library Entry Represents
+
+A PCB Library entry represents a **specific PCB design definition** that can be reused by Boxify.
+
+It should provide enough information for the downstream architecture to establish:
+
+- PCB identity
+- PCB coordinate system
+- PCB outline
+- Mounting locations
+- Reference geometry
+- Connection to the Adapter Plate
+
+The library entry should not contain enclosure-specific information.
+
+For example, the PCB Library should **not** define:
+
+- Box height
+- Wall thickness
+- Lid fastening
+- Threaded insert selection
+- Enclosure labels
+- Enclosure cut-outs
+
+Those decisions belong to **PS Enclosure**.
+
+---
+
+# 📐 PCB Geometry
+
+A PCB Library entry should contain the geometry required to establish the mechanical relationship between the PCB and the Adapter Plate.
+
+Important reference geometry can include:
+
+### PCB Outline
+
+Defines the physical board boundary.
+
+### Mounting Holes
+
+Defines the locations used to mount the PCB.
+
+### Reference Geometry
+
+Provides stable references for downstream features.
+
+### Mate Connector
+
+Provides the primary coordinate and orientation reference used when positioning the PCB within the Boxify architecture.
+
+The goal is to keep these references stable and predictable.
+
+---
+
+# 📏 PCB Variables
+
+PCB-specific variables can be stored or derived as part of the PCB definition.
+
+Examples include:
+
+```text id="8j7o5c"
+pcbWidth
+pcbLength
+mountingHoleDiameter
+mountingHolePosition
+```
+
+These values describe the PCB itself.
+
+They should not be confused with enclosure configuration variables such as:
+
+```text id="xv9c7a"
+boxHeight
+wallThickness
+lidFasteningType
+```
+
+The general rule is:
+
+> **PCB Library variables describe the PCB; PS Enclosure variables describe the enclosure.**
+
+---
+
+# 🧭 Coordinate System
+
+The PCB Library provides a stable coordinate system for the PCB.
+
+The coordinate system should remain consistent between:
+
+- PCB Library geometry
+- KiCad STEP exports
+- PS KiCadStep
+- Adapter Plate references
+
+When a new STEP revision is imported, the PCB should retain the same coordinate relationship whenever possible.
+
+This makes PCB updates much more predictable.
+
+---
+
+# 🔄 Creating a PCB Library Entry
+
+A typical workflow is:
+
+1. Export the PCB from KiCad as STEP.
+2. Import the STEP model into Onshape.
+3. Create a Composite Part if required.
+4. Open **PS KiCadStep**.
+5. Select or create the appropriate PCB Library prototype.
+6. Establish the Carrier / Passenger relationship.
+7. Verify the PCB references.
+8. Derive the resulting PCB definition into the Adapter Plate.
+
+The PCB Library entry then becomes reusable for the enclosure workflow.
+
+For the complete import procedure, see [KiCad Integration](kicad-integration.md).
+
+---
+
+# 🔁 Updating a PCB
+
+When the PCB design is revised, the KiCad STEP model can normally be updated without redesigning the enclosure architecture.
+
+The general workflow is:
+
+```text id="x9w7a8"
+KiCad PCB revision
+       │
+       ▼
+New STEP export
+       │
+       ▼
+Replace / update Passenger
+       │
+       ▼
+PS KiCadStep
+       │
+       │ Carrier remains reusable
+       ▼
+Adapter Plate
+       │
+       ▼
+PS Enclosure
+       │
+       ▼
+Updated enclosure
+```
+
+If the PCB outline, mounting locations or coordinate system remain compatible, the existing PCB Library definition can continue to be used.
+
+If the actual PCB definition changes, the PCB Library entry may need to be updated or replaced.
+
+---
+
+# 🧱 PCB Library and Adapter Plate
+
+The PCB Library provides the PCB-specific references consumed by the Adapter Plate.
+
+The Adapter Plate then translates those references into the mechanical interface required by the enclosure.
+
+```text id="yflj28"
+PCB Library
+     │
+     │ PCB definition
+     ▼
+Adapter Plate
+     │
+     │ mechanical interface
+     ▼
+PS Enclosure
+```
+
+This separation is important.
+
+The Adapter Plate should not need to know how the PCB was designed in KiCad.
+
+It only needs the stable PCB references provided by the PCB definition.
+
+---
+
+# ⚙️ PCB Configuration vs. Enclosure Configuration
+
+PCB selection and orientation may be exposed through **PS Enclosure**, but the underlying PCB definition remains owned by the PCB Library.
+
+For example:
+
+### PCB Library
+
+Defines:
 
 - PCB geometry
-- PCB thickness
-- Mounting hole locations
-- PCB dimensions
-- Reference Mate Connector
-- Reference geometry used by downstream Part Studios
+- Mounting locations
+- Reference coordinate system
+- PCB-specific information
 
-The PCB Library intentionally contains **no enclosure-specific features**.
+### PS Enclosure
 
----
+Selects and uses that definition and controls:
 
-# ⚙️ Configuration
+- PCB selection
+- PCB rotation
+- Component side
+- Mounting side
+- Adapter Plate height
+- Box dimensions
+- Lid fastening
+- Inserts
+- Cut-outs
+- Labels
 
-Depending on the PCB type, configurable options may include:
-
-- PCB type selection
-
-
-For standard prototype PCBs, available sizes include:
-
-- 20 × 80 mm
-- 30 × 70 mm
-- 40 × 60 mm
-- 50 × 70 mm
-- 60 × 80 mm
-- 70 × 90 mm
-
-This configuration option can be selected in the downstream Part Studio's (PS Adapter Plate or PS Enclosure)
+This distinction keeps the PCB reusable across different enclosure configurations.
 
 ---
 
-# 📤 Outputs
+# 🧠 Design Principles
 
-Each PCB Library entry provides:
+## Reusable
 
-- PCB solid model
-- Mounting holes
-- Reference geometry
-- Reference Mate Connector
+A PCB Library entry should be reusable by multiple Boxify enclosure configurations.
 
-These outputs are consumed by the Adapter Plate and ultimately by the enclosure.
+## PCB-specific
+
+The library should contain information about the PCB, not the enclosure.
+
+## Stable
+
+Reference geometry and coordinate systems should remain stable between compatible PCB revisions.
+
+## Independent
+
+The PCB definition should not depend on a particular enclosure design.
+
+## Minimal
+
+Only information required to define and interface the PCB should be stored in the library.
+
+## Parametric
+
+Where practical, PCB-specific geometry should be driven by parameters and stable references rather than manually duplicated dimensions.
 
 ---
 
-# 🎯 Design Principles
+# ⚠️ What Does Not Belong in the PCB Library
 
-The PCB Library follows several important principles:
+To keep responsibilities clear, the following should not normally be stored in the PCB Library:
 
-- Every PCB has a consistent interface.
-- PCB definitions are independent of the enclosure.
-- Downstream Part Studios never modify PCB geometry.
-- PCB changes automatically propagate through the Boxify framework.
+- Box dimensions
+- Wall thickness
+- Bottom thickness
+- Lid thickness
+- Lid fastening type
+- Threaded insert selection
+- Enclosure cut-outs
+- Enclosure labels
+- Box Base geometry
+- Box Lid geometry
 
-This allows a PCB to be replaced or updated without redesigning the enclosure.
+These belong to the enclosure architecture and are configured through **PS Enclosure**.
+
+---
+
+# 🎯 Result
+
+The PCB Library provides a stable and reusable definition of the PCB that sits between the electronic design and the mechanical enclosure.
+
+Its role can be summarized as:
+
+```text id="k8e8qf"
+              KiCad
+                │
+                │ detailed STEP
+                ▼
+          PS KiCadStep
+                │
+                │ Passenger
+                ▼
+       ┌─────────────────┐
+       │   PCB Library   │
+       │                 │
+       │     Carrier     │
+       └────────┬────────┘
+                │
+                │ PCB definition
+                ▼
+         Adapter Plate
+                │
+                │ mechanical interface
+                ▼
+          PS Enclosure
+                │
+                ▼
+        Box Base + Lid
+```
+
+The key principle is:
+
+> **The PCB Library defines what the PCB is; PS Enclosure defines what the enclosure should be.**
+
+This separation allows the same PCB definition to be reused across different enclosure configurations while keeping the enclosure independent from the PCB implementation.
+
+---
 
 # 📚 Related Documentation
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
+- 📄 [Configurations](configurations.md)
+- 📄 [KiCad Integration](kicad-integration.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
-- 📄 [KiCad Integration](kicad-integration.md)
-- 📄 [Configurations](configurations.md)
+
+---
