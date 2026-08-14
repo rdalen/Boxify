@@ -127,9 +127,10 @@ The user selects a **Lid Fastening Type**, and Boxify generates the correspondin
 
 Possible configurations can include:
 
-- **No fastening**
-- **Counterbore**
-- **Countersink**
+- **None**
+- **Counterbore screws**
+- **Countersunk screws**
+- **Selftapping screws**
 
 The exact options can evolve as additional fastening methods are added.
 
