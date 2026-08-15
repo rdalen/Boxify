@@ -145,7 +145,7 @@ Explains the overall architecture, responsibilities of each component and the fl
 
 Explains user configuration, measured and derived variables, dynamic suppression and the configuration philosophy of Boxify.
 
-### **[PCB Library](docs/pcb-library.md) / [KiCad Integration](docs/kicad-integration.md)**
+### **[PCB Library](docs/pcb-library.md) and [KiCad Integration](docs/kicad-integration.md)**
 → *How do I bring my electronics into it?*
 
 Explains the PCB Library, KiCad STEP integration and the Carrier / Passenger architecture.
