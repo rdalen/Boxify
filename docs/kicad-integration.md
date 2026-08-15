@@ -429,7 +429,6 @@ This separation is what allows Boxify to remain reusable while still generating 
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
-- 📄 [KiCad Integration](kicad-integration.md)
 - 📄 [Configurations](configurations.md)
 
 ---
