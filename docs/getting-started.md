@@ -77,8 +77,8 @@ Create / select PCB Library entry
 Configure the enclosure in PS Enclosure
     │
     ├── PCB type, -orientation and -clearences
-    ├── Adapter Plate Height
-    ├── Box Height
+    ├── Adapter Plate height
+    ├── Box height
     ├── Lid fastening
     ├── Threaded inserts
     ├── Cut-outs
