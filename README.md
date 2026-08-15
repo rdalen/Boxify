@@ -59,40 +59,10 @@ Assembly
 This separation allows:
 
 - Different PCBs to use the same enclosure architecture.
-- Different enclosure configurations to be generated from the same PCB.
+- Different enclosure configurations to be generated from the same PCB design.
 - PCB revisions to propagate through the mechanical design.
 - Reusable PCB and hardware definitions to be maintained independently.
 - Optional enclosure features to be dynamically enabled or suppressed.
-
----
-
-# 🚀 Boxify v2.0
-
-Boxify v2.0 represents a major step in the evolution of the framework.
-
-The enclosure is now **configuration-driven**, with enclosure-related user configuration centralized in **PS Enclosure**.
-
-This includes options such as:
-
-- PCB selection and orientation
-- Adapter Plate height
-- Box dimensions
-- Wall thickness
-- Lid fastening type
-- Threaded insert configuration
-- Interface cut-outs
-- Text labels
-
-Configuration variables and features can change dynamically depending on the selected options.
-
-This means the user normally does **not** need to:
-
-- Switch between Part Studios to configure the enclosure.
-- Edit Derive features.
-- Maintain duplicate configuration values.
-- Manually suppress irrelevant features.
-
-Boxify now behaves as a **configurable enclosure generator rather than a collection of independently configured Part Studios**.
 
 ---
 
@@ -121,7 +91,7 @@ PCB Library
 
 The PCB Library provides the reusable PCB definition, while the imported STEP model provides the detailed representation of the actual PCB.
 
-This allows the PCB STEP model to be updated while keeping the surrounding Boxify architecture reusable.
+This allows the PCB STEP model to be updated independently without breaking the surrounding Boxify architecture, keeping the enclosure design reusable and parametric.
 
 ---
 
@@ -234,11 +204,11 @@ Automatically enable or suppress optional features according to the selected con
 
 ### 🔌 Interface Cut-outs
 
-Generate enclosure cut-outs based on the available PCB/interface geometry.
+Define your own required enclosure cut-outs based on the available PCB/interface geometry. The PCB definition remains unchanged.
 
-### 🏷️ Configurable Labels
+### 🏷️ Text Labels
 
-Add enclosure-specific labels without modifying the PCB definition.
+Define your own enclosure-specific labels, independently of the PCB definition.
 
 ---
 
@@ -304,7 +274,9 @@ Before making changes, please read the [Contributing Guide](CONTRIBUTING.md) and
 
 Boxify is an actively evolving parametric enclosure framework.
 
-The current **v2.0 architecture** provides:
+In the current **v2.0 architecture** the enclosure is now **configuration-driven**, with enclosure-related user configuration centralized in **PS Enclosure**.
+
+It provides:
 
 - PCB Library integration
 - KiCad STEP integration
@@ -317,6 +289,15 @@ The current **v2.0 architecture** provides:
 - Configurable lid fastening
 - Interface cut-outs
 - Configurable labels
+
+Configuration variables and features can change dynamically depending on the selected options.
+
+This means the user normally does **not** need to:
+
+- Switch between Part Studios to configure the enclosure.
+- Edit Derive features.
+- Maintain duplicate configuration values.
+- Manually suppress irrelevant features.
 
 Future development will continue to extend the framework while preserving its modular architecture.
 
