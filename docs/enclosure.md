@@ -11,7 +11,7 @@ It converts the mechanical interface provided by the **Adapter Plate** and the u
 
 The Base and Lid are designed together because they always belong to the same enclosure configuration.
 
-The enclosure adapts automatically to the selected PCB, Adapter Plate and configuration.
+The enclosure adapts automatically to the selected PCB Type, Adapter Plate and configuration.
 
 ---
 
@@ -61,10 +61,10 @@ Enclosure-related configuration is centralized here.
 
 Typical configuration options include:
 
-- PCB selection
+- PCB Type selection
 - PCB rotation
-- Component side
-- Mounting side
+- Component side up or down
+- Mounting side above or below the adapter plate
 - Adapter Plate height
 - Box height
 - Wall thickness
@@ -112,7 +112,7 @@ The Lid can contain:
 - Fastening features
 - Screw pockets
 - Countersinks or counterbores
-- Optional cut-outs
+- Cut-outs
 - Text labels
 
 The Lid is designed together with the Base so that fastening features, wall geometry and clearances remain coordinated.
@@ -147,13 +147,13 @@ For example:
 ```text
 Lid Fastening Type
        │
-       ├── No fastening
+       ├── None
        │       └── Screw-related features suppressed
        │
-       ├── Counterbore
+       ├── Counterbore screws
        │       └── Counterbore geometry enabled
        │
-       └── Countersink
+       └── Countersunk screws
                └── Countersink geometry enabled
 ```
 
