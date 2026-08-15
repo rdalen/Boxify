@@ -19,7 +19,7 @@ The result is a reusable enclosure architecture that can adapt to different PCB 
 
 The parametric CAD model is maintained in Onshape:
 
-👉 **[Open Boxify in Onshape](https://cad.onshape.com/documents/2b9b04247ce552c5f277d796)**
+👉 **[Open Boxify in Onshape](https://cad.onshape.com/documents/2b9b04247ce552c5f277d796/w/c7290f51dafd6be38e8eb7a9/e/5737f0d6de4e250f9e54ff44)**
 
 The GitHub repository contains the documentation and project history, while the Onshape document contains the parametric CAD model itself.
 
