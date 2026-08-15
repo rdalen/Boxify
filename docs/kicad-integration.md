@@ -33,7 +33,7 @@ PCB STEP Model
     ▼
 PS KiCadStep  <--- PCB Library
     │
-    │ PCB + reusable prototype
+    │ PCB + reusable PCB type
     ▼
 Adapter Plate
     │
@@ -51,7 +51,7 @@ Assembly
 
 The important distinction is:
 
-> **The KiCad STEP model provides the detailed geometry; the PCB Library provides the reusable PCB definition used by the Boxify architecture.**
+> **The KiCad STEP model provides the detailed geometry of the electronics; the PCB Library provides the reusable PCB definition used by the Boxify architecture.**
 
 ---
 
@@ -64,14 +64,15 @@ For best results:
 - Include all mounted components that should be represented mechanically.
 - Export using millimetres.
 - Ensure component orientation is correct.
+- Make sure the PCB origin is always in the center of the PCB board
 - Keep the PCB origin and coordinate system consistent between STEP exports.
 - Include accurate 3D models for components that affect the enclosure.
 
 The exported STEP model should represent the mechanical state of the electronic assembly that needs to fit inside the enclosure.
 
-### PCB Origin
+### ⚠️PCB Origin
 
-The PCB origin does **not** need to be centered specifically for Boxify.
+When exporting from KiCad, make sure the PCB origin is positioned at the center of the PCB. Boxify uses the centered Mate Connector in the PCB Library as the reference for mating the imported STEP model.
 
 What is important is that the origin and coordinate system remain consistent between PCB revisions.
 
@@ -82,6 +83,7 @@ This allows an updated STEP model to replace the previous model without unexpect
 # 📥 Importing the STEP Model
 
 Import the STEP model into the Boxify Onshape document.
+If necessary, align the components that interface with the enclosure front to the same level in KiCad (before exporting) or manually in Onshape after importing
 
 The imported model is treated as the **Passenger** in the Boxify carrier/passenger architecture.
 
@@ -99,8 +101,10 @@ Instead, it provides the detailed geometry required to represent the actual elec
 
 ---
 
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/e55cbaf1-e128-4fd9-92a2-59690cd4e403" />
-<p align="center"><i>An example of a zenertester design on a prototype board.</i></p>
+<img width="29%" alt="image" src="https://github.com/user-attachments/assets/467a7635-c41a-4e8f-a737-2179581d48fd" />
+
+<img width="59%" alt="image" src="https://github.com/user-attachments/assets/e55cbaf1-e128-4fd9-92a2-59690cd4e403" />
+<p align="center"><i>Import the Step file.</i></p>
 
 ---
 
@@ -111,7 +115,7 @@ Boxify separates the detailed imported STEP model from the reusable PCB definiti
 ```text
                  PCB Library
                      │
-                     │ reusable prototype
+                     │ reusable PCB type
                      ▼
                   CARRIER
                      │
@@ -127,9 +131,10 @@ Boxify separates the detailed imported STEP model from the reusable PCB definiti
 
 ### Carrier
 
-The **PCB Library prototype** acts as the **Carrier**.
+The selected PCB Type from the PCB Library acts as the **Carrier**.
+Make sure the selected PCB Type **has the same dimensions as the PCB in the imported STEP model**.
 
-It provides the stable reusable PCB definition used by the Boxify architecture.
+In fact, it is the carrier that provides the stable reusable PCB definition used by the Boxify architecture.
 
 The carrier can provide:
 
@@ -169,6 +174,8 @@ This provides several advantages:
 - Easier handling of imported assemblies
 
 The Composite Part represents the complete imported PCB assembly as a single mechanical reference.
+
+Sadly, the Composited PCB is looking a little gray now… 😉
 
 ---
 
