@@ -76,7 +76,7 @@ Create / select PCB Library entry
     ▼
 Configure the enclosure in PS Enclosure
     │
-    ├── PCB type, -orientation and -clearences
+    ├── PCB Type, -orientation and -clearences
     ├── Adapter Plate height
     ├── Box height
     ├── Lid fastening
@@ -130,7 +130,7 @@ Boxify uses a **carrier/passenger architecture**:
 
 The PCB Library therefore becomes the reusable definition of the PCB used by the enclosure.
 
-Once the PCB Library entry is established, the PCB type can be selected from the enclosure configuration.
+Once the PCB Library entry is established, the PCB Type can be selected from the enclosure configuration.
 
 ---
 
@@ -142,7 +142,7 @@ This is the main configuration point for the Boxify enclosure.
 
 Depending on the selected configuration, you can control parameters such as:
 
-- PCB type selection
+- PCB Type selection
 - PCB orientation
 - Component side up or down
 - Mounting side above or below the adapter plate
@@ -175,7 +175,7 @@ The enclosure consists of:
 
 Both are generated from the common enclosure configuration and the geometry provided by the Adapter Plate.
 
-The generated enclosure automatically adapts to the selected PCB type and its associated configuration.
+The generated enclosure automatically adapts to the selected PCB Type and its associated configuration.
 
 The Box Lid and Base can be configured with different fastening options. Features that are not required by the selected configuration are automatically suppressed.
 
