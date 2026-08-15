@@ -402,11 +402,11 @@ The geometry changes according to the selected configuration while the underlyin
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
-- 📄 [Configurations](configurations.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
 - 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
 
 ---
 
