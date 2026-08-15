@@ -2,7 +2,7 @@
 
 ## 🧠 Purpose
 
-The **PCB Library** contains reusable definitions of supported PCB types for use within the Boxify framework.
+The **PCB Library** contains reusable definitions of supported PCB Types for use within the Boxify framework.
 
 A PCB Library entry provides the stable mechanical reference that Boxify uses to connect a (KiCad) PCB design to the Adapter Plate and, ultimately, the enclosure.
 
@@ -31,7 +31,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable PCB type
+     │ PCB + reusable PCB Type
      ▼
 Adapter Plate
      │
@@ -204,7 +204,7 @@ A typical workflow is:
 2. Import the STEP model into Onshape.
 3. Create a Composite Part if required.
 4. Open **PS KiCadStep**.
-5. Select or create the appropriate PCB type in the PCB Library.
+5. Select or create the appropriate PCB Type in the PCB Library.
 6. Establish the Carrier / Passenger relationship.
 7. Verify the PCB references.
 8. Derive the resulting PCB definition into the Adapter Plate.
@@ -285,7 +285,7 @@ It only needs the stable PCB references provided by the PCB definition.
 
 # ⚙️ PCB Configuration vs. Enclosure Configuration
 
-PCB type selection and orientation may be exposed through **PS Enclosure**, but the underlying PCB definition remains owned by the PCB Library.
+PCB Type selection and orientation may be exposed through **PS Enclosure**, but the underlying PCB definition remains owned by the PCB Library.
 
 For example:
 
@@ -302,7 +302,7 @@ Defines:
 
 Selects and uses that definition and controls:
 
-- PCB type selection
+- PCB Type selection
 - PCB rotation
 - Component side
 - Mounting side
