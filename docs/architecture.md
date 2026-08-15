@@ -7,7 +7,7 @@ The architecture separates the electronics from the mechanical enclosure by intr
 This separation allows:
 
 - The same PCB to be used with different enclosure configurations.
-- The same enclosure architecture to support different PCBs.
+- The same enclosure architecture to support different PCB designs.
 - PCB-specific geometry to remain independent from enclosure-specific geometry.
 - Enclosure configuration to be managed from a single user-facing location.
 
@@ -24,7 +24,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable prototype
+     │ PCB + reusable PCB type
      ▼
 Adapter Plate
      │
@@ -42,7 +42,7 @@ Assembly
 
 The libraries support the stages where their reusable definitions are consumed:
 
-- **PCB Library** provides the reusable PCB prototype used by `PS KiCadStep`.
+- **PCB Library** provides the reusable PCB type used by `PS KiCadStep`.
 - **Threaded Insert Library** provides the insert definitions used by `PS Enclosure`.
 
 The main mechanical design flow remains one-directional:
@@ -63,7 +63,7 @@ Changes to upstream geometry or configuration propagate downstream through the p
 
 ## PCB Library
 
-The **PCB Library** contains reusable definitions of supported PCB designs.
+The **PCB Library** contains reusable definitions of supported PCB types.
 
 In the Boxify architecture, the PCB Library provides the **Carrier** for the imported KiCad STEP model, which acts as the **Passenger**.
 
@@ -89,14 +89,14 @@ This separation allows the same PCB definition to be reused by different enclosu
 
 ## PS KiCadStep
 
-`PS KiCadStep` integrates a detailed PCB STEP model exported from KiCad with a reusable PCB Library prototype.
+`PS KiCadStep` integrates a detailed PCB STEP model exported from KiCad with a reusable PCB type from the PCB Library.
 
 The architecture uses a **Carrier / Passenger** relationship:
 
 ```text
 PCB Library
     │
-    │ reusable PCB prototype
+    │ reusable PCB type
     ▼
   Carrier
     ▲
@@ -107,6 +107,7 @@ PCB Library
     │
 PS KiCadStep
 ```
+*In Onshape terms; The KiCad STEP is mated to the PCB Type from the PCB library*
 
 The PCB Library provides the stable, reusable reference geometry, while the imported STEP model provides the detailed representation of the actual PCB assembly.
 
@@ -151,13 +152,14 @@ Enclosure-related configuration is centralized here so that the user normally do
 
 Typical configuration options include:
 
-- PCB selection
+- PCB type selection
 - PCB rotation
-- Mount side
-- Component side
+- Component side up or down
+- Mounting side above or below the adapter plate
 - Adapter Plate height
 - Box height
-- Wall thickness
+- Box-wall, box-bottom and box-lid  thickness
+- The PCB distance from the box-walls
 - Lid fastening type
 - Threaded insert configuration
 - Interface cut-outs
@@ -229,7 +231,7 @@ Threaded inserts can also be disabled when an enclosure does not require them.
 
 # ⚙️ Configuration Architecture
 
-A key principle introduced in Boxify v2.0 is **centralized user configuration**.
+A key principle introduced in Boxify is **centralized user configuration**.
 
 The user-facing configuration belongs to **PS Enclosure**.
 
@@ -260,7 +262,9 @@ This distinction is important:
 Controls **what the user wants**, for example:
 
 - Box height
+- Adapter height
 - Wall thickness
+- The PCB distance from the box-walls
 - Lid fastening
 - Insert option
 - PCB orientation
@@ -271,7 +275,6 @@ Describe **what the geometry provides**, for example:
 
 - PCB dimensions
 - Mounting-hole positions
-- Adapter Plate height
 - Derived reference locations
 - Measured component clearance
 
@@ -301,8 +304,8 @@ Box Base + Box Lid
 
 For example:
 
-1. A PCB STEP model provides the detailed PCB geometry.
-2. The PCB Library provides the reusable PCB reference.
+1. A PCB STEP model provides the actual PCB assembly.
+2. The PCB Library provides the reusable PCB geometry and reference.
 3. The Adapter Plate establishes the mechanical interface.
 4. PS Enclosure uses that interface together with the selected configuration.
 5. Box Base and Box Lid are generated from those references.
