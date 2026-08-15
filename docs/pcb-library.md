@@ -1,4 +1,4 @@
-# 📚 PCB Library / KiCad Integration
+# 📚 PCB Library
 
 ## 🧠 Purpose
 
