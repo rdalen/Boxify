@@ -2,7 +2,7 @@
 
 Welcome to **Boxify**!
 
-Boxify is a **Parametric Electronics Enclosure Framework (PEEF)** for Onshape that makes it easy to generate custom electronics enclosures from a PCB design.
+Boxify is a **Parametric Electronics Enclosure Framework (PEEF)** for Onshape that makes it easy to generate custom electronics enclosures around PCB-based electronics
 
 Instead of designing a new enclosure for every project, Boxify separates the **electronics** from the **enclosure** using a reusable architecture based on an **Adapter Plate**.
 
@@ -76,9 +76,9 @@ Create / select PCB Library entry
     ▼
 Configure the enclosure in PS Enclosure
     │
-    ├── PCB and orientation
-    ├── Adapter Plate
-    ├── Box dimensions
+    ├── PCB type, -orientation and -clearences
+    ├── Adapter Plate Height
+    ├── Box Height
     ├── Lid fastening
     ├── Threaded inserts
     ├── Cut-outs
@@ -91,7 +91,7 @@ Generated Box Base + Box Lid
 Verify in Assembly
 ```
 
-The important difference is that **you normally configure the complete enclosure from PS Enclosure**. There is no need to switch between Part Studios to edit configuration variables or manually modify Derive features.
+You normally configure the complete enclosure from PS Enclosure. There is no need to switch between Part Studios to edit configuration variables or manually modify Derive features.
 
 ---
 
@@ -101,19 +101,19 @@ Export your PCB from KiCad as a STEP model and import it into the Boxify documen
 
 For best results:
 
+- Set the PCB origin to the center of the PCB board
 - Keep the PCB origin and coordinate system consistent between STEP exports.
 - Include the PCB and all components that should be represented in the enclosure.
 - Export using millimetres.
-- Do not manually reposition the imported STEP model in Onshape.
+- Align the components that interface with the enclosure front to the same level in KiCad (before exporting) or manually in Onshape after importing
 
 The imported STEP model becomes the detailed representation of the actual PCB assembly.
 
 ---
 
 <p align="center">
-<img width="50%" alt="KiCad STEP example" src="https://github.com/user-attachments/assets/42280f8b-9f39-426e-b917-bcd274f2daf1" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/416cff42-1892-4567-96c6-c941a4b0970f" />
 </p>
-
 <p align="center"><i>Example: a STEP file of a Zenertester design on a prototype board.</i></p>
 
 ---
@@ -124,13 +124,13 @@ Create a PCB Library entry for the imported PCB.
 
 Boxify uses a **carrier/passenger architecture**:
 
-- The **PCB Library prototype** is the reusable **carrier**.
+- The PCB Library PCB is the reusable **carrier**.
 - The imported KiCad STEP model is the **passenger**.
 - The combination provides both reusable PCB reference geometry and the detailed representation of the actual PCB.
 
 The PCB Library therefore becomes the reusable definition of the PCB used by the enclosure.
 
-Once the PCB Library entry is established, the PCB can be selected from the enclosure configuration.
+Once the PCB Library entry is established, the PCB type can be selected from the enclosure configuration.
 
 ---
 
@@ -142,15 +142,13 @@ This is the main configuration point for the Boxify enclosure.
 
 Depending on the selected configuration, you can control parameters such as:
 
-- PCB selection
+- PCB type selection
 - PCB orientation
-- Component side
-- Mounting side
-- Adapter Plate dimensions
+- Component side up or down
+- Mounting side above or below the adapter plate
 - Adapter Plate height
-- Wall thickness
-- Box height
-- Lug geometry
+  Box height
+- Box-wall, box-bottom and box-lid  thickness
 - Lid fastening type
 - Threaded insert configuration
 - Interface cut-outs
@@ -159,6 +157,12 @@ Depending on the selected configuration, you can control parameters such as:
 Configuration variables and features are shown or suppressed dynamically according to the selected options.
 
 This allows the same Boxify enclosure framework to support different enclosure variants without manually editing individual Part Studios or Derive features.
+
+---
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/3804b72e-1345-4d8f-b7f1-c345c5bd8106" />
+</p>
+<p align="center"><i>Adjust the Adapter Plate height and Box height so that everything fits properly.</i></p>
 
 ---
 
@@ -171,9 +175,9 @@ The enclosure consists of:
 
 Both are generated from the common enclosure configuration and the geometry provided by the Adapter Plate.
 
-The generated enclosure automatically adapts to the selected PCB and its associated configuration.
+The generated enclosure automatically adapts to the selected PCB type and its associated configuration.
 
-The Box Lid can be configured with different fastening options. Features that are not required by the selected configuration are automatically suppressed.
+The Box Lid and Base can be configured with different fastening options. Features that are not required by the selected configuration are automatically suppressed.
 
 ---
 
@@ -227,7 +231,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable prototype
+     │ PCB + reusable PCB type
      ▼
 Adapter Plate
      │
@@ -268,7 +272,6 @@ For more information, continue with:
 # 💡 Tips
 
 - Create an Onshape Version before making major changes.
-- Keep imported PCB STEP geometry unchanged.
 - Configure the enclosure from **PS Enclosure** rather than editing downstream Part Studios.
 - Use configuration variables instead of manually editing sketches or Derive features.
 - Keep reusable geometry in the appropriate library.
