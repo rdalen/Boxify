@@ -69,7 +69,7 @@ The enclosure does not need to know:
 - Which CAD system was used to design the PCB.
 - How the PCB STEP model is structured.
 - Which components are present.
-- How the PCB Library prototype was created.
+- How the PCB Type in the PCB Library was created.
 
 It only needs the mechanical information provided by the Adapter Plate.
 
@@ -126,7 +126,7 @@ These references can include:
 
 - Adapter Plate outline
 - Mounting locations
-- Height
+- Thickness
 - Lug positions
 - Enclosure reference planes
 - Other mechanical reference geometry
@@ -143,7 +143,7 @@ Examples include:
 
 - PCB dimensions
 - PCB mounting-hole positions
-- Adapter Plate height
+- Adapter Plate thickness
 - Mounting locations
 - Reference offsets
 
@@ -264,40 +264,6 @@ If PCB dimensions or mounting locations change, the Adapter Plate adapts the new
 
 ---
 
-# 🧱 Why Not Connect the Enclosure Directly to the PCB?
-
-A direct PCB-to-enclosure relationship would tightly couple the enclosure to a specific PCB implementation.
-
-That would make it harder to:
-
-- Reuse enclosure architecture
-- Change PCB designs
-- Update PCB revisions
-- Support multiple PCB variants
-- Maintain stable references
-
-The Adapter Plate avoids this coupling.
-
-```text id="3d2v7c"
-Without Adapter Plate:
-
-PCB ──────────────────► Enclosure
-          tight coupling
-
-
-With Adapter Plate:
-
-PCB ─────► Adapter Plate ─────► Enclosure
-              │
-              │ abstraction
-              ▼
-        stable interface
-```
-
-This abstraction is one of the defining characteristics of Boxify.
-
----
-
 # 🧠 Design Principles
 
 ## Mechanical Abstraction
@@ -371,11 +337,12 @@ This separation is what allows Boxify to remain parametric, reusable and adaptab
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
-- 📄 [Configurations](configurations.md)
 - 📄 [PCB Library](pcb-library.md)
-- 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
 
 ---
 
