@@ -231,7 +231,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable PCB type
+     │ PCB + reusable PCB Type
      ▼
 Adapter Plate
      │
