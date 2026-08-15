@@ -339,10 +339,10 @@ This keeps reusable hardware definitions separate from enclosure-specific design
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
-- 📄 [Configurations](configurations.md)
-- 📄 [Enclosure](enclosure.md)
-- 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [PCB Library](pcb-library.md)
+- 📄 [Adapter Plate](adapter-plate.md)
+- 📄 [Enclosure](enclosure.md)
 - 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
 
 ---
