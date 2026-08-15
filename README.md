@@ -40,7 +40,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable prototype
+     │ PCB + reusable PCB type
      ▼
 Adapter Plate
      │
