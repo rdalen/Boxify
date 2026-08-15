@@ -2,7 +2,7 @@
 
 **Parametric Electronics Enclosure Framework (PEEF)** for Onshape.
 
-Boxify provides a reusable, configuration-driven framework for creating custom electronics enclosures from PCB designs.
+Boxify provides a reusable, configuration-driven framework for creating custom enclosures around PCB-based electronics
 
 Instead of designing an enclosure directly around a specific PCB, Boxify separates the electronics from the enclosure through a **parametric Adapter Plate**.
 
