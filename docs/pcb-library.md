@@ -54,7 +54,7 @@ The PCB Library prototype acts as the **Carrier** for the imported KiCad STEP mo
 ```text id="9y3c2v"
                 PCB Library
                      │
-                     │ reusable PCB type
+                     │ reusable PCB Type
                      ▼
                   CARRIER
                      │
