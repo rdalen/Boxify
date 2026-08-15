@@ -24,7 +24,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable PCB type
+     │ PCB + reusable PCB Type
      ▼
 Adapter Plate
      │
@@ -42,7 +42,7 @@ Assembly
 
 The libraries support the stages where their reusable definitions are consumed:
 
-- **PCB Library** provides the reusable PCB type used by `PS KiCadStep`.
+- **PCB Library** provides the reusable PCB Type used by `PS KiCadStep`.
 - **Threaded Insert Library** provides the insert definitions used by `PS Enclosure`.
 
 The main mechanical design flow remains one-directional:
@@ -63,7 +63,7 @@ Changes to upstream geometry or configuration propagate downstream through the p
 
 ## PCB Library
 
-The **PCB Library** contains reusable definitions of supported PCB types.
+The **PCB Library** contains reusable definitions of supported PCB Types.
 
 In the Boxify architecture, the PCB Library provides the **Carrier** for the imported KiCad STEP model, which acts as the **Passenger**.
 
@@ -89,14 +89,14 @@ This separation allows the same PCB definition to be reused by different enclosu
 
 ## PS KiCadStep
 
-`PS KiCadStep` integrates a detailed PCB STEP model exported from KiCad with a reusable PCB type from the PCB Library.
+`PS KiCadStep` integrates a detailed PCB STEP model exported from KiCad with a reusable PCB Type from the PCB Library.
 
 The architecture uses a **Carrier / Passenger** relationship:
 
 ```text
 PCB Library
     │
-    │ reusable PCB type
+    │ reusable PCB Type
     ▼
   Carrier
     ▲
@@ -152,7 +152,7 @@ Enclosure-related configuration is centralized here so that the user normally do
 
 Typical configuration options include:
 
-- PCB type selection
+- PCB Type selection
 - PCB rotation
 - Component side up or down
 - Mounting side above or below the adapter plate
