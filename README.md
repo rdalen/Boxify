@@ -40,7 +40,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable PCB type
+     │ PCB + reusable PCB Type
      ▼
 Adapter Plate
      │
@@ -77,7 +77,7 @@ Boxify uses a **Carrier / Passenger** architecture:
 ```text id="j3h6vz"
 PCB Library
      │
-     │ reusable PCB prototype
+     │ reusable PCB Type
      ▼
    Carrier
      ▲
