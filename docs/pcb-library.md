@@ -387,6 +387,28 @@ This separation allows the same PCB definition to be reused across different enc
 
 ---
 
+## 🧩 Adding a New PCB Type
+
+A new PCB Type can be added to the PCB Library without modifying the overall Boxify architecture.
+
+A typical workflow is:
+
+1. Create a new PCB Type in the PCB Library.
+2. Define the PCB dimensions and relevant mounting/interface geometry.
+3. Position the PCB Library Mate Connector at the **center of the PCB**.
+4. Add the required configuration variables and options.
+5. Make the PCB Type available to PS Enclosure.
+6. Verify the resulting Adapter Plate and enclosure geometry.
+7. Verify the result in the Assembly.
+
+The PCB Type acts as the **Carrier** for the actual PCB geometry used by Boxify. It provides the stable, reusable PCB definition on which the surrounding enclosure architecture depends.
+
+When using an imported KiCad STEP model, make sure the PCB Type **has the same dimensions as the PCB in the STEP model** and that the PCB origin is centered accordingly.
+
+The goal is to add a new PCB definition to the library rather than creating a separate, hard-coded implementation in the enclosure.
+
+---
+
 # 📚 Related Documentation
 
 - 📄 [Getting Started](getting-started.md)
