@@ -18,7 +18,7 @@ The result is a flexible system in which the same enclosure architecture can be 
 
 <img width="39%" alt="image" src="https://github.com/user-attachments/assets/7439bafd-b270-442a-9c83-bebcb6d6b8c8" />
 <img width="59%" alt="image" src="https://github.com/user-attachments/assets/8a0189ef-4f5e-4c37-b752-3c603636a3fd" />
-<p align="center"><i>Boxify Treaded inserts Library</i></p>
+<p align="center"><i>Boxify Threaded inserts Library</i></p>
 
 
 ---
@@ -239,17 +239,17 @@ A typical workflow is:
 2. Define its relevant dimensions and installation geometry.
 3. Make the definition available to PS Enclosure.
 4. Add the new option to the appropriate configuration.
-5. Use the **Lug Verification Help** curve to verify that the insert and surrounding lug geometry are correctly sized and positioned.
+5. Use the **Lug Verification Help** to verify that the insert and surrounding lug geometry are correctly sized and positioned.
 6. Verify the generated enclosure geometry.
 7. Verify the result in the Assembly.
 
-The **Lug Verification Help** curve provides a visual check of the insert installation geometry and helps identify potential clearance or positioning issues before finalizing the enclosure.
+The **Lug Verification Help** provides a visual check of the insert installation geometry and helps identify potential clearance or positioning issues before finalizing the enclosure.
 
 The enclosure should consume the new definition rather than containing a completely separate hard-coded implementation.
 <p align="center">
 <img width="25%" alt="image" src="https://github.com/user-attachments/assets/3943e839-669b-4988-908c-2c3f80364760" />
 <p>
-<p align="center"><i>Lug Verification Help curve</i></p>
+<p align="center"><i>Lug Verification Help</i></p>
 
 ---
 
@@ -262,7 +262,7 @@ When using a threaded insert configuration, verify:
 - Insert pocket diameter
 - Insert pocket depth
 - Insert position
-- Lug Verification HELP curve
+- Lug Verification Help
 - Lug geometry
 - Wall thickness around the insert
 - Screw clearance
