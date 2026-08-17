@@ -179,8 +179,8 @@ Some Adapter Plate-related values may be exposed as user configuration through *
 
 - Adapter Plate height
 - PCB orientation
-- Mounting side
-- Component side
+- Component side up or down
+- Mounting side above or below the adapter plate
 
 The important distinction is that the user makes these choices from **PS Enclosure**, while the Adapter Plate provides the geometry required to implement them.
 
