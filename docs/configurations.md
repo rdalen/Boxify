@@ -36,7 +36,7 @@ The user should not need to know which sketches, features or Derive operations a
 
 # 🏗 Configuration Architecture
 
-In Boxify v2.0, user-facing enclosure configuration is centralized in **PS Enclosure**.
+In Boxify, user-facing enclosure configuration is centralized in **PS Enclosure**.
 
 ```text
                          User Configuration
@@ -85,10 +85,10 @@ Typical configuration options include:
 
 ### PCB
 
-- PCB selection
+- PCB Type selection
 - PCB rotation
-- Component side
-- Mounting side
+- Component side up or down
+- Mounting side above or below the adapter plate
 
 ### Adapter Plate
 
@@ -200,7 +200,7 @@ Examples include:
 - PCB dimensions
 - PCB mounting-hole positions
 - Adapter Plate dimensions
-- Adapter Plate height
+- Adapter Plate thickness
 - Lug dimensions
 - Internal reference dimensions
 
@@ -222,6 +222,7 @@ Examples:
 
 ```text
 boxHeight
+adapterPlateHeight
 wallThickness
 lidFasteningType
 pcbRotation
@@ -238,7 +239,7 @@ Examples:
 pcbWidth
 pcbLength
 mountingHolePosition
-adapterPlateHeight
+adapterPlateThickness
 lugHeight
 ```
 
@@ -287,6 +288,7 @@ Expose parameters that describe the desired result.
 Good examples:
 
 - Box height
+- Adapter Plate height
 - Wall thickness
 - PCB rotation
 - Lid fastening type
