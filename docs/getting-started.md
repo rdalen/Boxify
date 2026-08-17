@@ -47,7 +47,7 @@ The document contains several Part Studios that together form the complete enclo
 
 - **PS KiCadStep**
   - Integrates an imported PCB STEP model with a reusable PCB Library prototype
-  - The STEP model acts as the **passenger** on the PCB Library **carrier**
+  - The STEP model acts as the **Passenger** on the PCB Library **Carrier**
 
 - **PS LIBs**
   - **PS PCB Library**
@@ -122,10 +122,10 @@ The imported STEP model becomes the detailed representation of the actual PCB as
 
 Create a PCB Library entry for the imported PCB.
 
-Boxify uses a **carrier/passenger architecture**:
+Boxify uses a **Carrier/Passenger architecture**:
 
-- The PCB Library PCB is the reusable **carrier**.
-- The imported KiCad STEP model is the **passenger**.
+- The PCB Library PCB is the reusable **Carrier**.
+- The imported KiCad STEP model is the **Passenger**.
 - The combination provides both reusable PCB reference geometry and the detailed representation of the actual PCB.
 
 The PCB Library therefore becomes the reusable definition of the PCB used by the enclosure.
