@@ -76,7 +76,7 @@ Create / select PCB Library entry
     ▼
 Configure the enclosure in PS Enclosure
     │
-    ├── PCB Type, -orientation and -clearences
+    ├── PCB Type, orientation and clearences
     ├── Adapter Plate height
     ├── Box height
     ├── Lid fastening
@@ -147,7 +147,7 @@ Depending on the selected configuration, you can control parameters such as:
 - Component side up or down
 - Mounting side above or below the adapter plate
 - Adapter Plate height
-  Box height
+- Box height
 - Box-wall, box-bottom and box-lid  thickness
 - Lid fastening type
 - Threaded insert configuration
