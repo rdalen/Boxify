@@ -192,7 +192,7 @@ This makes it possible to use the same enclosure model for:
 ---
 
 <img width="1156" height="494" alt="image" src="https://github.com/user-attachments/assets/cdcd8059-6a76-43c5-95dc-5889efbc2660" />
-<p align="center"><i>Section view of Enclosure with Treaded Inserts</i></p>
+<p align="center"><i>Section view of Enclosure with Threaded Inserts</i></p>
 
 ---
 
