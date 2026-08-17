@@ -2,9 +2,9 @@
 
 ## 🧠 Purpose
 
-The **PCB Library** contains reusable definitions of supported PCB designs for use within the Boxify framework.
+The **PCB Library** contains reusable definitions of supported PCB Types for use within the Boxify framework.
 
-A PCB Library entry provides the stable mechanical reference that Boxify uses to connect a PCB design to the Adapter Plate and, ultimately, the enclosure.
+A PCB Library entry provides the stable mechanical reference that Boxify uses to connect a (KiCad) PCB design to the Adapter Plate and, ultimately, the enclosure.
 
 The PCB Library is deliberately separated from the detailed PCB STEP model exported from KiCad.
 
@@ -31,7 +31,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable prototype
+     │ PCB + reusable PCB Type
      ▼
 Adapter Plate
      │
@@ -54,7 +54,7 @@ The PCB Library prototype acts as the **Carrier** for the imported KiCad STEP mo
 ```text id="9y3c2v"
                 PCB Library
                      │
-                     │ reusable prototype
+                     │ reusable PCB Type
                      ▼
                   CARRIER
                      │
@@ -204,7 +204,7 @@ A typical workflow is:
 2. Import the STEP model into Onshape.
 3. Create a Composite Part if required.
 4. Open **PS KiCadStep**.
-5. Select or create the appropriate PCB Library prototype.
+5. Select or create the appropriate PCB Type in the PCB Library.
 6. Establish the Carrier / Passenger relationship.
 7. Verify the PCB references.
 8. Derive the resulting PCB definition into the Adapter Plate.
@@ -250,6 +250,13 @@ If the actual PCB definition changes, the PCB Library entry may need to be updat
 
 ---
 
+<p align="center">
+<img width="25%" alt="image" src="https://github.com/user-attachments/assets/3ae2a3f5-cb6f-4b84-bb2f-3e668f4aa7a9" />
+<p>
+<p align="center"><i>Updating the STEP model</i></p>
+
+---
+
 # 🧱 PCB Library and Adapter Plate
 
 The PCB Library provides the PCB-specific references consumed by the Adapter Plate.
@@ -278,7 +285,7 @@ It only needs the stable PCB references provided by the PCB definition.
 
 # ⚙️ PCB Configuration vs. Enclosure Configuration
 
-PCB selection and orientation may be exposed through **PS Enclosure**, but the underlying PCB definition remains owned by the PCB Library.
+PCB Type selection and orientation may be exposed through **PS Enclosure**, but the underlying PCB definition remains owned by the PCB Library.
 
 For example:
 
@@ -295,12 +302,12 @@ Defines:
 
 Selects and uses that definition and controls:
 
-- PCB selection
+- PCB Type selection
 - PCB rotation
 - Component side
 - Mounting side
 - Adapter Plate height
-- Box dimensions
+- Box height
 - Lid fastening
 - Inserts
 - Cut-outs
@@ -338,24 +345,6 @@ Where practical, PCB-specific geometry should be driven by parameters and stable
 
 ---
 
-# ⚠️ What Does Not Belong in the PCB Library
-
-To keep responsibilities clear, the following should not normally be stored in the PCB Library:
-
-- Box dimensions
-- Wall thickness
-- Bottom thickness
-- Lid thickness
-- Lid fastening type
-- Threaded insert selection
-- Enclosure cut-outs
-- Enclosure labels
-- Box Base geometry
-- Box Lid geometry
-
-These belong to the enclosure architecture and are configured through **PS Enclosure**.
-
----
 
 # 🎯 Result
 
@@ -398,14 +387,36 @@ This separation allows the same PCB definition to be reused across different enc
 
 ---
 
+## 🧩 Adding a New PCB Type
+
+A new PCB Type can be added to the PCB Library without modifying the overall Boxify architecture.
+
+A typical workflow is:
+
+1. Create a new PCB Type in the PCB Library.
+2. Define the PCB dimensions and relevant mounting/interface geometry.
+3. Position the PCB Library Mate Connector at the **center of the PCB**.
+4. Add the required configuration variables and options.
+5. Make the PCB Type available to PS Enclosure.
+6. Verify the resulting Adapter Plate and enclosure geometry.
+7. Verify the result in the Assembly.
+
+The PCB Type acts as the **Carrier** for the actual PCB geometry used by Boxify. It provides the stable, reusable PCB definition on which the surrounding enclosure architecture depends.
+
+When using an imported KiCad STEP model, make sure the PCB Type **has the same dimensions as the PCB in the STEP model** and that the PCB origin is centered accordingly.
+
+The goal is to add a new PCB definition to the library rather than creating a separate, hard-coded implementation in the enclosure.
+
+---
+
 # 📚 Related Documentation
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
-- 📄 [Configurations](configurations.md)
-- 📄 [KiCad Integration](kicad-integration.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
 
 ---

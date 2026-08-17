@@ -11,7 +11,7 @@ It converts the mechanical interface provided by the **Adapter Plate** and the u
 
 The Base and Lid are designed together because they always belong to the same enclosure configuration.
 
-The enclosure adapts automatically to the selected PCB, Adapter Plate and configuration.
+The enclosure adapts automatically to the selected PCB Type, Adapter Plate and configuration.
 
 ---
 
@@ -61,10 +61,10 @@ Enclosure-related configuration is centralized here.
 
 Typical configuration options include:
 
-- PCB selection
+- PCB Type selection
 - PCB rotation
-- Component side
-- Mounting side
+- Component side up or down
+- Mounting side above or below the adapter plate
 - Adapter Plate height
 - Box height
 - Wall thickness
@@ -112,7 +112,7 @@ The Lid can contain:
 - Fastening features
 - Screw pockets
 - Countersinks or counterbores
-- Optional cut-outs
+- Cut-outs
 - Text labels
 
 The Lid is designed together with the Base so that fastening features, wall geometry and clearances remain coordinated.
@@ -147,13 +147,13 @@ For example:
 ```text
 Lid Fastening Type
        │
-       ├── No fastening
+       ├── None
        │       └── Screw-related features suppressed
        │
-       ├── Counterbore
+       ├── Counterbore screws
        │       └── Counterbore geometry enabled
        │
-       └── Countersink
+       └── Countersunk screws
                └── Countersink geometry enabled
 ```
 
@@ -192,27 +192,28 @@ This makes it possible to use the same enclosure model for:
 ---
 
 <img width="1156" height="494" alt="image" src="https://github.com/user-attachments/assets/cdcd8059-6a76-43c5-95dc-5889efbc2660" />
-<p align="center"><i>Section view of Enclosure with Treaded Inserts</i></p>
+<p align="center"><i>Section view of Enclosure with Threaded Inserts</i></p>
 
 ---
 
 # 🔌 Interface Cut-outs
 
-Boxify can generate interface cut-outs based on the geometry and configuration available to the enclosure.
+Boxify allows the user to define interface cut-outs based on a **projection of the relevant PCB / KiCad geometry**.
 
-Cut-outs are positioned relative to the enclosure and Adapter Plate rather than being manually placed against the final enclosure walls.
+The required interface geometry is projected into Boxify, where the user defines the corresponding cut-out. The cut-out is then positioned relative to the **Adapter Plate and enclosure**, rather than being manually placed against the final enclosure walls.
 
-This makes them more robust when enclosure dimensions change.
+This makes the cut-outs more robust when enclosure dimensions or configurations change.
 
-Where the required geometry is available from the PCB / KiCad integration, the cut-out can follow the corresponding interface geometry.
+Because the cut-out is derived from the PCB geometry, it **propagates with the PCB** when the PCB position or configuration changes.
 
-The goal is to keep the cut-out associated with the **interface it represents**, rather than with a fixed location in the enclosure.
+Where the required geometry is available from the PCB / KiCad integration, the cut-out can therefore remain associated with the **interface it represents**, rather than with a fixed location in the enclosure.
 
+> **PCB geometry → projection → user-defined cut-out → parametric enclosure**
 ---
 
 # 🏷️ Text Labels
 
-Optional text labels can be included in the enclosure configuration.
+Boxify allows the user to **define optional text labels** as part of the enclosure configuration.
 
 Labels can be used for:
 
@@ -222,7 +223,9 @@ Labels can be used for:
 - Project information
 - Other enclosure-specific information
 
-Labels belong to the enclosure configuration rather than the PCB Library because they describe the physical enclosure.
+Labels belong to the **enclosure configuration** rather than the PCB Library because they describe the physical enclosure, not the PCB itself.
+
+This keeps enclosure-specific labelling independent from the PCB definition and allows labels to be configured together with the enclosure.
 
 ---
 
@@ -248,7 +251,7 @@ PCB geometry
      ▼
 Adapter Plate geometry
      │
-     ├── measured height
+     ├── measured PCB Thickness
      ├── mounting positions
      └── reference geometry
              │
@@ -325,10 +328,10 @@ For example:
 ```text
 Configuration
      │
-     ├── Inserts = No
+     ├── Inserts = None
      │       └── Insert features suppressed
      │
-     ├── Lid fastening = Countersink
+     ├── Lid fastening = Countersunk Screws
      │       ├── Counterbore suppressed
      │       └── Countersink enabled
      │
@@ -402,12 +405,10 @@ The geometry changes according to the selected configuration while the underlyin
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
-- 📄 [Configurations](configurations.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
 - 📄 [KiCad Integration](kicad-integration.md)
+- 📄 [Configurations](configurations.md)
 
 ---
-
-**Happy Boxifying! 🚀**

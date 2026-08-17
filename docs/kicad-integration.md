@@ -4,7 +4,7 @@
 
 Boxify supports custom PCBs designed in **KiCad** by importing the PCB as a STEP model.
 
-This allows the enclosure to be generated from the actual mechanical representation of the PCB, including mounted components.
+This allows the actual mechanical representation of the PCB and its components to be integrated into the reusable Boxify enclosure architecture.
 
 The KiCad STEP model provides the detailed geometry of the electronics, while Boxify provides the reusable mechanical framework around it.
 
@@ -33,7 +33,7 @@ PCB STEP Model
     ▼
 PS KiCadStep  <--- PCB Library
     │
-    │ PCB + reusable prototype
+    │ PCB + reusable PCB type
     ▼
 Adapter Plate
     │
@@ -51,7 +51,7 @@ Assembly
 
 The important distinction is:
 
-> **The KiCad STEP model provides the detailed geometry; the PCB Library provides the reusable PCB definition used by the Boxify architecture.**
+> **The KiCad STEP model provides the detailed geometry of the electronics; the PCB Library provides the reusable PCB definition used by the Boxify architecture.**
 
 ---
 
@@ -64,14 +64,15 @@ For best results:
 - Include all mounted components that should be represented mechanically.
 - Export using millimetres.
 - Ensure component orientation is correct.
+- Make sure the PCB origin is always in the center of the PCB board
 - Keep the PCB origin and coordinate system consistent between STEP exports.
 - Include accurate 3D models for components that affect the enclosure.
 
 The exported STEP model should represent the mechanical state of the electronic assembly that needs to fit inside the enclosure.
 
-### PCB Origin
+### ⚠️PCB Origin
 
-The PCB origin does **not** need to be centered specifically for Boxify.
+When exporting from KiCad, make sure the PCB origin is positioned at the center of the PCB. Boxify uses the centered Mate Connector in the PCB Library as the reference for mating the imported STEP model.
 
 What is important is that the origin and coordinate system remain consistent between PCB revisions.
 
@@ -82,6 +83,7 @@ This allows an updated STEP model to replace the previous model without unexpect
 # 📥 Importing the STEP Model
 
 Import the STEP model into the Boxify Onshape document.
+If necessary, align the components that interface with the enclosure front to the same level in KiCad (before exporting) or manually in Onshape after importing
 
 The imported model is treated as the **Passenger** in the Boxify carrier/passenger architecture.
 
@@ -99,8 +101,10 @@ Instead, it provides the detailed geometry required to represent the actual elec
 
 ---
 
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/e55cbaf1-e128-4fd9-92a2-59690cd4e403" />
-<p align="center"><i>An example of a zenertester design on a prototype board.</i></p>
+<img width="29%" alt="image" src="https://github.com/user-attachments/assets/467a7635-c41a-4e8f-a737-2179581d48fd" />
+
+<img width="59%" alt="image" src="https://github.com/user-attachments/assets/e55cbaf1-e128-4fd9-92a2-59690cd4e403" />
+<p align="center"><i>Import the Step file.</i></p>
 
 ---
 
@@ -111,7 +115,7 @@ Boxify separates the detailed imported STEP model from the reusable PCB definiti
 ```text
                  PCB Library
                      │
-                     │ reusable prototype
+                     │ reusable PCB Type
                      ▼
                   CARRIER
                      │
@@ -127,9 +131,10 @@ Boxify separates the detailed imported STEP model from the reusable PCB definiti
 
 ### Carrier
 
-The **PCB Library prototype** acts as the **Carrier**.
+The selected PCB Type from the PCB Library acts as the **Carrier**.
+Make sure the selected PCB Type **has the same dimensions as the PCB in the imported STEP model**.
 
-It provides the stable reusable PCB definition used by the Boxify architecture.
+In fact, it is the carrier that provides the stable reusable PCB definition used by the Boxify architecture.
 
 The carrier can provide:
 
@@ -170,6 +175,8 @@ This provides several advantages:
 
 The Composite Part represents the complete imported PCB assembly as a single mechanical reference.
 
+Sadly, the Composited PCB is looking a little gray now… 😉
+
 ---
 
 <img width="50%" alt="image" src="https://github.com/user-attachments/assets/dab130d6-efd1-49a4-85e4-d71f27485fb3" />
@@ -184,8 +191,8 @@ After importing and preparing the STEP model:
 1. Create the Composite Part.
 2. Open **PS KiCadStep**.
 3. Derive the imported Composite Part into PS KiCadStep.
-4. Select an appropriate prototype from the **PCB Library**.
-5. Use the PCB Library prototype as the Carrier.
+4. Select an appropriate PCB Type from the **PCB Library**. Make sure the selected PCB Type has the same dimensions as the PCB in the imported STEP model
+5. Use the PCB Library PCB as the Carrier.
 6. Use the imported STEP geometry as the Passenger.
 7. Establish the required relationship between the two.
 
@@ -204,7 +211,7 @@ PS KiCadStep
     │               │
     ▼               ▼
 Passenger        Carrier
-STEP geometry    PCB Library prototype
+STEP geometry    PCB Library PCB Type
     │               │
     └───────┬───────┘
             ▼
@@ -221,9 +228,9 @@ STEP geometry    PCB Library prototype
 
 ---
 
-# 📐 PCB Library Prototype
+# 📐 PCB Library PCB Type
 
-The selected PCB Library prototype should represent the PCB that the imported STEP model belongs to.
+The selected PCB Type from the PCB Library should represent the PCB that the imported STEP model belongs to.
 
 The prototype provides the reusable reference information required by the downstream Boxify architecture.
 
@@ -247,7 +254,14 @@ When the PCB design changes:
 
 The Boxify architecture allows the updated PCB geometry to propagate through the Adapter Plate and enclosure.
 
-The PCB Library prototype should only need to be changed when the **PCB definition itself** changes, rather than simply because the detailed STEP model has been updated.
+The PCB Type from the PCB Library should only need to be changed when the **PCB definition itself** changes, rather than simply because the detailed STEP model has been updated.
+
+---
+
+<p align="center">
+<img width="25%" alt="image" src="https://github.com/user-attachments/assets/3ae2a3f5-cb6f-4b84-bb2f-3e668f4aa7a9" />
+<p>
+<p align="center"><i>Updating the STEP model</i></p>
 
 ---
 
@@ -297,12 +311,12 @@ Once the PCB is available to Boxify, enclosure-related choices are made in **PS 
 
 Examples include:
 
-- PCB selection
+- PCB Type selection
 - PCB rotation
-- Component side
-- Mounting side
+- Component side up or down
+- Mounting side above or below the adapter plate
 - Adapter Plate height
-- Box dimensions
+- Box height
 - Lid fastening
 - Threaded inserts
 - Cut-outs
@@ -326,15 +340,9 @@ Components that affect enclosure clearance should have accurate 3D models in KiC
 
 Use a Composite Part to simplify the imported PCB assembly.
 
-### Keep the Passenger unmodified
-
-Avoid manually changing the imported STEP geometry to compensate for enclosure requirements.
-
-If a mechanical correction is required, make the appropriate change in the source design or Boxify's parametric architecture.
-
 ### Keep the Carrier reusable
 
-The PCB Library prototype should represent the reusable PCB definition rather than a particular imported STEP revision.
+The PCB Library PCBs should represent the reusable PCB definition rather than a particular imported STEP revision.
 
 ### Create an Onshape Version
 
@@ -364,7 +372,7 @@ Current limitations include:
 - Incorrect component orientation can result in incorrect mechanical geometry.
 - Large PCB assemblies can increase Onshape regeneration time.
 - Mechanical features that are not represented in the STEP model cannot be detected automatically.
-- Changes to the physical PCB definition may require an updated PCB Library prototype.
+- Changes to the physical PCB definition may require an updated PCB Library PCB.
 
 ---
 
@@ -417,10 +425,10 @@ This separation is what allows Boxify to remain reusable while still generating 
 
 - 📄 [Getting Started](getting-started.md)
 - 📄 [Architecture](architecture.md)
-- 📄 [Configurations](configurations.md)
 - 📄 [PCB Library](pcb-library.md)
 - 📄 [Adapter Plate](adapter-plate.md)
 - 📄 [Enclosure](enclosure.md)
 - 📄 [Threaded Insert Library](threaded-insert-library.md)
+- 📄 [Configurations](configurations.md)
 
 ---

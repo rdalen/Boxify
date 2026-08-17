@@ -40,7 +40,7 @@ PCB / KiCad
      ▼
 PS KiCadStep  <--- PCB Library
      │
-     │ PCB + reusable prototype
+     │ PCB + reusable PCB Type
      ▼
 Adapter Plate
      │
@@ -58,8 +58,8 @@ Assembly
 
 This separation allows:
 
-- Different PCBs to use the same enclosure architecture.
-- Different enclosure configurations to be generated from the same PCB design.
+- The same PCB to be used with different enclosure configurations.
+- The same enclosure architecture to support different PCB designs.
 - PCB revisions to propagate through the mechanical design.
 - Reusable PCB and hardware definitions to be maintained independently.
 - Optional enclosure features to be dynamically enabled or suppressed.
@@ -77,7 +77,7 @@ Boxify uses a **Carrier / Passenger** architecture:
 ```text id="j3h6vz"
 PCB Library
      │
-     │ reusable PCB prototype
+     │ reusable PCB Type
      ▼
    Carrier
      ▲
