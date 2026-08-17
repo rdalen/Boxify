@@ -4,7 +4,7 @@
 
 Boxify supports custom PCBs designed in **KiCad** by importing the PCB as a STEP model.
 
-This allows the enclosure to be generated from the actual mechanical representation of the PCB, including mounted components.
+This allows the actual mechanical representation of the PCB and its components to be integrated into the reusable Boxify enclosure architecture.
 
 The KiCad STEP model provides the detailed geometry of the electronics, while Boxify provides the reusable mechanical framework around it.
 
