@@ -239,10 +239,17 @@ A typical workflow is:
 2. Define its relevant dimensions and installation geometry.
 3. Make the definition available to PS Enclosure.
 4. Add the new option to the appropriate configuration.
-5. Verify the generated enclosure geometry.
-6. Verify the result in the Assembly.
+5. Use the **Lug Verification Help** curve to verify that the insert and surrounding lug geometry are correctly sized and positioned.
+6. Verify the generated enclosure geometry.
+7. Verify the result in the Assembly.
+
+The **Lug Verification Help** curve provides a visual check of the insert installation geometry and helps identify potential clearance or positioning issues before finalizing the enclosure.
 
 The enclosure should consume the new definition rather than containing a completely separate hard-coded implementation.
+<p align="center">
+<img width="25%" alt="image" src="https://github.com/user-attachments/assets/3943e839-669b-4988-908c-2c3f80364760" />
+<p>
+<p align="center"><i>Lug Verification Help curve</i></p>
 
 ---
 
@@ -255,6 +262,7 @@ When using a threaded insert configuration, verify:
 - Insert pocket diameter
 - Insert pocket depth
 - Insert position
+- Lug Verification HELP curve
 - Lug geometry
 - Wall thickness around the insert
 - Screw clearance
