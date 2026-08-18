@@ -177,7 +177,7 @@ The Adapter Plate should contain **mechanical information**, not general enclosu
 
 Some Adapter Plate-related values may be exposed as user configuration through **PS Enclosure**, for example:
 
-- Adapter Plate height
+- Distance between the PCB and the edge of the Adapter Plate
 - PCB orientation
 - Component side up or down
 - Mounting side above or below the adapter plate
