@@ -164,6 +164,12 @@ This allows the same Boxify enclosure framework to support different enclosure v
 </p>
 <p align="center"><i>Adjust the Adapter Plate height and Box height so that everything fits properly.</i></p>
 
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/7c4b52cd-d6fa-4609-af84-50bde27f7f46" />
+
+</p>
+<p align="center"><i>Adjust the PCB to Adapter Plate Edge Distance how far the PCB is positioned from the edge of the Adapter Plate</i></p>
+
 ---
 
 # [4️⃣ Generate the Enclosure](enclosure.md)
