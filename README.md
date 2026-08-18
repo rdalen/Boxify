@@ -8,6 +8,13 @@ Instead of designing an enclosure directly around a specific PCB, Boxify separat
 
 The result is a reusable enclosure architecture that can adapt to different PCB designs and configurations.
 
+
+### 📖 Boxify on Instructables
+
+Want a more visual introduction to Boxify?
+
+Check out the Boxify [Instructable](https://www.instructables.com/-Boxify-a-Parametric-Electronics-Enclosure-Framewo) for a step-by-step introduction to the Boxify concept and workflow.
+
 ---
 
 <img width="836" height="400" alt="image" src="https://github.com/user-attachments/assets/c668ee63-fbc0-4809-b90f-31d5326c883d" />
