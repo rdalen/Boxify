@@ -118,6 +118,14 @@ The imported STEP model becomes the detailed representation of the actual PCB as
 
 ---
 
+<p align="center">
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/d9468aa0-9994-4fa7-b2ed-6966fbae0a8e" />
+</p>
+<p align="center"><i>Import STEP in Boxify - Select Combine to single Part Studio</i></p>
+
+---
+
+
 # [2️⃣ Create a PCB Library Entry](kicad-integration.md#creating-a-pcb-library-entry)
 
 Create a PCB Library entry for the imported PCB.
