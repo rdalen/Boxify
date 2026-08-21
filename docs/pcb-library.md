@@ -207,17 +207,17 @@ Prototype types are intended for the pre-drilled universal prototyping boards (s
 
 Examples include:
 
-- Prototype w20×80 mm
-- Prototype w30×70 mm
-- Prototype w40×60 mm
-- Prototype w50×70 mm
-- Prototype w60×80 mm
-- Prototype w70×90 mm
+- Prototype w20×80mm
+- Prototype w30×70mm
+- Prototype w40×60mm
+- Prototype w50×70mm
+- Prototype w60×80mm
+- Prototype w70×90mm
 
 These are generic example formats and can be replaced or extended with project-specific PCB dimensions.
 
 <p align="center">
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
 </p>
 <p align="center"><i>ProtoType PCBs</i></p>
 
@@ -229,15 +229,21 @@ The supported dimensions take into account a **2 mm mouse-bite gap** between adj
 
 | Panel Type | Panel Layout | Calculation |
 |---|---:|---:|
-| Panel w100×100 mm | 1 × 1 | 100 |
-| Panel w49×100 mm | 2 × 1 | 2 × 49 + 2 = 100 |
-| Panel w49×49 mm | 2 × 2 | 2 × 49 + 2 = 100 |
-| Panel w23.5×49 mm | 4 × 2 | 4 × 23.5 + 3 × 2 = 100 |
-| Panel w23.5×23.5 mm | 4 × 4 | 4 × 23.5 + 3 × 2 = 100 |
+| Panel w100×100mm | 1 × 1 | 100 |
+| Panel w49×100mm | 2 × 1 | 2 × 49 + 2 = 100 |
+| Panel w49×49mm | 2 × 2 | 2 × 49 + 2 = 100 |
+| Panel w23.5×49mm | 4 × 2 | 4 × 23.5 + 3 × 2 = 100 |
+| Panel w23.5×23.5mm | 4 × 4 | 4 × 23.5 + 3 × 2 = 100 |
 
 These panel dimensions make it possible to design the enclosure for the **individual PCB** while using the same PCB definition when the design is panelized for manufacturing.
 
 > **Note:** The panel dimensions assume a 100 × 100 mm manufacturing panel and a 2 mm separation between PCBs. Actual panelization rules may vary between PCB manufacturers.
+ 
+<p align="center">
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/27c2d2b4-efbb-44ba-9353-04aeeab5edf3" />
+</p>
+<p align="center"><i>100 × 100 mm manufacturing panel with 4x Panel w49×49mm PCBs</i></p>
+
 
 # 🔄 Creating a PCB Library Entry
 
