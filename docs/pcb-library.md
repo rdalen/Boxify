@@ -16,8 +16,9 @@ Together they form the PCB definition used by the Boxify architecture.
 
 ---
 
-<img width="29%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
-<img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
+<p align="center">
+<img width="1890" height="554" alt="image" src="https://github.com/user-attachments/assets/1545f158-0418-44c5-a1fa-211482e106c8" />
+</p>
 <p align="center"><i>Boxify PCB Library</i></p>
 
 ---
@@ -202,7 +203,7 @@ Boxify provides two categories of PCB Types in the PCB Library: **Prototype** an
 
 ### Prototype PCB Types
 
-Prototype types are intended for individual PCBs where the dimensions are determined by the specific electronics design.
+Prototype types are intended for the pre-drilled universal prototyping boards (so-called perfboard) you buy in bulk packs to build and test temporary or permanent DIY electronics
 
 Examples include:
 
@@ -214,6 +215,11 @@ Examples include:
 - Prototype w70×90 mm
 
 These are generic example formats and can be replaced or extended with project-specific PCB dimensions.
+
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
+</p>
+<p align="center"><i>ProtoType PCBs</i></p>
 
 ### Panel PCB Types
 
