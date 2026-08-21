@@ -16,8 +16,9 @@ Together they form the PCB definition used by the Boxify architecture.
 
 ---
 
-<img width="29%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
-<img width="69%" alt="image" src="https://github.com/user-attachments/assets/16429a6e-03f9-459d-8346-272a7b01088f" />
+<p align="center">
+<img width="1890" height="554" alt="image" src="https://github.com/user-attachments/assets/1545f158-0418-44c5-a1fa-211482e106c8" />
+</p>
 <p align="center"><i>Boxify PCB Library</i></p>
 
 ---
@@ -195,6 +196,54 @@ When a new STEP revision is imported, the PCB should retain the same coordinate 
 This makes PCB updates much more predictable.
 
 ---
+
+## Supported PCB Types
+
+Boxify provides two categories of PCB Types in the PCB Library: **Prototype** and **Panel**.
+
+### Prototype PCB Types
+
+Prototype types are intended for the pre-drilled universal prototyping boards (so-called perfboard) you buy in bulk packs to build and test temporary or permanent DIY electronics
+
+Examples include:
+
+- Prototype w20×80mm
+- Prototype w30×70mm
+- Prototype w40×60mm
+- Prototype w50×70mm
+- Prototype w60×80mm
+- Prototype w70×90mm
+
+These are generic example formats and can be replaced or extended with project-specific PCB dimensions.
+
+<p align="center">
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/f4776759-e6ac-4e63-8ff4-193a4fcfcd65" />
+</p>
+<p align="center"><i>ProtoType PCBs</i></p>
+
+### Panel PCB Types
+
+Panel types are intended for PCBs that are manufactured as part of a **100 × 100 mm production panel**.
+
+The supported dimensions take into account a **2 mm mouse-bite gap** between adjacent PCBs:
+
+| Panel Type | Panel Layout | Calculation |
+|---|---:|---:|
+| Panel w100×100mm | 1 × 1 | 100 |
+| Panel w49×100mm | 2 × 1 | 2 × 49 + 2 = 100 |
+| Panel w49×49mm | 2 × 2 | 2 × 49 + 2 = 100 |
+| Panel w23.5×49mm | 4 × 2 | 4 × 23.5 + 3 × 2 = 100 |
+| Panel w23.5×23.5mm | 4 × 4 | 4 × 23.5 + 3 × 2 = 100 |
+
+These panel dimensions make it possible to design the enclosure for the **individual PCB** while using the same PCB definition when the design is panelized for manufacturing.
+
+> **Note:** The panel dimensions assume a 100 × 100 mm manufacturing panel and a 2 mm separation between PCBs. Actual panelization rules may vary between PCB manufacturers.
+ 
+<p align="center">
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/27c2d2b4-efbb-44ba-9353-04aeeab5edf3" />
+</p>
+<p align="center"><i>100 × 100 mm manufacturing panel with 4x Panel w49×49mm PCBs</i></p>
+
 
 # 🔄 Creating a PCB Library Entry
 

@@ -5,6 +5,21 @@ All notable changes to Boxify are documented in this file.
 The format is based on Keep a Changelog, adapted for the Boxify development process.
 
 ---
+## [2.1] – PCB Panelization Support
+
+### Added
+- Added **Panel PCB types** to the PCB Library for panelized PCB manufacturing.
+- Added standard panel dimensions derived from a **100 × 100 mm manufacturing panel** with **2 mm mouse-bite spacing**:
+  - Panel w100×100mm
+  - Panel w49×100mm
+  - Panel w49×49mm
+  - Panel w23.5×49mm
+  - Panel w23.5×23.5mm
+- These configurations support common panel layouts such as **2×1, 2×2, 4×2 and 4×4** PCB arrangements.
+
+### Improved
+- Clearly separated **Prototype** PCB types from **Panel** PCB types in the PCB Library.
+- Made it easier to configure Boxify for PCBs intended to be manufactured as a panel.
 
 ## [2.0] – Unified Enclosure Configuration
 
