@@ -196,6 +196,43 @@ This makes PCB updates much more predictable.
 
 ---
 
+## Supported PCB Types
+
+Boxify provides two categories of PCB Types in the PCB Library: **Prototype** and **Panel**.
+
+### Prototype PCB Types
+
+Prototype types are intended for individual PCBs where the dimensions are determined by the specific electronics design.
+
+Examples include:
+
+- Prototype w20×80 mm
+- Prototype w30×70 mm
+- Prototype w40×60 mm
+- Prototype w50×70 mm
+- Prototype w60×80 mm
+- Prototype w70×90 mm
+
+These are generic example formats and can be replaced or extended with project-specific PCB dimensions.
+
+### Panel PCB Types
+
+Panel types are intended for PCBs that are manufactured as part of a **100 × 100 mm production panel**.
+
+The supported dimensions take into account a **2 mm mouse-bite gap** between adjacent PCBs:
+
+| Panel Type | Panel Layout | Calculation |
+|---|---:|---:|
+| Panel w100×100 mm | 1 × 1 | 100 |
+| Panel w49×100 mm | 2 × 1 | 2 × 49 + 2 = 100 |
+| Panel w49×49 mm | 2 × 2 | 2 × 49 + 2 = 100 |
+| Panel w23.5×49 mm | 4 × 2 | 4 × 23.5 + 3 × 2 = 100 |
+| Panel w23.5×23.5 mm | 4 × 4 | 4 × 23.5 + 3 × 2 = 100 |
+
+These panel dimensions make it possible to design the enclosure for the **individual PCB** while using the same PCB definition when the design is panelized for manufacturing.
+
+> **Note:** The panel dimensions assume a 100 × 100 mm manufacturing panel and a 2 mm separation between PCBs. Actual panelization rules may vary between PCB manufacturers.
+
 # 🔄 Creating a PCB Library Entry
 
 A typical workflow is:
