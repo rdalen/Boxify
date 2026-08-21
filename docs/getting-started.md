@@ -122,6 +122,13 @@ The imported STEP model becomes the detailed representation of the actual PCB as
 
 Create a PCB Library entry for the imported PCB.
 
+```text
+Create / select PCB Library entry
+    │
+    ├── Prototype PCB type
+    └── Panel PCB type (for panelized manufacturing)
+```
+
 Boxify uses a **Carrier/Passenger architecture**:
 
 - The PCB Library PCB is the reusable **Carrier**.
