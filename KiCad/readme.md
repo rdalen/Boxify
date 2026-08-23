@@ -17,8 +17,8 @@ To use a Boxify KiCad template:
 
 To use one of the Boxify KiKit panelization configurations:
 
-1. Open **PCB Editor** (standalone).
-2. Start the **KiKit panelizing tool** by clicking the menu button.
+1. Open **KiCad PCB Editor** (standalone).
+2. Start the **KiKit panelizing plugin** by clicking the menu button.
 3. In KiKit, import the desired panelization configuration, for example:
    `KiKit panelize 2x PCB w49x100mm.json`
 4. Browse for the **Input file**.
