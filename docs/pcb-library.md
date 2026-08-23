@@ -252,6 +252,15 @@ The template names correspond directly to the PCB Library names, making it easy 
 
 See [KiCad Resources](../KiCad/README.md)
 
+### 🔲 KiKit Panelization
+
+Matching KiKit panelization configurations are provided for the supported Panel PCB Types.
+
+These configurations can be used to panelize the PCB according to the corresponding Boxify Panel PCB definition
+
+See [KiCad Resources](../KiCad/README.md)
+
+
 # 🔄 Creating a PCB Library Entry
 
 A typical workflow is:
