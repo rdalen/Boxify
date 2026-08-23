@@ -5,6 +5,21 @@ All notable changes to Boxify are documented in this file.
 The format is based on Keep a Changelog, adapted for the Boxify development process.
 
 ---
+## [2.2] — KiCad Resources
+
+### Added
+- Added **KiCad project templates** matching the PCB definitions in the Boxify PCB Library.
+- Added **KiKit panelization configurations** for supported Panel PCB types.
+- Added a dedicated `kicad/` resource folder with documentation and usage instructions.
+- Added documentation references linking the KiCad resources to the corresponding PCB Library definitions and KiCad integration workflow.
+
+### Improved
+- Simplified the workflow for creating Boxify-compatible PCBs in KiCad.
+- Established a clear one-to-one naming relationship between Boxify PCB Library entries and their corresponding KiCad templates.
+- Added ready-to-use KiKit configurations for panelized PCB designs.
+
+---
+
 ## [2.1] – PCB Panelization Support
 
 ### Added
@@ -20,6 +35,8 @@ The format is based on Keep a Changelog, adapted for the Boxify development proc
 ### Improved
 - Clearly separated **Prototype** PCB types from **Panel** PCB types in the PCB Library.
 - Made it easier to configure Boxify for PCBs intended to be manufactured as a panel.
+
+---
 
 ## [2.0] – Unified Enclosure Configuration
 

@@ -95,6 +95,17 @@ You normally configure the complete enclosure from PS Enclosure. There is no nee
 
 ---
 
+# 🧰 KiCad Templates and Panelization
+
+Boxify provides a set of KiCad project templates matching the supported PCB Types in the PCB Library.
+
+For panel PCBs, matching KiKit panelization configurations are also provided.
+
+See [KiCad Resources](../KiCad/README.md)
+
+
+---
+
 # [1️⃣ Import your PCB](kicad-integration.md#importing-the-step-model)
 
 Export your PCB from KiCad as a STEP model and import it into the Boxify document.
