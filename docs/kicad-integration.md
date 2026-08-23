@@ -107,6 +107,13 @@ Instead, it provides the detailed geometry required to represent the actual elec
 <p align="center"><i>Import the Step file.</i></p>
 
 ---
+### 🧰 KiCad Resources
+
+Boxify provides matching KiCad project templates for the supported PCB Types, as well as KiKit configurations for panelized PCB designs.
+
+See [KiCad Resources](../KiCad/README.md)
+
+---
 
 # 🚗 Carrier / Passenger Architecture
 
