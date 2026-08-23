@@ -244,6 +244,8 @@ These panel dimensions make it possible to design the enclosure for the **indivi
 </p>
 <p align="center"><i>100 × 100 mm manufacturing panel with 4x Panel w49×49mm PCBs</i></p>
 
+---
+
 ### 🧰 Matching KiCad Templates
 
 Matching KiCad project templates are provided for the supported PCB Types.
@@ -251,6 +253,8 @@ Matching KiCad project templates are provided for the supported PCB Types.
 The template names correspond directly to the PCB Library names, making it easy to select the correct KiCad template for a Boxify PCB definition.
 
 See [KiCad Resources](../KiCad/README.md)
+
+---
 
 ### 🔲 KiKit Panelization
 
@@ -260,6 +264,7 @@ These configurations can be used to panelize the PCB according to the correspond
 
 See [KiCad Resources](../KiCad/README.md)
 
+---
 
 # 🔄 Creating a PCB Library Entry
 
