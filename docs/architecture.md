@@ -54,8 +54,7 @@ Changes to upstream geometry or configuration propagate downstream through the p
 ---
 
 <img width="59%" alt="image" src="https://github.com/user-attachments/assets/e1c10873-f9fd-4df8-9d88-fa98777c8af0" />  
-
-<img width="39%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
+<img width="39%" alt="image" src="https://github.com/user-attachments/assets/1ab64efa-ba62-4c43-a2e4-9da3c6fb0d66" />
 <p align="center"><i>From PCB design to Boxify Enclosure design</i></p>
 ---
 
@@ -138,7 +137,7 @@ This loose coupling is one of the fundamental principles of Boxify.
 ---
 
 <p align="center">
-  <img width="75%" alt="image" src="https://github.com/user-attachments/assets/e3d67d1b-cafe-44a0-b046-9d6984c00c5e" />
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/e3d67d1b-cafe-44a0-b046-9d6984c00c5e" />
 <p>
 <p align="center"><i>Boxify Adapter Plate</i></p>
 
@@ -152,7 +151,6 @@ Enclosure-related configuration is centralized here so that the user normally do
 
 Typical configuration options include:
 
-- PCB Type selection
 - PCB rotation
 - Component side up or down
 - Mounting side above or below the adapter plate
@@ -172,7 +170,8 @@ This allows a single enclosure framework to generate different enclosure variant
 ---
 
 <p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/79765599-6296-46cc-861c-e51c30c22aa4" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/5b7eeb10-9f71-4390-8ae3-58670d391a80" />
+
 </p>
 <p align="center"><i>Boxify Enclosure</i></p>
 
@@ -231,47 +230,70 @@ Threaded inserts can also be disabled when an enclosure does not require them.
 
 # ⚙️ Configuration Architecture
 
-A key principle introduced in Boxify is **centralized user configuration**.
+A key principle in Boxify is that **configuration belongs to the stage where the information is defined**.
 
-The user-facing configuration belongs to **PS Enclosure**.
+The **PCB Type** is selected when the PCB Library is derived into **PS KiCadStep**. This defines which PCB is used by the Boxify system.
 
-The other components provide the information required to generate the enclosure:
+The remaining **enclosure-related user configuration** is centralized in **PS Enclosure**.
 
 ```text
-                     User Configuration
-                            │
-                            ▼
-                    ┌───────────────┐
-                    │ PS Enclosure  │
-                    └───────┬───────┘
-                            │
-             ┌──────────────┼──────────────┐
-             │              │              │
-             ▼              ▼              ▼
-        PCB geometry   Adapter Plate   Insert Library
-             │              │              │
-             └──────────────┼──────────────┘
-                            ▼
-                    Box Base + Box Lid
+                 PCB Definition
+                       │
+                       ▼
+              ┌─────────────────┐
+              │  PS KiCadStep   │
+              │                 │
+              │ Select PCB Type │
+              │ from PCB Library│
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ PS AdapterPlate │
+              │                 │
+              │ PCB-derived     │
+              │ information     │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   PS Enclosure  │
+              │                 │
+              │ Enclosure       │
+              │ configuration   │
+              └────────┬────────┘
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+      Box Base      Box Lid     Insert Library
 ```
+This separation is important because each stage has a different responsibility
 
-This distinction is important:
+### PCB definition
 
-### User configuration
+The PCB Library contains the available PCB definitions.
 
-Controls **what the user wants**, for example:
+In PS KiCadStep, the user selects the required PCB Type when deriving the PCB Library. This selection determines which PCB definition is carried forward into the rest of Boxify.
+
+The PCB Type is therefore not an enclosure configuration option.
+
+### Enclosure configuration
+
+The user-facing configuration in PS Enclosure controls how the enclosure should be built around the selected PCB, for example:
 
 - Box height
 - Adapter height
 - Wall thickness
-- The PCB distance from the box-walls
+- PCB distance from the box walls
 - Lid fastening
 - Insert option
 - PCB orientation
 
+The enclosure does not need a separate PCB Type selection because that information has already been defined upstream.
+
 ### Engineering and measured variables
 
-Describe **what the geometry provides**, for example:
+Other variables describe what the geometry provides, rather than what the user wants to configure, for example:
 
 - PCB dimensions
 - Mounting-hole positions
@@ -279,6 +301,8 @@ Describe **what the geometry provides**, for example:
 - Measured component clearance
 
 Whenever possible, engineering information is measured or derived from existing geometry rather than entered manually.
+
+This separation keeps the PCB definition, mechanical adaptation, and enclosure configuration independent, reducing duplication and maintenance when new PCB types are added.
 
 ---
 
