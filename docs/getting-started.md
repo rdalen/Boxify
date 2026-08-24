@@ -90,7 +90,7 @@ Generated Box Base + Box Lid
 Verify in Assembly
 ```
 
-You normally configure the complete enclosure from PS Enclosure. There is no need to switch between Part Studios to edit configuration variables or manually modify Derive features.
+You normally configure the complete enclosure from PS Enclosure. The PCB Type is selected once in the Derive feature of PS KiCadStep when setting up the PCB.
 
 ---
 
