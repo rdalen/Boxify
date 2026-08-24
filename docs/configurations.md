@@ -85,10 +85,11 @@ Typical configuration options include:
 
 ### PCB
 
-- PCB Type selection
 - PCB rotation
 - Component side up or down
 - Mounting side above or below the adapter plate
+
+*Note: PCB Type is not an enclosure configuration option. It is selected when deriving the PCB Library entry in PS KiCadStep.*
 
 ### Adapter Plate
 
