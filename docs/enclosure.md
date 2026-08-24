@@ -188,8 +188,7 @@ This makes it possible to use the same enclosure model for:
 - Enclosures without threaded inserts
 
 ---
-
-<img width="1156" height="494" alt="image" src="https://github.com/user-attachments/assets/cdcd8059-6a76-43c5-95dc-5889efbc2660" />
+<img width="1220" height="430" alt="image" src="https://github.com/user-attachments/assets/c1e3f5b3-9659-4db8-84e2-911faa3874c1" />
 <p align="center"><i>Section view of Enclosure with Threaded Inserts</i></p>
 
 ---
