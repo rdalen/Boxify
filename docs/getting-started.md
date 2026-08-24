@@ -10,8 +10,7 @@ The Boxify workflow is configuration-driven: enclosure-related settings are mana
 
 ---
 
-<img width="836" height="400" alt="Boxify Enclosure design" src="https://github.com/user-attachments/assets/c668ee63-fbc0-4809-b90f-31d5326c883d" />
-
+<img width="928" height="436" alt="image" src="https://github.com/user-attachments/assets/ad3dfee1-c6e7-40a9-961e-e8ea8d04acc7" />
 <p align="center"><i>Boxify Enclosure design</i></p>
 
 ---
@@ -71,12 +70,12 @@ Export PCB as STEP
 Import STEP into Boxify
     │
     ▼
-Create / select PCB Library entry
+Create / select PCB Library entry -> Derive it in PS KiCadStep and select PCB Type
     │
     ▼
 Configure the enclosure in PS Enclosure
     │
-    ├── PCB Type, orientation and clearences
+    ├── PCB orientation and clearences
     ├── Adapter Plate height
     ├── Box height
     ├── Lid fastening
@@ -122,10 +121,10 @@ The imported STEP model becomes the detailed representation of the actual PCB as
 
 ---
 
-<p align="center">
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/416cff42-1892-4567-96c6-c941a4b0970f" />
-</p>
-<p align="center"><i>Example: a STEP file of a Zenertester design on a prototype board.</i></p>
+
+<img width="45%" alt="image" src="https://github.com/user-attachments/assets/af0776d9-91d5-4ba4-8366-0937a4106a10" />
+<img width="45%" alt="image" src="https://github.com/user-attachments/assets/eb8ba364-d61c-44ad-99b7-52b556e5e9af" />
+<p align="center"><i>STEP file of an example design on a prototype board</i></p>
 
 ---
 
@@ -140,6 +139,8 @@ Create / select PCB Library entry
     └── Panel PCB type (for panelized manufacturing)
 ```
 
+Derive it in PS KiCadStep and select PCB Type
+
 Boxify uses a **Carrier/Passenger architecture**:
 
 - The PCB Library PCB is the reusable **Carrier**.
@@ -147,8 +148,6 @@ Boxify uses a **Carrier/Passenger architecture**:
 - The combination provides both reusable PCB reference geometry and the detailed representation of the actual PCB.
 
 The PCB Library therefore becomes the reusable definition of the PCB used by the enclosure.
-
-Once the PCB Library entry is established, the PCB Type can be selected from the enclosure configuration.
 
 ---
 
@@ -160,7 +159,6 @@ This is the main configuration point for the Boxify enclosure.
 
 Depending on the selected configuration, you can control parameters such as:
 
-- PCB Type selection
 - PCB orientation
 - Component side up or down
 - Mounting side above or below the adapter plate
@@ -178,12 +176,12 @@ This allows the same Boxify enclosure framework to support different enclosure v
 
 ---
 <p align="center">
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/3804b72e-1345-4d8f-b7f1-c345c5bd8106" />
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/3ad8816a-e92d-4c2f-bd74-401834881e0b" />
 </p>
 <p align="center"><i>Adjust the Adapter Plate height and Box height so that everything fits properly.</i></p>
 
 <p align="center">
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/7c4b52cd-d6fa-4609-af84-50bde27f7f46" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/4eee554c-d91f-4ef1-ab3c-9bdfba90cf14" />
 
 </p>
 <p align="center"><i>Adjust the PCB to Adapter Plate Edge Distance how far the PCB is positioned from the edge of the Adapter Plate</i></p>
@@ -198,8 +196,6 @@ The enclosure consists of:
 - **Box Lid**
 
 Both are generated from the common enclosure configuration and the geometry provided by the Adapter Plate.
-
-The generated enclosure automatically adapts to the selected PCB Type and its associated configuration.
 
 The Box Lid and Base can be configured with different fastening options. Features that are not required by the selected configuration are automatically suppressed.
 
