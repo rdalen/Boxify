@@ -6,7 +6,7 @@ Configurations allow Boxify to generate different enclosure variants from a sing
 
 Instead of maintaining separate designs for different combinations of PCB, dimensions, mounting methods or fastening options, Boxify uses configuration variables to define **what the user wants to build**.
 
-The goal is to keep the configuration:
+The goal is to keep the enclosure configuration:
 
 - Centralized
 - Meaningful
