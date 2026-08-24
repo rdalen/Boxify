@@ -196,7 +196,7 @@ The enclosure consists of:
 - **Box Lid**
 
 Both are generated from the common enclosure configuration and the geometry provided by the Adapter Plate.
-
+The enclosure adapts automatically to the PCB Type provided by the upstream PCB definition.
 The Box Lid and Base can be configured with different fastening options. Features that are not required by the selected configuration are automatically suppressed.
 
 ---
