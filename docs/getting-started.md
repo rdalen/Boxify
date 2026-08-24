@@ -75,7 +75,7 @@ Create / select PCB Library entry -> Derive it in PS KiCadStep and select PCB Ty
     ▼
 Configure the enclosure in PS Enclosure
     │
-    ├── PCB orientation and clearences
+    ├── PCB orientation and clearances
     ├── Adapter Plate height
     ├── Box height
     ├── Lid fastening
