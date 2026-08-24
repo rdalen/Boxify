@@ -17,7 +17,7 @@ Check out the Boxify [Instructable](https://www.instructables.com/-Boxify-a-Para
 
 ---
 
-<img width="836" height="400" alt="image" src="https://github.com/user-attachments/assets/c668ee63-fbc0-4809-b90f-31d5326c883d" />
+<img width="928" height="436" alt="image" src="https://github.com/user-attachments/assets/ad3dfee1-c6e7-40a9-961e-e8ea8d04acc7" />
 <p align="center"><i>Boxify Enclosure design</i></p>
 
 ---

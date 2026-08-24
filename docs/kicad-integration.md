@@ -102,8 +102,7 @@ Instead, it provides the detailed geometry required to represent the actual elec
 ---
 
 <img width="29%" alt="image" src="https://github.com/user-attachments/assets/467a7635-c41a-4e8f-a737-2179581d48fd" />
-
-<img width="59%" alt="image" src="https://github.com/user-attachments/assets/e55cbaf1-e128-4fd9-92a2-59690cd4e403" />
+<img width="59%" alt="image" src="https://github.com/user-attachments/assets/a7cdc101-a907-44c9-9eb9-e9ca7d740758" />
 <p align="center"><i>Import the Step file.</i></p>
 
 ---
@@ -318,7 +317,6 @@ Once the PCB is available to Boxify, enclosure-related choices are made in **PS 
 
 Examples include:
 
-- PCB Type selection
 - PCB rotation
 - Component side up or down
 - Mounting side above or below the adapter plate
@@ -330,6 +328,12 @@ Examples include:
 - Labels
 
 The user should therefore not need to modify PS KiCadStep when configuring the enclosure.
+
+The PCB Type is selected in the Derive feature when the PCB Library is brought into PS KiCadStep.
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/b20127a7-eb0d-4855-9255-ecf1ca17d0c8" />
+</p>
+<p align="center"><i>Select PCB Type in the Derive feature</i></p>
 
 ---
 

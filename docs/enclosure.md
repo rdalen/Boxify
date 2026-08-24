@@ -11,12 +11,11 @@ It converts the mechanical interface provided by the **Adapter Plate** and the u
 
 The Base and Lid are designed together because they always belong to the same enclosure configuration.
 
-The enclosure adapts automatically to the selected PCB Type, Adapter Plate and configuration.
+The enclosure adapts automatically to the PCB Type provided by the upstream PCB definition, the Adapter Plate and the enclosure configuration.
 
 ---
 
-
-<img width="850" height="896" alt="image" src="https://github.com/user-attachments/assets/1331d56a-d396-409b-99f9-39e9f524ce26" />
+<img width="75%" alt="image" src="https://github.com/user-attachments/assets/452abd34-6212-4b03-86d6-fdb95021c9f2" />
 <p align="center"><i>Enclosure for the PCB with cut-outs and textlabels</i></p>
 
 ---
@@ -61,7 +60,6 @@ Enclosure-related configuration is centralized here.
 
 Typical configuration options include:
 
-- PCB Type selection
 - PCB rotation
 - Component side up or down
 - Mounting side above or below the adapter plate
@@ -190,8 +188,7 @@ This makes it possible to use the same enclosure model for:
 - Enclosures without threaded inserts
 
 ---
-
-<img width="1156" height="494" alt="image" src="https://github.com/user-attachments/assets/cdcd8059-6a76-43c5-95dc-5889efbc2660" />
+<img width="1220" height="430" alt="image" src="https://github.com/user-attachments/assets/c1e3f5b3-9659-4db8-84e2-911faa3874c1" />
 <p align="center"><i>Section view of Enclosure with Threaded Inserts</i></p>
 
 ---

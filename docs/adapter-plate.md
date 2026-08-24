@@ -25,8 +25,7 @@ Enclosure
 This separation allows the PCB and enclosure to evolve independently.
 
 ---
-
-<img width="1046" height="892" alt="image" src="https://github.com/user-attachments/assets/f35adabe-419d-4af0-94da-1c42cc0a5404" />
+<img width="1030" height="850" alt="image" src="https://github.com/user-attachments/assets/c482e30a-4df9-435a-a16c-d9599ea6d15e" />
 <p align="center"><i>Adapter Plate with the PCB Library Entry</i></p>
 
 ---

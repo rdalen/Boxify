@@ -3,8 +3,19 @@
 All notable changes to Boxify are documented in this file.
 
 The format is based on Keep a Changelog, adapted for the Boxify development process.
+---
+
+## [2.3] – Simplified PCB Type Configuration
+
+### Changed
+- Moved **PCB Type selection** from PS Enclosure to the PCB Library Derive feature in PS KiCadStep.
+- Removed the redundant PCB Type configuration from PS Enclosure, PS Adapter Plate and PS KiCadSTEP
+- Simplified the process of **adding new PCB Types** by eliminating duplicate configuration maintenance.
+- Improved separation between **PCB definition** and **enclosure configuration**.
+- Updated the documentation to clarify the PCB Type selection and configuration workflow.
 
 ---
+
 ## [2.2] — KiCad Resources
 
 ### Added
