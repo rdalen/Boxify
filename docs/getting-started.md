@@ -112,6 +112,10 @@ Export your PCB from KiCad as a STEP model and import it into the Boxify documen
 For best results:
 
 - Make sure the PCB origin is always in the center of the PCB board (Boxify uses the centered Mate Connector in the PCB Library as the reference for mating the imported STEP model)
+      <p align="center">
+     <img width="50%" alt="image" src="https://github.com/user-attachments/assets/c042bd27-013e-4162-8bc7-cfd6b954fab1" />
+     </p>
+      <p align="center"><i>Check Board center origin in the STEP export</i></p>
 - Keep the PCB origin and coordinate system consistent between STEP exports.
 - Include the PCB and all components that should be represented in the enclosure.
 - Export using millimetres.
