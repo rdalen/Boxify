@@ -17,7 +17,7 @@ Together they form the PCB definition used by the Boxify architecture.
 ---
 
 <p align="center">
-<img width="1890" height="554" alt="image" src="https://github.com/user-attachments/assets/1545f158-0418-44c5-a1fa-211482e106c8" />
+<img width="1850" height="722" alt="image" src="https://github.com/user-attachments/assets/81441788-bdcd-4b3f-b8de-fb667ab9c511" />
 </p>
 <p align="center"><i>Boxify PCB Library</i></p>
 
@@ -177,6 +177,10 @@ lidFasteningType
 The general rule is:
 
 > **PCB Library variables describe the PCB; PS Enclosure variables describe the enclosure.**
+
+Please note: PCB Thickness is defined in the Variable Studio under **General Settings**. It is not part of the PCB Library configuration table.
+
+The PCB Library configuration table defines the PCB type and its mechanical interface. `vs_pcbThickness` is a general PCB property used by Boxify when positioning the PCB and KiCad STEP geometry.
 
 ---
 
