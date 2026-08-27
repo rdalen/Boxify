@@ -115,9 +115,9 @@ Typical references include:
   
 The KiCad STEP is positioned as part of the Derive operation.
 
-That's why the PCB thickness (`vs_pcbThickness`) and `pcbMountAdjust` information are resolved before the Derived of the kicadStep
+Therefore, `pcbThickness` and `pcbMountAdjust` are resolved before the KiCad STEP is derived into the Adapter Plate.
 
-The Adapter Plate therefore adapts to the selected PCB and its passenger) automatically.
+The Adapter Plate therefore adapts automatically to the selected PCB and its Passenger.
 
 ---
 
