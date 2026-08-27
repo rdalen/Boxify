@@ -112,8 +112,12 @@ Typical references include:
 - PCB origin
 - Mounting plane
 - Reference Mate Connector
+  
+The KiCad STEP is positioned as part of the Derive operation.
 
-The Adapter Plate therefore adapts to the selected PCB rather than containing a hard-coded PCB design.
+That's why the PCB thickness (`vs_pcbThickness`) and `pcbMountAdjust` information are resolved before the Derived of the kicadStep
+
+The Adapter Plate therefore adapts to the selected PCB and its passenger) automatically.
 
 ---
 
@@ -138,13 +142,14 @@ The enclosure uses these references to generate the surrounding walls and other 
 
 Where possible, Adapter Plate information should be **measured or derived from existing geometry** rather than manually duplicated.
 
-Examples include:
+Measured from geometry
+- PCB length
+- PCB width
+- mounting-hole positions
+- hole diameter
 
-- PCB dimensions
-- PCB mounting-hole positions
-- Adapter Plate thickness
-- Mounting locations
-- Reference offsets
+Defined PCB information
+- PCB thickness
 
 For example:
 
