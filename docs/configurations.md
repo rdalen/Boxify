@@ -248,7 +248,9 @@ The general rule is:
 
 > **If the user needs to choose it, configure it. If the model already knows it, derive or measure it.**
 
-Some PCB properties are defined inputs rather than measured geometry, PCB thickness is one such property because it is required to position the detailed KiCad STEP before it enters the Adapter Plate.
+Some PCB properties are defined inputs rather than measured geometry.
+
+PCB thickness is one such property because it is required to position the detailed KiCad STEP before it enters the Adapter Plate.
 
 ```text
 PCB definition
