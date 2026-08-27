@@ -263,9 +263,9 @@ Optional features should be enabled or suppressed according to configuration.
 
 # 📜 Version History
 
-See the [CHANGELOG](CHANGELOG.md) for the Boxify development history.
+Boxify follows an evolving configuration-driven architecture. See the [CHANGELOG](CHANGELOG.md) for the development history and architectural changes.
 
-Boxify v2.0 marks the transition to a centralized, configuration-driven enclosure workflow.
+Boxify is currently based on the v2.x configuration-driven architecture, with ongoing improvements to the PCB and KiCad STEP integration.
 
 ---
 
@@ -275,38 +275,6 @@ Contributions are welcome!
 
 Before making changes, please read the [Contributing Guide](CONTRIBUTING.md) and familiarize yourself with the [Architecture](docs/architecture.md).
 
----
-
-# 📦 Project Status
-
-Boxify is an actively evolving parametric enclosure framework.
-
-In the current **v2.0 architecture** the enclosure is now **configuration-driven**, with enclosure-related user configuration centralized in **PS Enclosure**.
-
-It provides:
-
-- PCB Library integration
-- KiCad STEP integration
-- Carrier / Passenger architecture
-- Parametric Adapter Plate
-- Centralized enclosure configuration
-- Box Base + Box Lid generation
-- Threaded Insert Library
-- Dynamic feature suppression
-- Configurable lid fastening
-- Interface cut-outs
-- Configurable labels
-
-Configuration variables and features can change dynamically depending on the selected options.
-
-This means the user normally does **not** need to:
-
-- Switch between Part Studios to configure the enclosure.
-- Edit Derive features.
-- Maintain duplicate configuration values.
-- Manually suppress irrelevant features.
-
-Future development will continue to extend the framework while preserving its modular architecture.
 
 ---
 

@@ -80,6 +80,12 @@ This allows an updated STEP model to replace the previous model without unexpect
 
 ---
 
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/c042bd27-013e-4162-8bc7-cfd6b954fab1" />
+</p>
+<p align="center"><i>Check Board center origin in the STEP export</i></p>
+---
+
 # 📥 Importing the STEP Model
 
 Import the STEP model into the Boxify Onshape document.
@@ -179,6 +185,19 @@ This provides several advantages:
 - Cleaner model organisation
 - Easier handling of imported assemblies
 
+To do so: 
+- Open the STEP Model in Boxify
+- Create a feature **composite**
+- Select all the (sub)parts of the STEP model
+- Check **closed**
+
+---
+
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/3cee0901-024f-47bd-92f6-80ff0ca44fb8" />
+</p>    
+<p align="center"><i>Create a Composite part</i></p>
+
 The Composite Part represents the complete imported PCB assembly as a single mechanical reference.
 
 Sadly, the Composited PCB is looking a little gray now… 😉
@@ -194,7 +213,6 @@ Sadly, the Composited PCB is looking a little gray now… 😉
 
 After importing and preparing the STEP model:
 
-1. Create the Composite Part.
 2. Open **PS KiCadStep**.
 3. Derive the imported Composite Part into PS KiCadStep.
 4. Select an appropriate PCB Type from the **PCB Library**. Make sure the selected PCB Type has the same dimensions as the PCB in the imported STEP model
@@ -234,7 +252,7 @@ STEP geometry    PCB Library PCB Type
 
 ---
 
-# 📐 PCB Library PCB Type
+### 📐 PCB Library PCB Type
 
 The selected PCB Type from the PCB Library should represent the PCB that the imported STEP model belongs to.
 
@@ -243,6 +261,20 @@ The prototype provides the reusable reference information required by the downst
 The imported STEP model supplies the detailed representation of the actual electronic assembly.
 
 This separation means that the enclosure does not need to depend directly on the internal structure of the imported STEP model.
+
+---
+
+### 📐 PCB Thickness and STEP Positioning
+
+The PCB thickness is defined in the Variable Studio **General Settings** as `vs_pcbThickness`.
+
+It is not measured from the imported KiCad STEP and is not part of the PCB Library configuration table.
+
+The mounting adjustment is calculated from the PCB configuration and applied when the KiCad STEP is derived into the Adapter Plate.
+
+This means the KiCad STEP enters the Adapter Plate in its required mounting position without requiring a downstream transformation of the imported Composite Part.
+
+This keeps the KiCad STEP integration independent of transformations applied to the imported composite geometry and makes the workflow more robust when the STEP model is replaced or updated.
 
 ---
 

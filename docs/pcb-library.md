@@ -17,7 +17,7 @@ Together they form the PCB definition used by the Boxify architecture.
 ---
 
 <p align="center">
-<img width="1890" height="554" alt="image" src="https://github.com/user-attachments/assets/1545f158-0418-44c5-a1fa-211482e106c8" />
+<img width="1850" height="722" alt="image" src="https://github.com/user-attachments/assets/81441788-bdcd-4b3f-b8de-fb667ab9c511" />
 </p>
 <p align="center"><i>Boxify PCB Library</i></p>
 
@@ -162,6 +162,7 @@ pcbWidth
 pcbLength
 mountingHoleDiameter
 mountingHolePosition
+pcbThickness (defined in the Variable Studio General Settings)
 ```
 
 These values describe the PCB itself.
@@ -177,6 +178,10 @@ lidFasteningType
 The general rule is:
 
 > **PCB Library variables describe the PCB; PS Enclosure variables describe the enclosure.**
+
+Please note: PCB thickness is defined in the Variable Studio **General Settings**. It is not part of the PCB Library configuration table.
+
+The PCB Library configuration table defines the PCB type and its mechanical interface. `pcbThickness` is a general PCB property used by Boxify when positioning the PCB and KiCad STEP geometry.
 
 ---
 
@@ -274,10 +279,11 @@ A typical workflow is:
 2. Import the STEP model into Onshape.
 3. Create a Composite Part if required.
 4. Open **PS KiCadStep**.
-5. Select or create the appropriate PCB Type in the PCB Library.
+5. Select (or create) the appropriate PCB Type in the PCB Library.
 6. Establish the Carrier / Passenger relationship.
 7. Verify the PCB references.
-8. Derive the resulting PCB definition into the Adapter Plate.
+
+The resulting PCB definition is derived into the Adapter Plate automatically.
 
 The PCB Library entry then becomes reusable for the enclosure workflow.
 
@@ -363,6 +369,7 @@ For example:
 
 Defines:
 
+- PCB Type
 - PCB geometry
 - Mounting locations
 - Reference coordinate system
@@ -372,7 +379,6 @@ Defines:
 
 Selects and uses that definition and controls:
 
-- PCB Type selection
 - PCB rotation
 - Component side
 - Mounting side
@@ -467,7 +473,6 @@ A typical workflow is:
 2. Define the PCB dimensions and relevant mounting/interface geometry.
 3. Position the PCB Library Mate Connector at the **center of the PCB**.
 4. Add the required configuration variables and options.
-5. Make the PCB Type available to PS Enclosure.
 6. Verify the resulting Adapter Plate and enclosure geometry.
 7. Verify the result in the Assembly.
 
