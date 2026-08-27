@@ -9,13 +9,13 @@ The format is based on Keep a Changelog, adapted for the Boxify development proc
 ## [2.4] – Robust KiCad STEP Integration
 
 ### Changed
-Reworked KiCad STEP positioning to avoid downstream transformations of the imported Composite Part.
-Added `vs_pcbThickness` as an explicit PCB property used to calculate pcbMountAdjust.
-Apply pcbRotation in the Adapter Plate derive feature in PS Enclosure rather than transforming the imported KiCad STEP.
-Removed the previous KiCad STEP transformation features.
+- Reworked KiCad STEP positioning to avoid downstream transformations of the imported Composite Part.
+- Added `vs_pcbThickness` as an explicit PCB property used to calculate pcbMountAdjust.
+- Removed the previous KiCad STEP transformation features.
 
 ### Improved
-Improved robustness when replacing or updating KiCad STEP models.
+- Improved robustness when replacing or updating KiCad STEP models.
+- Applied pcbRotation in the Adapter Plate derive feature in PS Enclosure rather than transforming the imported KiCad STEP.
 
 ---
 
