@@ -3,6 +3,7 @@
 All notable changes to Boxify are documented in this file.
 
 The format is based on Keep a Changelog, adapted for the Boxify development process.
+
 ---
 
 ## [2.4] – Robust KiCad STEP Integration
@@ -16,6 +17,7 @@ Removed the previous KiCad STEP transformation features.
 ### Improved
 Improved robustness when replacing or updating KiCad STEP models.
 
+---
 
 ## [2.3] – Simplified PCB Type Configuration
 
