@@ -363,6 +363,7 @@ For example:
 
 Defines:
 
+- PCB Type
 - PCB geometry
 - Mounting locations
 - Reference coordinate system
@@ -372,7 +373,6 @@ Defines:
 
 Selects and uses that definition and controls:
 
-- PCB Type selection
 - PCB rotation
 - Component side
 - Mounting side
