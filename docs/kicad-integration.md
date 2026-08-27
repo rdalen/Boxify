@@ -264,7 +264,7 @@ This separation means that the enclosure does not need to depend directly on the
 
 ---
 
-# 📐 PCB Thickness and STEP Positioning
+### 📐 PCB Thickness and STEP Positioning
 
 The PCB thickness is defined in the Variable Studio **General Settings** as `vs_pcbThickness`.
 
