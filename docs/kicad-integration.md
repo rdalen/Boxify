@@ -80,6 +80,12 @@ This allows an updated STEP model to replace the previous model without unexpect
 
 ---
 
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/69773d2e-d5fd-4acd-ad49-f3bd7b4cb541" />
+</p>
+<p align="center"><i>Export the Step file.</i></p>
+---
+
 # 📥 Importing the STEP Model
 
 Import the STEP model into the Boxify Onshape document.
@@ -179,6 +185,19 @@ This provides several advantages:
 - Cleaner model organisation
 - Easier handling of imported assemblies
 
+To do so: 
+- Open the STEP Model in Boxify
+- Create a feature **composite**
+- Select all the (sub)parts of the STEP model
+- Check **closed**
+
+---
+
+<p align="center">
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/3cee0901-024f-47bd-92f6-80ff0ca44fb8" />
+</p>    
+<p align="center"><i>Create a Composite part</i></p>
+
 The Composite Part represents the complete imported PCB assembly as a single mechanical reference.
 
 Sadly, the Composited PCB is looking a little gray now… 😉
@@ -194,7 +213,6 @@ Sadly, the Composited PCB is looking a little gray now… 😉
 
 After importing and preparing the STEP model:
 
-1. Create the Composite Part.
 2. Open **PS KiCadStep**.
 3. Derive the imported Composite Part into PS KiCadStep.
 4. Select an appropriate PCB Type from the **PCB Library**. Make sure the selected PCB Type has the same dimensions as the PCB in the imported STEP model
