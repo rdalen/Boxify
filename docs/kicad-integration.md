@@ -81,9 +81,9 @@ This allows an updated STEP model to replace the previous model without unexpect
 ---
 
 <p align="center">
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/69773d2e-d5fd-4acd-ad49-f3bd7b4cb541" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/c042bd27-013e-4162-8bc7-cfd6b954fab1" />
 </p>
-<p align="center"><i>Export the Step file.</i></p>
+<p align="center"><i>Check Board center origin in the STEP export</i></p>
 ---
 
 # 📥 Importing the STEP Model
