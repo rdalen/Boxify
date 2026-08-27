@@ -162,7 +162,7 @@ pcbWidth
 pcbLength
 mountingHoleDiameter
 mountingHolePosition
-pcbThickness (defined in the Variable Studio under **General Settings**)
+pcbThickness (defined in the Variable Studio General Settings)
 ```
 
 These values describe the PCB itself.
@@ -179,7 +179,7 @@ The general rule is:
 
 > **PCB Library variables describe the PCB; PS Enclosure variables describe the enclosure.**
 
-Please note: PCB thickness is defined in the Variable Studio under **General Settings**. It is not part of the PCB Library configuration table.
+Please note: PCB thickness is defined in the Variable Studio **General Settings**. It is not part of the PCB Library configuration table.
 
 The PCB Library configuration table defines the PCB type and its mechanical interface. `pcbThickness` is a general PCB property used by Boxify when positioning the PCB and KiCad STEP geometry.
 
