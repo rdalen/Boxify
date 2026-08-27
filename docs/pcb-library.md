@@ -178,7 +178,7 @@ The general rule is:
 
 > **PCB Library variables describe the PCB; PS Enclosure variables describe the enclosure.**
 
-Please note: PCB Thickness is defined in the Variable Studio under **General Settings**. It is not part of the PCB Library configuration table.
+Please note: PCB Thickness is defined in the Variable Studio under **General Settings**. It is **not** part of the PCB Library configuration table.
 
 The PCB Library configuration table defines the PCB type and its mechanical interface. `vs_pcbThickness` is a general PCB property used by Boxify when positioning the PCB and KiCad STEP geometry.
 
@@ -278,10 +278,11 @@ A typical workflow is:
 2. Import the STEP model into Onshape.
 3. Create a Composite Part if required.
 4. Open **PS KiCadStep**.
-5. Select or create the appropriate PCB Type in the PCB Library.
+5. Select (or create) the appropriate PCB Type in the PCB Library.
 6. Establish the Carrier / Passenger relationship.
 7. Verify the PCB references.
-8. Derive the resulting PCB definition into the Adapter Plate.
+
+The resulting PCB definition is derived into the Adapter Plate automatically.
 
 The PCB Library entry then becomes reusable for the enclosure workflow.
 
@@ -471,7 +472,6 @@ A typical workflow is:
 2. Define the PCB dimensions and relevant mounting/interface geometry.
 3. Position the PCB Library Mate Connector at the **center of the PCB**.
 4. Add the required configuration variables and options.
-5. Make the PCB Type available to PS Enclosure.
 6. Verify the resulting Adapter Plate and enclosure geometry.
 7. Verify the result in the Assembly.
 
