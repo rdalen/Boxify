@@ -252,7 +252,7 @@ STEP geometry    PCB Library PCB Type
 
 ---
 
-# 📐 PCB Library PCB Type
+### 📐 PCB Library PCB Type
 
 The selected PCB Type from the PCB Library should represent the PCB that the imported STEP model belongs to.
 
@@ -261,6 +261,20 @@ The prototype provides the reusable reference information required by the downst
 The imported STEP model supplies the detailed representation of the actual electronic assembly.
 
 This separation means that the enclosure does not need to depend directly on the internal structure of the imported STEP model.
+
+---
+
+# 📐 PCB Thickness and STEP Positioning
+
+The PCB thickness is defined in the Variable Studio **General Settings** as `vs_pcbThickness`.
+
+It is not measured from the imported KiCad STEP and is not part of the PCB Library configuration table.
+
+The mounting adjustment is calculated from the PCB configuration and applied when the KiCad STEP is derived into the Adapter Plate.
+
+This means the KiCad STEP enters the Adapter Plate in its required mounting position without requiring a downstream transformation of the imported Composite Part.
+
+This keeps the KiCad STEP integration independent of transformations applied to the imported composite geometry and makes the workflow more robust when the STEP model is replaced or updated.
 
 ---
 
